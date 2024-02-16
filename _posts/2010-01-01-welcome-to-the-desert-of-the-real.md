@@ -6,9 +6,9 @@ subtitle: 'Implementing Basic Security Measures to Harden the SSH Port'
 description: >-
   Explore essential steps to harden your SSH port and prevent unauthorized access in this concise guide. Learn key security measures to protect your systems effectively.
 image: >-
-  https://res.cloudinary.com/dm7h7e8xj/image/upload/v1559821647/theme6_qeeojf.jpg
+  /assets/img/ssh.png
 optimized_image: >-
-  https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559821647/theme6_qeeojf.jpg
+  /assets/img/ssh.png
 category: blog
 tags:
   - SSH
