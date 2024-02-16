@@ -1,11 +1,11 @@
 ---
 layout: author
 photo: /assets/img/uploads/profile.png
-name: mranderson
-display_name: Mr. Anderson
+name: Harsimran Sidhu
+display_name: Harsimran Sidhu
 position: The One
-bio: Bulletproof hacker passionate about leather clothes.
-github_username: github_username
+bio: Hacker who is passinate about IoT and DevOps
+github_username: PKHarsimran
 facebook_username: facebook_username
 twitter_username: twitter_username
 instagram_username: instagram_username
