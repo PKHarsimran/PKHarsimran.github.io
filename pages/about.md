@@ -7,13 +7,17 @@ description: Some description.
 permalink: /about/
 ---
 
-<img class="img-rounded" src="/assets/img/uploads/profile.png" alt="Thomas A. Anderson" width="200">
+<img class="img-rounded" src="/assets/img/uploads/pro.png" alt="Harsimran" width="200">
 
 # About
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Hi there! 😄 Welcome to my world, where I’m much more than just an engineer. I love working with embedded microcontrollers like Arduino and Raspberry Pi. They’re not just hobbies for me; they’re a passion. 🚀🤖
+But that’s not all. During the day, I’m a security analyst, fighting against cyber threats and staying ahead in this fast-paced digital battleground. Think of me as a cyber-superhero, minus the cape. 💻🦸‍♂️
+I’m also fascinated by cloud computing, especially Azure. It’s like looking into a future filled with unlimited possibilities! ☁️🔮
+
+My personal challenges with CPTSD have driven me to advocate for mental health. I’m dedicated to spreading hope and awareness. 🌟💚 Reading is another passion of mine, particularly self-help and personal development books. I’m like a walking library for growth and resilience! 📚🌱
+
+So, why not check out my blog? I hope to add a dash of inspiration and humor to your day. Your thoughts and experiences are important to me. Let’s connect and learn from each other, sharing laughter along the way. 😊🌈
+
+And guess what? I’m currently learning Docker! 🐳💻 Join me as we explore these exciting new territories.
+Also check out this if you are looking get a job : https://50waystogetajob.com/
