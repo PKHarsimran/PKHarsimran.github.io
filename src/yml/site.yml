@@ -1,12 +1,10 @@
 name: Harsimran Sidhu
 title: Blogging for the future
-description: Welcome to my Blog!
+description: Welcome to my blog!
 tags:
   - blog
-  - template
+  - cybersecurity
   - jekyll
-  - theme
-  - netlify
 show_hero: true
 menu:
   - title: Home
