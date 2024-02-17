@@ -147,6 +147,7 @@ metalytics@analytics:~$ uname -a
 Linux analytics 6.2.0-25-generic #25~22.04.2-Ubuntu SMP PREEMPT_DYNAMIC Wed Jun 28 09:55:23 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
 ```
 The output revealed a kernel version potentially vulnerable to recent exploits [(CVE-2023-2640 and CVE-2023-32629)](https://github.com/g1vi/CVE-2023-2640-CVE-2023-32629). Armed with this knowledge, I crafted a exploit.sh script in the /tmp directory to exploit these vulnerabilities:
+
 ```bash
 #!/bin/bash
 
