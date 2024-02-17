@@ -4,8 +4,8 @@ layout: post
 title: "A Blogger's Guide to CI/CD: Hosting with Azure Static Web Apps"
 subtitle: How I deployed a blog on internet ?
 description: Hey there! Ever wondered how a simple blog turns into a tech adventure? That's what happened to me. This is a story about taking my blog from a basic setup to something way cooler with CI/CD, using Azure and GitHub.
-image: assets/img/CICCD.png
-optimized_image: assets/img/CICCD.png
+image: /assets/img/CICCD.png
+optimized_image: /assets/img/CICCD.png
 category: Inspiration
 tags:
   - Blog
