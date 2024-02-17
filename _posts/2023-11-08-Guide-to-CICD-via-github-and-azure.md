@@ -21,7 +21,7 @@ If you're curious about blogging, tech, or just love a good story about learning
 
 So, get comfy and join me as we explore this journey, one question at a time.
 
-![image](https://github.com/PKHarsimran/PKHarsimran.github.io/assets/22066581/cccd6b4e-0ff9-4be2-a42a-448e5b19514b)
+![image](/assests/img/map.PNG)
 
 
 ### Q: To start, could you share what initially inspired you to create a blog and why you chose Jekyll as your platform?
