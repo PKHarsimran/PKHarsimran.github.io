@@ -21,8 +21,7 @@ If you're curious about blogging, tech, or just love a good story about learning
 
 So, get comfy and join me as we explore this journey, one question at a time.
 
-![image](/assests/img/map.PNG)
-
+![CI/CD Blog Map](/assets/img/map.PNG)
 
 ### Q: To start, could you share what initially inspired you to create a blog and why you chose Jekyll as your platform?
 
