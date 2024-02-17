@@ -1,5 +1,5 @@
 ---
-date: 2021-10-20
+date: 2022-10-20
 layout: post
 title: Securing SSH
 subtitle: 'Implementing Basic Security Measures to Harden the SSH Port'
