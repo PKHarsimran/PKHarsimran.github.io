@@ -30,7 +30,7 @@ Here's the nmap command I used:
 ```bash
 sudo nmap -p- --open -sS --min-rate 5000 -Pn -n -v 10.10.11.233 -oN nmap
 ```
-![image](https://github.com/PKHarsimran/PKHarsimran.github.io/blob/master/assets/htbA/portS.png)
+![image](https://raw.githubusercontent.com/PKHarsimran/PKHarsimran.github.io/blob/master/assets/htbA/portS.png)
 
 This command initiated an intensive SYN Stealth Scan, bypassing ping discovery (which can be useful if the host is blocking ping requests), not resolving DNS to speed up the scan, and running it verbosely to get real-time feedback. The --min-rate 5000 flag was used to send packets at a higher rate, significantly speeding up the scan process. The results were saved to a file named nmap.
 
@@ -45,7 +45,7 @@ The command executed was:
 ```bash
 sudo nmap -p22,80 -sCV -v 10.10.11.233 -oN nmapsV
 ```
-![image](https://github.com/PKHarsimran/PKHarsimran.github.io/blob/master/assets/htbA/servenu.png)
+![image](https://raw.githubusercontent.com/PKHarsimran.github.io/blob/master/assets/htbA/servenu.png)
 
 This command targets the specific open ports (22 and 80), requests service versions (-sV), runs default NSE scripts for more information (-sC), and increases verbosity for detailed output (-v). The results were saved to a file nmapsV.
 
@@ -61,7 +61,7 @@ The command used for this mapping was:
 ```bash
 echo '10.10.11.233 analytical.htb' | sudo tee -a /etc/hosts
 ```
-![image](https://github.com/PKHarsimran/PKHarsimran.github.io/blob/master/assets/htbA/hostmap.png)
+![image](https://raw.githubusercontent.com/PKHarsimran/PKHarsimran.github.io/blob/master/assets/htbA/hostmap.png)
 
 This appends the custom hostname to the end of the hosts file and now any traffic directed to analytical.htb will route to 10.10.11.233. This step is crucial for testing web applications that rely on specific host headers or virtual hosting environments.
 
@@ -72,7 +72,7 @@ The command executed was:
 ```bash
 sudo whatweb http://analytical.htb/
 ```
-![image](https://github.com/PKHarsimran/PKHarsimran.github.io/blob/master/assets/htbA/WCA.png)
+![image](https://raw.githubusercontent.com/PKHarsimran/PKHarsimran.github.io/blob/master/assets/htbA/WCA.png)
 
 The whatweb scan returned the following information about the web application:
 
@@ -90,7 +90,7 @@ The command used to update the host mapping was:
 ```bash
 echo '10.10.11.233 analytical.htb data.analytical.htb' | sudo tee -a /etc/hosts
 ```
-![image](https://github.com/PKHarsimran/PKHarsimran.github.io/blob/master/assets/htbA/routing.png)
+![image](https://raw.githubusercontent.com/PKHarsimran/PKHarsimran.github.io/blob/master/assets/htbA/routing.png)
 
 With this update, any requests to analytical.htb or data.analytical.htb will be directed to 10.10.11.233, allowing the site to load correctly and facilitating further investigation into the application hosted on the subdomain.
 
@@ -101,17 +101,17 @@ I started by searching for relevant Metabase exploits within Metasploit:
 ```bash
 search metabase
 ```
-![image](https://github.com/PKHarsimran/PKHarsimran.github.io/blob/master/assets/htbA/e1.png)
+![image](https://raw.githubusercontent.com/PKHarsimran/PKHarsimran.github.io/blob/master/assets/htbA/e1.png)
 
 The search yielded an exploit module for a Metabase Setup Token Remote Code Execution vulnerability, which was disclosed on 2023-07-22. The module's rank was listed as 'excellent', indicating a high level of reliability and success rate.
 Using this information, I executed the following commands to set up the exploit:
 
-![image](https://github.com/PKHarsimran/PKHarsimran.github.io/blob/master/assets/htbA/e2.png)
+![image](https://raw.githubusercontent.com/PKHarsimran/PKHarsimran.github.io/blob/master/assets/htbA/e2.png)
 
 The Metasploit module targeted the Metabase application at data.analytical.htb on port 80, with a reverse shell payload set to connect back to my listener at 10.10.14.227 on port 4444.
 The exploit confirmed the target's vulnerability and successfully obtained a session:
 
-![image](https://github.com/PKHarsimran/PKHarsimran.github.io/blob/master/assets/htbA/e3.png)
+![image](https://raw.githubusercontent.com/PKHarsimran/PKHarsimran.github.io/blob/master/assets/htbA/e3.png)
 
 This successful exploitation resulted in a command shell session being opened, providing access to the target system. With this access, I can now execute commands directly on the compromised host, allowing for further enumeration and potential privilege escalation.
 
@@ -128,11 +128,11 @@ Among the various entries, two variables stood out:
 - META_USER: A username for what seemed to be a system account.
 - META_PASS: A password that accompanied the username.
 
-![image](https://github.com/PKHarsimran/PKHarsimran.github.io/blob/master/assets/htbA/env.png)
+![image](https://raw.githubusercontent.com/PKHarsimran/PKHarsimran.github.io/blob/master/assets/htbA/env.png)
 
 With these credentials in hand, I proceeded to attempt SSH access to the host. Using the META_USER and META_PASS, I was able to successfully authenticate over SSH, gaining a more stable and reliable connection to the target system.
 
-![image](https://github.com/PKHarsimran/PKHarsimran.github.io/blob/master/assets/htbA/env2.png)
+![image](https://raw.githubusercontent.com/PKHarsimran/PKHarsimran.github.io/blob/master/assets/htbA/env2.png)
 
 This sequence of events—from discovering sensitive environment variables to leveraging them for SSH access and finally locating the user flag—demonstrates a successful user-level compromise of the target system.
 
@@ -162,13 +162,13 @@ unshare -rm sh -c "mkdir l u w m && cp /u*/b*/p*3 l/;setcap cap_setuid+eip l/pyt
 ```
 Running this script successfully exploited the kernel vulnerabilities, granting me root privileges. I then navigated to the root user's home directory and listed its contents, where I found the root.txt file:
 
-![image](https://github.com/PKHarsimran/PKHarsimran.github.io/blob/master/assets/htbA/r1.png)
+![image](https://raw.githubusercontent.com/PKHarsimran/PKHarsimran.github.io/blob/master/assets/htbA/r1.png)
 
 This confirmed my root access, as shown in the uploaded screenshot, where the presence of root.txt in the /root directory signifies successful privilege escalation.
 
 Finally, I was able to read the contents of root.txt and capture the root flag, marking the culmination of this CTF challenge.
 
-![image](https://github.com/PKHarsimran/PKHarsimran.github.io/blob/master/assets/htbA/r2.png)
+![image](https://raw.githubusercontent.com/PKHarsimran/PKHarsimran.github.io/blob/master/assets/htbA/r2.png)
 
 
 
