@@ -1,13 +1,13 @@
 # Site Settings
 name: Harsimran Sidhu
-title: Harsimran's blog
-description: Welcome to my blog!
+title: Harsimran's Blog - Cybersecurity & Tech
+description: Join Harsimran's journey through the world of cybersecurity. Get expert insights, in-depth tech analysis, and much more.
 tags:
   - blog
-  - template
+  - tech
   - jekyll
-  - theme
-  - netlify
+  - github
+  - cybersecurity
 show_hero: true
 menu:
   - title: Home
