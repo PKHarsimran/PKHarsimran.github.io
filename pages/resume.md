@@ -13,7 +13,7 @@ Resourceful and analytical cybersecurity analyst with a robust IT background. Pr
 
 ## Experience
 
-### Cyber Security Analyst
+### Security Operations Center Analyst
 **Columba System Inc, Remote**  
 _Nov 2021 - Present_
 
