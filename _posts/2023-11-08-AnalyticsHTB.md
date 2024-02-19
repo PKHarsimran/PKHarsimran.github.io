@@ -20,7 +20,7 @@ In this post, I'm going to walk through my process of tackling the "Analytics" b
 
 ## Initial Reconnaissance
 First things first, I needed to make sure the box was reachable over the network. A simple `ping` command sufficed:
-![ping](https://private-user-images.githubusercontent.com/22066581/281562553-9b792bfb-9bec-4fa6-8c8f-d58a2dc1b81e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDgzMDUxNDksIm5iZiI6MTcwODMwNDg0OSwicGF0aCI6Ii8yMjA2NjU4MS8yODE1NjI1NTMtOWI3OTJiZmItOWJlYy00ZmE2LThjOGYtZDU4YTJkYzFiODFlLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAyMTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMjE5VDAxMDcyOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTUwM2U3ZGZlMWI1NmY3M2I5Nzk1MDk2Nzk1Mzg1ZTVlYWY5MjBiYzhmMjBhZTRkMDE3YWFhMTM3OGE3ZGVkY2ImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.sNjSBkGFmxKBXNxOeJ6WPLrG76t5ZaQyOsSRI94MfUY)
+![image]({{ site.baseurl }}/assets/htbA/ping.png)
 
 ## Task 2: Port Scanning
 After establishing the availability of the "Analytics" box, I proceeded with a comprehensive port scan using nmap. The goal was to identify open ports and running services that could provide vectors for deeper analysis or exploitation.
