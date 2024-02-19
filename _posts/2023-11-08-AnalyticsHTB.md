@@ -13,7 +13,7 @@ tags:
   - Cybersecurity
 author: Harsimran Sidhu
 paginate: true
-comment: true
+comments: true
 ---
 
 # Hack The Box Write-Up: Analytics
