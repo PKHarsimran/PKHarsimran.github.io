@@ -2,83 +2,72 @@
 layout: page
 menu: false
 title: Resume
-description: Harsimran's Resume
+description: Harsimran Sidhu's detailed resume showcasing expertise in cybersecurity, IT infrastructure, and development.
 permalink: /resume/
 ---
 
-<img class="img-rounded" src="/assets/img/uploads/pro.png" alt="Harsimran" width="200">
-
+![Harsimran Sidhu](/assets/img/uploads/pro.png){: .img-rounded width="200px"}
 # Harsimran Sidhu
 
-As a cybersecurity analyst with a background in IT and work experience in cloud safety, automation, and both offensive and defensive security, I am a resourceful and analytical individual with superior conflict resolution skills. My excellent communication and ability to effectively collaborate with others have enabled me to consistently achieve goals. In addition to these strengths, I am also highly persistent and optimistic, qualities that have helped me to overcome challenges and find solutions to complex problems.
+Resourceful and analytical cybersecurity analyst with a robust IT background. Proficient in cloud safety, automation, and both offensive and defensive security. Strong communicator, persistent problem solver, and an optimistic team player.
 
 ## Experience
 
-### NOV 2021 - PRESENT
-**Cyber Security Analyst**  
-Columba System Inc, Remote
+### Cyber Security Analyst
+**Columba System Inc, Remote**  
+_Nov 2021 - Present_
 
-- Use Cortex XDR to monitor endpoint traffic, logs, and events and identify potential threats.
-- Leverage Jira to efficiently manage and resolve tickets, alerts, and basic investigations.
-- Proficiently escalate Jira tickets to IT team, ensuring prompt scanning for potentially malicious changes made to a host.
-- Spearheaded the development of a robust bash script for macOS, automating CIS compliance checks.
-- Exhibited strong problem-solving abilities by creating a Python script to automate URL checking tasks, drastically reducing the time spent on repetitive tasks and enhancing productivity.
-- Utilized Mimecast email monitoring tools to analyze header information of emails to determine authenticity and identify potentially suspicious messages.
-- Expertly identified and mitigated login attacks on web applications by analyzing patterns and anomalies in data using Elastic Search. Developed and implemented effective security measures to block malicious attempts, significantly enhancing the company's defense mechanisms against cyber threats.
+- Monitoring network traffic with Cortex XDR to identify potential threats.
+- Implementing Splunk rules and alerts for threat detection.
+- Managing and resolving tickets with Jira for efficient issue tracking.
+- Escalating critical issues to the IT team for rapid response.
+- Automating compliance checks and URL verifications with custom scripts.
+- Analyzing email headers and login patterns to prevent attacks.
 
-### OCT 2021 – NOV 2022
-**Cyber Security Analyst**  
-SecureOps, Remote
+### Cyber Security Analyst
+**SecureOps, Remote**  
+_Oct 2021 – Nov 2022_
 
-- Investigate Microsoft 365 Defender alerts, determine their threat level, and document the investigation steps. Accurately escalate incidents on Jira as needed.
-- Provide timely and accurate responses to all incidents and requests by using Teams to communicate with team members.
-- Utilize Splunk, Azure Sentinel, and AWS Sandbox to complete daily tasks within the Service Level Agreement (SLA).
-- Possess experience with Kusto Query Language (KQL) for filtering security event data to support investigations.
-- Analyze network packets using Wireshark to investigate suspicious URLs.
-- Have knowledge of MITRE ATTACK® and OWASP Top 10 vulnerabilities, as well as tools such as URLScan.io, VirusTotal, Symantec, and abuseipdb.
+- Investigating alerts from Microsoft 365 Defender and managing incident escalation.
+- Maintaining clear communication with team members using Microsoft Teams.
+- Daily use of Splunk, Azure Sentinel, and AWS Sandbox within service agreements.
+- Employing Kusto Query Language (KQL) for data filtering during investigations.
+- Packet analysis with Wireshark and familiarity with cybersecurity frameworks.
 
-### JAN 2021 – AUGUST 2021
-**Information Technology Specialist**  
-Telecom Metrics Inc, Kingston, Ontario
+### Information Technology Specialist
+**Telecom Metrics Inc, Kingston, Ontario**  
+_Jan 2021 – Aug 2021_
 
-- Effectively managed IT security-related projects for infrastructure rollouts, and implemented upgrades and replacements for server systems.
-- Anticipated and defined customer needs and continually achieved high quality results for both internal and external customers.
-- Use remote tools and diagnostic utilities to aid in troubleshooting. For example, using ssh tunneling to help client remotely.
-- Deploy high availability cluster using Raspberry Pi SBC.
-- Audit and document each server for maintenance.
-- Create scripts in python to automate web scraping by using Selenium library.
-- Troubleshoot and solve network and hardware-related issues
+- Leading IT security projects for infrastructure development and server maintenance.
+- Providing top-tier customer support and remote troubleshooting.
+- Implementing high availability solutions and automating tasks with Python.
 
 ## Skills
 
-**Problem Solving**: Good at finding solutions to tricky issues.
+- **Problem Solving**: Exceptional at diagnosing and resolving complex issues.
+- **Teamwork**: Collaborative mindset with a history of positive team interactions.
+- **Time Management**: Efficiently prioritizes tasks to meet and exceed deadlines.
+- **Curiosity**: Avid learner, constantly acquiring new technical skills.
 
-**Teamwork**: Works well with others.
-
-**Time Management**: Great at using time wisely and meeting deadlines.
-
-**Curiosity**: Always eager to learn and understand new things.
-
-**Technical Abilities**:
-- Know how to program in C++.
-- Can write code in Python.
-- Skilled in writing scripts for the computer's shell.
-- Familiar with using GitHub for managing code.
+**Technical Skills**:
+- Programming: C++, Python
+- Scripting: Shell, Bash
+- Version Control: Proficient with GitHub
 
 ## Education
 
-**Cyber Security**  
+**Cyber Security**
 *University of Toronto CE, Toronto, ON*  
-January 2020 – August 2020  
-Studied various aspects of cybersecurity, including network protection and data privacy.
+_Jan 2020 – Aug 2020_  
+Studies focused on cybersecurity strategies and digital information protection.
 
-**Bachelor of Engineering in Technology**  
+**Bachelor of Engineering in Technology**
 *Cape Breton University, Sydney, NS*  
-September 2017 – April 2019  
-Focused on engineering principles, technology systems, and project management.
+_Sept 2017 – Apr 2019_  
+Emphasis on engineering principles and technological system management.
 
-**Electromechanical Engineering – Advanced Diploma**  
+**Electromechanical Engineering – Advanced Diploma**
 *Humber College, Toronto, ON*  
-September 2013 – April 2016  
-Gained knowledge in mechanical and electronic systems, combining hands-on technical skills with engineering theory.
+_Sept 2013 – Apr 2016_  
+Combination of practical technical skills and electromechanical theory.
 
