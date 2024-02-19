@@ -12,6 +12,8 @@ show_hero: true
 menu:
   - title: Home
     url: /
+  - title: Resume
+    url: /resume
   - title: About
     url: /about
   - title: Contact
