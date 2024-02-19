@@ -13,6 +13,7 @@ tags:
   - github
 author: Harsimran
 paginate: true
+comments: true
 ---
 ## How I deployed a blog on internet ?
 Hey there! Ever wondered how a simple blog turns into a tech adventure? That's what happened to me. This is a story about taking my blog from a basic setup to something way cooler with CI/CD, using Azure and GitHub.
