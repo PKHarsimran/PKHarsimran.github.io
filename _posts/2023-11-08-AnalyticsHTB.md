@@ -20,7 +20,7 @@ In this post, I'm going to walk through my process of tackling the "Analytics" b
 
 ## Initial Reconnaissance
 First things first, I needed to make sure the box was reachable over the network. A simple `ping` command sufficed:
-![image1](https://github.com/PKHarsimran/PKHarsimran.github.io/blob/master/assets/htbA/ping.png)
+![image1](https://raw.githubusercontent.com/PKHarsimran/PKHarsimran.github.io/master/assets/htbA/ping.png)
 
 ## Task 2: Port Scanning
 After establishing the availability of the "Analytics" box, I proceeded with a comprehensive port scan using nmap. The goal was to identify open ports and running services that could provide vectors for deeper analysis or exploitation.
