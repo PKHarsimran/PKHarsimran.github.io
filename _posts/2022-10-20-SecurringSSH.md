@@ -14,7 +14,7 @@ tags:
   - SSH
   - cybersecurity
   - ports
-  - blog
+  - tutorials
 author: Harsimran Sidhu
 paginate: true
 ---
