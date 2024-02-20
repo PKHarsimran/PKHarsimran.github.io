@@ -137,4 +137,4 @@ Using UniversalWebTracker is straightforward:
 
 ## In Conclusion
 
-UniversalWebTracker is more than just a script — it's a commitment to efficiency, flexibility, and ease of use. By embracing the power of automation with UniversalWebTracker, you can stay one step ahead in the digital game. For those interested in trying out UniversalWebTracker or contributing to its development, visit the GitHub repository [https://github.com/PKHarsimran/UniversalWebTracker] and join a growing community of users who value staying informed.
+UniversalWebTracker is more than just a script — it's a commitment to efficiency, flexibility, and ease of use. By embracing the power of automation with UniversalWebTracker, you can stay one step ahead in the digital game. For those interested in trying out UniversalWebTracker or contributing to its development, visit the GitHub repository [Github](https://github.com/PKHarsimran/UniversalWebTracker) and join a growing community of users who value staying informed.
