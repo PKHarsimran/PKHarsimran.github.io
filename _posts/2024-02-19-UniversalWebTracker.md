@@ -43,9 +43,6 @@ Let's break down the operation of UniversalWebTracker:
 
 ## Behind the Scenes: Technical Details
 
-<details>
-<summary>Dockerfile Explained (Click to expand)</summary>
-
 The Dockerfile for UniversalWebTracker creates a streamlined environment for the script to run, ensuring consistency across different platforms:
 
 ```dockerfile
@@ -76,9 +73,6 @@ COPY . .
 CMD python main.py && cron && tail -f /var/log/cron.log
 ```
 This Dockerfile is carefully crafted to ensure that the environment is prepared for the UniversalWebTracker to run as intended, with all its dependencies met and scheduling in place.
-</details>
-<details>
-<summary>Python Script Detailed Breakdown (Click to expand)</summary>
 
 The `main.py` script is where the monitoring action takes place. Let's go through its core components:
 
@@ -125,8 +119,6 @@ if __name__ == "__main__":
     monitor_website()
 ```
 This script combines systematic web scraping with change detection and logging. It's a simple yet effective way to keep an eye on website updates without manual oversight.
-</details>
-
 
 ## Advanced Features
 
