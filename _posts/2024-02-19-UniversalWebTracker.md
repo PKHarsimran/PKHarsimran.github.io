@@ -78,7 +78,6 @@ CMD python main.py && cron && tail -f /var/log/cron.log
 This Dockerfile is carefully crafted to ensure that the environment is prepared for the UniversalWebTracker to run as intended, with all its dependencies met and scheduling in place.
 </details>
 <details>
-<details>
 <summary>Python Script Detailed Breakdown (Click to expand)</summary>
 
 The `main.py` script is where the monitoring action takes place. Let's go through its core components:
