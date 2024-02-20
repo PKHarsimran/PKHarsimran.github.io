@@ -46,35 +46,33 @@ Let's break down the operation of UniversalWebTracker:
 <details>
 <summary>Dockerfile Explained (Click to expand)</summary>
 
-Let's take a closer look at the Dockerfile, which sets the stage for running UniversalWebTracker in any environment:
+The Dockerfile for UniversalWebTracker creates a streamlined environment for the script to run, ensuring consistency across different platforms:
 
 ```dockerfile
-# Base Image: We use an official Python 3.8 image that's slimmed down to reduce size.
+# Start with a lightweight Python 3.8 image.
 FROM python:3.8-slim
 
-# Cron Installation: We install cron, a time-based job scheduler, to handle periodic running of the script.
+# Install cron for scheduling the script.
 RUN apt-get update && apt-get -y install cron
 
-# Working Directory: This command sets the working directory where we'll place our script and related files.
+# Set the working directory to /usr/src/app.
 WORKDIR /usr/src/app
 
-# Crontab Setup: We copy the crontab file into the container to schedule when the script runs.
+# Copy the cron schedule file and set permissions.
 COPY crontab /etc/cron.d/simple-cron
-
-# File Permissions: We need to give execution rights on the cron job and apply it so it's recognized by the system.
 RUN chmod 0644 /etc/cron.d/simple-cron && crontab /etc/cron.d/simple-cron
 
-# Logging: To keep track of cron job outputs, we create a log file.
+# Prepare for logging by creating a log file.
 RUN touch /var/log/cron.log
 
-# Dependencies: Here we copy our Python requirements and install them using pip.
+# Install required Python packages.
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Script Copying: Finally, we copy over our script and any other necessary files.
+# Copy the script and other necessary files to the container.
 COPY . .
 
-# Running the Script: The CMD command runs our script, starts cron, and tails the log file to output the logs.
+# Execute the script, then start cron and follow the log output.
 CMD python main.py && cron && tail -f /var/log/cron.log
 ```
 This Dockerfile is carefully crafted to ensure that the environment is prepared for the UniversalWebTracker to run as intended, with all its dependencies met and scheduling in place.
