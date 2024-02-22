@@ -71,18 +71,18 @@ Next, run the Pi-hole container with the following command. This command include
 
 ```bash
 docker run -d \
-  --name pihole \
-  -p 53:53/tcp -p 53:53/udp \
-  -p 80:80 \
-  -p 443:443 \
-  -e TZ="YOUR_TIMEZONE" \
-  -e WEBPASSWORD="YOUR_PASSWORD_HERE" \
-  --restart=unless-stopped \
-  --dns=127.0.0.1 --dns=1.1.1.1 \
-  --hostname pi.hole \
-  -v "$(pwd)/etc-pihole/:/etc/pihole/" \
-  -v "$(pwd)/etc-dnsmasq.d/:/etc/dnsmasq.d/" \
-  pihole/pihole:latest
+--name pihole \
+-p 53:53/tcp -p 53:53/udp \
+-p 80:80 \
+-p 443:443 \
+-e TZ="YOUR_TIMEZONE" \
+-e WEBPASSWORD="YOUR_PASSWORD_HERE" \
+--restart=unless-stopped \
+--dns=127.0.0.1 --dns=1.1.1.1 \
+--hostname pi.hole \
+-v "$(pwd)/etc-pihole/:/etc/pihole/" \
+-v "$(pwd)/etc-dnsmasq.d/:/etc/dnsmasq.d/" \
+pihole/pihole:latest
 ```
 ### **Finalizing Your Pi-hole Setup**
 
