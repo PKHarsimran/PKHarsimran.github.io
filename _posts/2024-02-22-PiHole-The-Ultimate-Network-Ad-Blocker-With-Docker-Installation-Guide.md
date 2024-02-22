@@ -5,7 +5,7 @@ title: "Pi-hole: Your Ultimate Solution for a Cleaner, Faster Internet Experienc
 subtitle: "How Installing Pi-hole via Docker Can Transform Your Home Network"
 description: "Unlock the full potential of your home network with Pi-hole, the open-source software that blocks ads, trackers, and malware domains on all your devices. This guide walks you through the simple steps of installing Pi-hole using Docker, ensuring a secure, ad-free internet experience without the hassle."
 image: /assets/img/pihole-network-protection.png
-optimized_image: /assets/img/pihole-network-protection-optimized.png
+optimized_image: /assets/img/pihole-network-protection.png
 category: technology
 tags:
   - Pi-hole
