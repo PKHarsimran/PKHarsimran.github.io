@@ -71,4 +71,22 @@ Head to [xz.fail](https://xz.fail) to scan your Linux executables, ensuring they
 
 In the end, the XZ Backdoor incident is not just about the flaws found or the patches applied. It's a testament to the resilience of the open-source ethos and a community unyielded by the shadows that lurk in the vast expanse of our digital society.
 
+
+## References and Further Reading
+
+The XZ Backdoor incident, CVE-2024-3094, is a complex topic with many facets to explore. For those looking to delve deeper into the details or follow the latest developments, the following sources provide extensive coverage and analysis:
+
+1. "The XZ Backdoor: Everything You Need to Know" – Wired's thorough article on the initial discovery and implications of the backdoor within XZ Utils. [Wired Article](https://www.wired.com/story/xz-backdoor-everything-you-need-to-know/)
+
+2. "What we know about the xz Utils backdoor that almost infected the world" – Ars Technica provides an in-depth look at the attack and the social engineering involved. [Ars Technica Article](https://arstechnica.com/security/2024/04/what-we-know-about-the-xz-utils-backdoor-that-almost-infected-the-world/)
+
+3. CVE-2024-3094 Detail – The National Vulnerability Database entry detailing the severity and metrics of the vulnerability. [NVD CVE Detail](https://nvd.nist.gov/vuln/detail/CVE-2024-3094)
+
+4. "New XZ backdoor scanner detects implant in any Linux binary" – BleepingComputer reports on the innovative scanner developed by Binarly to detect the backdoor in Linux executables. [BleepingComputer Article](https://www.bleepingcomputer.com/news/security/new-xz-backdoor-scanner-detects-implant-in-any-linux-binary/)
+
+Each source offers a unique perspective and contributes to a holistic understanding of the incident and its impact on the open-source community and cybersecurity landscape.
+
 _Stay informed, stay connected, and above all, stay secure._
+
+
+
