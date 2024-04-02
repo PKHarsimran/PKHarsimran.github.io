@@ -8,12 +8,11 @@ image: /assets/img/xz-backdoor-alert.png
 optimized_image: /assets/img/xz-backdoor-alert.png
 category: cybersecurity
 tags:
-
-    XZ Backdoor
-    Supply Chain Attack
-    Open Source Security
-    CVE-2024-3094
-    author: Harsimran
-    paginate: true
-    comments: true
+- XZ Backdoor
+- Supply Chain Attack
+- Open Source Security
+- CVE-2024-3094  
+author: Harsimran
+paginate: true
+comments: true
 ---
