@@ -33,6 +33,7 @@ This wasn't just a simple trapdoor; it was a complex, hidden passage crafted wit
 But just as all seemed lost, the day was saved by the open source community—think of a neighborhood watch that spans the globe. Freund's call to arms sparked a weekend-long digital investigation, a collective effort that showcased the power of community.
 
 ## 🖼️ Visualizing the Attack
+![xz-backdoor-graphic-thomas-roccia-scaled](https://github.com/PKHarsimran/PKHarsimran.github.io/assets/22066581/f9cef0f5-a892-4935-be56-e81da4c183e1)
 
 Enter Thomas Roccia, a digital cartographer from Microsoft, who mapped out this intricate scheme in a [visual infographic](file-SOWHtFKqvKLVfPreK0liPu6x) for all to see, revealing the sheer scale of this digital heist attempt.
 
