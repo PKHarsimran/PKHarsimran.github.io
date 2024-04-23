@@ -69,7 +69,7 @@ Before starting, ensure you have:
 2. **Run the Pi-hole Container**
 Next, run the Pi-hole container with the following command. This command includes basic configurations such as setting your web admin interface password (`YOUR_PASSWORD_HERE`), specifying network settings, and defining DNS preferences. Adjust the command as needed for your setup:
   
-  ```bash
+  ```
     docker run -d \
     --name pihole \
     -p 53:53/tcp -p 53:53/udp \
