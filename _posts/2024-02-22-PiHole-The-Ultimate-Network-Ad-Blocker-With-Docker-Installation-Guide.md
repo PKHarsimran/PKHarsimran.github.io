@@ -123,7 +123,7 @@ NextDNS stands out for its ease of use and extensive customization options. Here
 
 To integrate NextDNS with your existing network setup, including alongside Pi-hole, follow these steps:
 
-1. **Sign Up for NextDNS:** Visit [NextDNS](https://nextdns.io/) and create an account to start customizing your DNS filtering preferences.
+1. **Sign Up for NextDNS:** Visit [NextDNS](https://nextdns.io/?from=72ks2krj) and create an account to start customizing your DNS filtering preferences.
 2. **Configure Your Devices:** NextDNS provides straightforward instructions for configuring your devices or router to use its service, ensuring all your internet traffic benefits from enhanced filtering and protection.
 3. **Optional: Use NextDNS with Pi-hole:** For those looking to leverage the strengths of both services, configure Pi-hole to use NextDNS as its upstream DNS server, combining local ad blocking with cloud-based filtering and security features.
 
