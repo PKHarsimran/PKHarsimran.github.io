@@ -11,7 +11,7 @@ tags:
   - Blog
   - azure
   - github
-author: Harsimran
+author: Harsimran Sidhu
 paginate: true
 comments: true
 ---
