@@ -68,22 +68,22 @@ docker pull pihole/pihole:latest
 
 2. **Run the Pi-hole Container**
 Next, run the Pi-hole container with the following command. This command includes basic configurations such as setting your web admin interface password (`YOUR_PASSWORD_HERE`), specifying network settings, and defining DNS preferences. Adjust the command as needed for your setup:
-
-```bash
-docker run -d \
---name pihole \
--p 53:53/tcp -p 53:53/udp \
--p 80:80 \
--p 443:443 \
--e TZ="YOUR_TIMEZONE" \
--e WEBPASSWORD="YOUR_PASSWORD_HERE" \
---restart=unless-stopped \
---dns=127.0.0.1 --dns=1.1.1.1 \
---hostname pi.hole \
--v "$(pwd)/etc-pihole/:/etc/pihole/" \
--v "$(pwd)/etc-dnsmasq.d/:/etc/dnsmasq.d/" \
-pihole/pihole:latest
-```
+  
+  ```bash
+  docker run -d \
+  --name pihole \
+  -p 53:53/tcp -p 53:53/udp \
+  -p 80:80 \
+  -p 443:443 \
+  -e TZ="YOUR_TIMEZONE" \
+  -e WEBPASSWORD="YOUR_PASSWORD_HERE" \
+  --restart=unless-stopped \
+  --dns=127.0.0.1 --dns=1.1.1.1 \
+  --hostname pi.hole \
+  -v "$(pwd)/etc-pihole/:/etc/pihole/" \
+  -v "$(pwd)/etc-dnsmasq.d/:/etc/dnsmasq.d/" \
+  pihole/pihole:latest
+  ```
 ### **Finalizing Your Pi-hole Setup**
 
 After deploying Pi-hole with Docker, a few critical steps remain to ensure its optimal operation. Replace `YOUR_TIMEZONE` with the appropriate setting for your location, such as `Europe/London`, and choose a strong, unique password for `YOUR_PASSWORD_HERE` to secure the Pi-hole admin interface.
