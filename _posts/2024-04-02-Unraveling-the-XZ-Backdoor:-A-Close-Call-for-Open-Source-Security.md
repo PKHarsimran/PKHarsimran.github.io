@@ -12,7 +12,7 @@ tags:
 - Supply Chain Attack
 - Open Source Security
 - CVE-2024-3094  
-author: Harsimran
+author: Harsimran Sidhu
 paginate: true
 comments: true
 ---
