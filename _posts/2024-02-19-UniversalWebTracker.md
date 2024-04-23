@@ -13,7 +13,7 @@ tags:
   - Monitoring
   - Automation
   - Web Development
-author: Harsimran
+author: Harsimran Sidhu
 paginate: true
 comments: true
 ---
