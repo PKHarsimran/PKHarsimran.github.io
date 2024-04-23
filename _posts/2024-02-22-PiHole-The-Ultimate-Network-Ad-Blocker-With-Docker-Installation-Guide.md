@@ -13,7 +13,7 @@ tags:
   - Ad Blocking
   - Docker
   - Network Security
-author: Harsimran
+author: Harsimran Sidhu
 paginate: true
 comments: true
 ---
