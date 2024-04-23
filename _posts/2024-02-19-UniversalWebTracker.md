@@ -44,80 +44,80 @@ Let's break down the operation of UniversalWebTracker:
 ## Behind the Scenes: Technical Details
 
 The Dockerfile for UniversalWebTracker creates a streamlined environment for the script to run, ensuring consistency across different platforms:
-
-```dockerfile
-# Start with a lightweight Python 3.8 image.
-FROM python:3.8-slim
-
-# Install cron for scheduling the script.
-RUN apt-get update && apt-get -y install cron
-
-# Set the working directory to /usr/src/app.
-WORKDIR /usr/src/app
-
-# Copy the cron schedule file and set permissions.
-COPY crontab /etc/cron.d/simple-cron
-RUN chmod 0644 /etc/cron.d/simple-cron && crontab /etc/cron.d/simple-cron
-
-# Prepare for logging by creating a log file.
-RUN touch /var/log/cron.log
-
-# Install required Python packages.
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy the script and other necessary files to the container.
-COPY . .
-
-# Execute the script, then start cron and follow the log output.
-CMD python main.py && cron && tail -f /var/log/cron.log
-```
+  
+  ```dockerfile
+  # Start with a lightweight Python 3.8 image.
+  FROM python:3.8-slim
+  
+  # Install cron for scheduling the script.
+  RUN apt-get update && apt-get -y install cron
+  
+  # Set the working directory to /usr/src/app.
+  WORKDIR /usr/src/app
+  
+  # Copy the cron schedule file and set permissions.
+  COPY crontab /etc/cron.d/simple-cron
+  RUN chmod 0644 /etc/cron.d/simple-cron && crontab /etc/cron.d/simple-cron
+  
+  # Prepare for logging by creating a log file.
+  RUN touch /var/log/cron.log
+  
+  # Install required Python packages.
+  COPY requirements.txt ./
+  RUN pip install --no-cache-dir -r requirements.txt
+  
+  # Copy the script and other necessary files to the container.
+  COPY . .
+  
+  # Execute the script, then start cron and follow the log output.
+  CMD python main.py && cron && tail -f /var/log/cron.log
+  ```
 This Dockerfile is carefully crafted to ensure that the environment is prepared for the UniversalWebTracker to run as intended, with all its dependencies met and scheduling in place.
 
 The `main.py` script is where the monitoring action takes place. Let's go through its core components:
 
-```python
-# The necessary modules for HTTP requests, hashing, and logging are imported.
-import requests
-import hashlib
-import logging
-from logging.handlers import RotatingFileHandler
-
-# The URL to monitor and the paths for the hash storage and log files are set.
-URL = "https://example.com"
-HASH_FILE = "hash.txt"
-LOG_FILE = "monitor.log"
-
-# Logging is configured to output both to the console and to a rotating file.
-# ...
-
-def fetch_content(url):
-    # This function is responsible for sending a request to the website and fetching its content.
-    # An HTTP GET request is made to the 'url', and the content is returned.
-    # In case of a request failure, it logs an error and returns None.
-    ...
-
-def compute_hash(content):
-    # For any given content, this function computes and returns its SHA-256 hash.
-    # This is useful for detecting changes in the content of the website.
-    ...
-
-def file_operations(file_name, mode, content=None):
-    # A versatile function that either reads from a file (if mode is 'r') and returns its content,
-    # or writes to a file (if mode is 'w') if 'content' is not None.
-    ...
-
-def monitor_website():
-    # The main function orchestrates the monitoring process.
-    # It reads the previous hash from the HASH_FILE, fetches the current website content,
-    # computes the current hash, and compares it with the previous hash.
-    # If there's a difference, it logs the change and updates the HASH_FILE with the new hash.
-    ...
-
-# This is the standard boilerplate for running the main function in Python scripts.
-if __name__ == "__main__":
-    monitor_website()
-```
+  ```python
+  # The necessary modules for HTTP requests, hashing, and logging are imported.
+  import requests
+  import hashlib
+  import logging
+  from logging.handlers import RotatingFileHandler
+  
+  # The URL to monitor and the paths for the hash storage and log files are set.
+  URL = "https://example.com"
+  HASH_FILE = "hash.txt"
+  LOG_FILE = "monitor.log"
+  
+  # Logging is configured to output both to the console and to a rotating file.
+  # ...
+  
+  def fetch_content(url):
+      # This function is responsible for sending a request to the website and fetching its content.
+      # An HTTP GET request is made to the 'url', and the content is returned.
+      # In case of a request failure, it logs an error and returns None.
+      ...
+  
+  def compute_hash(content):
+      # For any given content, this function computes and returns its SHA-256 hash.
+      # This is useful for detecting changes in the content of the website.
+      ...
+  
+  def file_operations(file_name, mode, content=None):
+      # A versatile function that either reads from a file (if mode is 'r') and returns its content,
+      # or writes to a file (if mode is 'w') if 'content' is not None.
+      ...
+  
+  def monitor_website():
+      # The main function orchestrates the monitoring process.
+      # It reads the previous hash from the HASH_FILE, fetches the current website content,
+      # computes the current hash, and compares it with the previous hash.
+      # If there's a difference, it logs the change and updates the HASH_FILE with the new hash.
+      ...
+  
+  # This is the standard boilerplate for running the main function in Python scripts.
+  if __name__ == "__main__":
+      monitor_website()
+  ```
 This script combines systematic web scraping with change detection and logging. It's a simple yet effective way to keep an eye on website updates without manual oversight.
 
 ## Advanced Features
