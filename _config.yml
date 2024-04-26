@@ -16,8 +16,8 @@ menu:
     url: /resume
   - title: About
     url: /about
-  - title: Contact
-    url: /contact
+#  - title: Contact
+#    url: /contact
 #  - title: Feed
 #    url: /feed.xml
 email: harsimransidhu770@gmail.com
