@@ -15,7 +15,7 @@ Resourceful and analytical cybersecurity analyst with a robust IT background. Pr
 
 ### Security Operations Center Analyst
 **Columba System Inc, Remote**  
-_Nov 2021 - Present_
+_Nov 2022 - Present_
 
 - Monitoring network traffic with Cortex XDR to identify potential threats.
 - Implementing Splunk rules and alerts for threat detection.
