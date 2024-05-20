@@ -97,6 +97,6 @@ Google's new email rules for 2024 are a big step towards making email more secur
 For more information on implementing these changes and ensuring compliance, refer to the following resources:
 - [Google: Email sender guidelines](https://support.google.com/a/answer/81126?hl=en)
 - [New Gmail protections for a safer, less spammy inbox](https://blog.google/products/gmail/gmail-security-authentication-spam-protection/)
-- [Digitopia Agency: Understanding Google's Email Sending Changes in 2024](https://www.digitopia.agency/google-email-sending-changes-2024)
-- [Bleeping Computer: Google to bolster phishing and malware delivery defenses in 2024](https://www.bleepingcomputer.com/news/security/google-to-bolster-phishing-and-malware-delivery-defenses-in-2024/)
-- [Valimail: New Email Sender Requirements for DMARC, SPF, and DKIM at Google and Yahoo](https://www.valimail.com/new-email-sender-requirements-for-dmarc-spf-and-dkim-at-google-and-yahoo)
+- [Digitopia Agency: Understanding Google's Email Sending Changes in 2024](https://www.digitopia.agency/blog/understanding-googles-email-sending-changes-in-2024-a-guide-to-spf-dkim-and-dmarc)
+- [Bleeping Computer: Google to bolster phishing and malware delivery defenses in 2024](https://www.bleepingcomputer.com/news/google/google-now-blocks-spoofed-emails-for-better-phishing-protection/)
+- [Valimail: New Email Sender Requirements for DMARC, SPF, and DKIM at Google and Yahoo](https://support.valimail.com/en/articles/9143173-google-yahoo-email-authentication-requirements-for-bulk-senders)
