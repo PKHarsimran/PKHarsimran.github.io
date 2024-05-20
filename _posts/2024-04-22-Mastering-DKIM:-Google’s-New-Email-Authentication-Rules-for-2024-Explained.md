@@ -21,7 +21,9 @@ comments: true
 
 ### Introduction
 
-Google is making some important changes to how emails should be sent to Gmail users starting February 1, 2024. These new rules require that senders use specific methods to verify their emails. This helps reduce spam and make sure the emails you receive are genuine and safe.
+Starting February 1, 2024, [Google](https://blog.google/products/gmail/gmail-security-authentication-spam-protection/) is introducing new email sending rules for Gmail users aimed at enhancing email security and reducing spam. These new rules require senders to verify their emails using specific authentication methods. By doing so, Google aims to ensure that the emails you receive are authentic and safe, thereby protecting users from spam and phishing attacks.
+
+These changes are significant for everyone who relies on email, from businesses to individual users. For businesses, it means adopting new practices to comply with Google's requirements. For individual users, it means a cleaner, safer inbox with fewer unwanted emails. Let's dive into what these changes entail and how they will impact email communication.
 
 ### What is DKIM?
 
@@ -56,7 +58,8 @@ By following these new rules, organizations can protect their email domains from
 Google's new email rules for 2024 are a big step towards making email more secure. Using DKIM, along with SPF and DMARC, helps ensure that emails are genuine and trusted. By understanding and applying these protocols, you can protect your email, build trust with your audience, and improve your email deliverability.
 
 For more information on implementing these changes and ensuring compliance, refer to the following resources:
-- [Google Blog: Gmail introduces new requirements to fight spam](https://blog.google/products/gmail/introduces-new-requirements-fight-spam)
+- [Google: Email sender guidelines](https://support.google.com/a/answer/81126?hl=en)
+- [New Gmail protections for a safer, less spammy inbox](https://blog.google/products/gmail/gmail-security-authentication-spam-protection/)
 - [Digitopia Agency: Understanding Google's Email Sending Changes in 2024](https://www.digitopia.agency/google-email-sending-changes-2024)
 - [Bleeping Computer: Google to bolster phishing and malware delivery defenses in 2024](https://www.bleepingcomputer.com/news/security/google-to-bolster-phishing-and-malware-delivery-defenses-in-2024/)
 - [Valimail: New Email Sender Requirements for DMARC, SPF, and DKIM at Google and Yahoo](https://www.valimail.com/new-email-sender-requirements-for-dmarc-spf-and-dkim-at-google-and-yahoo)
