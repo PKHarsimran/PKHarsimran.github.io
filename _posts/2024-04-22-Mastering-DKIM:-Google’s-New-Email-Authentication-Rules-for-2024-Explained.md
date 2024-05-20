@@ -55,7 +55,15 @@ When an email is sent, the receiving email server performs these checks:
 ### Diagram Explanation
 
 Here's a diagram to illustrate how DKIM, along with SPF and DMARC, works to authenticate an email:
+![image](https://github.com/PKHarsimran/PKHarsimran.github.io/assets/22066581/b9acfad6-5fa7-456a-8225-1dfb8f9b8579)
 
+1. **Sender**: Sends an email.
+2. **Sending Email Server**: Processes the email.
+3. **SPF, DKIM, and DMARC Checks**: The receiving server checks the SPF record, verifies the DKIM signature, and follows the DMARC policy.
+4. **Receiving Email Server**: Delivers the email to the inbox, sends it to the spam folder, or rejects it based on the checks.
+5. **DMARC Reports**: Provides feedback to the sender about email authentication results.
+
+By using DKIM together with SPF and DMARC, you can significantly improve your email security and ensure that your emails are trusted and delivered correctly. This helps protect against spam and phishing attacks and enhances the overall reliability of your email communications.
 
 ### Why is Google Implementing These Changes?
 
