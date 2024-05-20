@@ -27,7 +27,35 @@ These changes are significant for everyone who relies on email, from businesses 
 
 ### What is DKIM?
 
-DKIM, or DomainKeys Identified Mail, is a way to check if an email is truly from the person or organization it claims to be from. It adds a digital signature to the email, like a seal of authenticity, which can be verified by the recipient’s email server.
+DKIM, or DomainKeys Identified Mail, is a way to check if an email is truly from the person or organization it claims to be from. It adds a digital signature to the email, like a seal of authenticity, which can be verified by the recipient’s email server. This helps ensure that the email has not been tampered with and is genuinely from the stated sender.
+
+### How DKIM Works with SPF and DMARC
+
+To enhance email security, DKIM works alongside SPF (Sender Policy Framework) and DMARC (Domain-based Message Authentication, Reporting, and Conformance). Here's a brief overview of each:
+
+#### 1. SPF (Sender Policy Framework)
+
+**SPF** is like a list of approved senders for your email domain. It helps identify which mail servers are allowed to send emails on behalf of your domain.
+
+#### 2. DKIM (DomainKeys Identified Mail)
+
+**DKIM** adds a unique digital signature to each email sent from your domain. This signature is verified by the recipient's email server to ensure the email hasn't been altered and is genuinely from you.
+
+#### 3. DMARC (Domain-based Message Authentication, Reporting, and Conformance)
+
+**DMARC** builds on SPF and DKIM. It tells receiving servers what to do if an email fails SPF or DKIM checks, helping protect your domain from unauthorized use.
+
+### How They Work Together
+
+When an email is sent, the receiving email server performs these checks:
+1. **SPF Check**: Verifies the email is sent from an authorized server.
+2. **DKIM Check**: Verifies the digital signature to ensure the email hasn't been tampered with.
+3. **DMARC Check**: Decides what to do with the email based on the results of the SPF and DKIM checks.
+
+### Diagram Explanation
+
+Here's a diagram to illustrate how DKIM, along with SPF and DMARC, works to authenticate an email:
+
 
 ### Why is Google Implementing These Changes?
 
