@@ -65,29 +65,30 @@ Here's a diagram to illustrate how DKIM, along with SPF and DMARC, works to auth
 
 By using DKIM together with SPF and DMARC, you can significantly improve your email security and ensure that your emails are trusted and delivered correctly. This helps protect against spam and phishing attacks and enhances the overall reliability of your email communications.
 
-### Why is Google Implementing These Changes?
+### Why is Google Implementing These Changes? 🌐
 
 Google’s new requirements are designed to:
-- **Prevent Fake Emails**: Ensure emails come from real sources, reducing the risk of scams.
-- **Improve Delivery**: Verified emails are less likely to end up in the spam folder.
-- **Build Trust**: By cutting down on spam and fake emails, users can trust their inbox more.
+- **Prevent Fake Emails** 🛡️: Ensure emails come from real sources, reducing the risk of scams.
+- **Improve Delivery** 📥: Verified emails are less likely to end up in the spam folder.
+- **Build Trust** 🤝: By cutting down on spam and fake emails, users can trust their inbox more.
 
-### Key Changes and Requirements
+### Key Changes and Requirements 📝
 
 Starting February 1, 2024, if you send a lot of emails to Gmail addresses, you need to:
-1. **Authenticate Emails**: Use SPF, DKIM, and DMARC to verify your emails.
-2. **Keep Spam Low**: Make sure your emails have a low spam complaint rate.
-3. **Easy Unsubscribe**: Include a one-click unsubscribe option in promotional emails.
+1. **Authenticate Emails** ✅: Use SPF, DKIM, and DMARC to verify your emails.
+2. **Keep Spam Low** 📉: Make sure your emails have a low spam complaint rate.
+3. **Easy Unsubscribe** ✉️: Include a one-click unsubscribe option in promotional emails.
 
-### Email Spam Statistics
+### Email Spam Statistics 📊
 
 To highlight the importance of these changes, here are some key statistics about email spam:
-- **Spam Prevalence**: In 2023, 45.6% of all emails worldwide were identified as spam&#8203;``【oaicite:5】``&#8203;&#8203;``【oaicite:4】``&#8203;.
-- **Spam by Country**: The United States leads in sending spam emails, with over 8 billion spam emails sent daily&#8203;``【oaicite:3】``&#8203;&#8203;``【oaicite:2】``&#8203;.
-- **Spam's Financial Impact**: Email spam costs businesses around $20.5 billion annually due to decreased productivity and technical expenses&#8203;``【oaicite:1】``&#8203;.
-- **Phishing and Malware**: Approximately 94% of all malware is delivered via email, making it critical to have strong email security&#8203;``【oaicite:0】``&#8203;.
+- **Spam Prevalence**: In 2023, 45.6% of all emails worldwide were identified as spam
+- **Spam by Country**: The United States leads in sending spam emails, with over 8 billion spam emails sent daily
+- **Spam's Financial Impact**: Email spam costs businesses around $20.5 billion annually due to decreased productivity and technical expenses
+- **Phishing and Malware**: Approximately 94% of all malware is delivered via email, making it critical to have strong email security
 
 By following these new rules, organizations can protect their email domains from being used for scams and ensure their communications are safe and trustworthy.
+
 
 ### Conclusion
 
