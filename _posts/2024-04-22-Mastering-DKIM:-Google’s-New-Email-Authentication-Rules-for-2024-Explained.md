@@ -65,6 +65,27 @@ Here's a diagram to illustrate how DKIM, along with SPF and DMARC, works to auth
 
 By using DKIM together with SPF and DMARC, you can significantly improve your email security and ensure that your emails are trusted and delivered correctly. This helps protect against spam and phishing attacks and enhances the overall reliability of your email communications.
 
+### How to Check DKIM in Gmail
+
+To verify DKIM, SPF, and DMARC for an email in Gmail, you can view the email’s original message details. Here’s a step-by-step guide:
+
+1. **Open the Email**: Go to your Gmail inbox and open the email you want to check.
+2. **Click on More Options**: In the top right corner of the email (next to the reply button), click on the three vertical dots to open more options.
+3. **Select "Show Original"**: From the dropdown menu, select "Show original." This will open a new tab showing the email's original message details.
+
+In the original message view, you will see details about SPF, DKIM, and DMARC authentication results. For example, you might see:
+
+- **SPF**: PASS with IP (followed by the sending IP address)
+- **DKIM**: 'PASS' with domain (followed by the sender’s domain)
+- **DMARC**: 'PASS'
+
+Here’s an example screenshot to illustrate:
+
+![image](https://github.com/PKHarsimran/PKHarsimran.github.io/assets/22066581/59662aec-8b12-4737-aebf-6d04f5ab035a)
+
+
+This shows the authentication results for SPF, DKIM, and DMARC, helping you confirm that the email is genuine and hasn’t been tampered with.
+
 ### Why is Google Implementing These Changes? 🌐
 
 Google’s new requirements are designed to:
