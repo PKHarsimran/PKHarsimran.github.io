@@ -81,8 +81,7 @@ In the original message view, you will see details about SPF, DKIM, and DMARC au
 
 Here’s an example screenshot to illustrate:
 
-![image](https://github.com/PKHarsimran/PKHarsimran.github.io/assets/22066581/59662aec-8b12-4737-aebf-6d04f5ab035a)
-
+![image](https://github.com/PKHarsimran/PKHarsimran.github.io/assets/22066581/034a4379-44c5-41f1-a21c-e93ab20b9a23)
 
 This shows the authentication results for SPF, DKIM, and DMARC, helping you confirm that the email is genuine and hasn’t been tampered with.
 
