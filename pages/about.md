@@ -11,16 +11,12 @@ permalink: /about/
 
 # About
 
-Hello and welcome! 😄 I'm the embodiment of curiosity and dedication in the world of technology and cybersecurity. My daytime persona is that of a diligent Security Operations Center Analyst, dedicated to deciphering the complex landscape of cyber threats. Think of me as the guardian of the digital realm, working tirelessly to keep it secure. 💻🛡️
+Hello and welcome! 😄 I'm Harsimran, a Security Operations Center Analyst dedicated to safeguarding the digital world. By day, I unravel the mysteries of cyber threats, ensuring a secure digital realm. 💻🛡️
 
-Beyond my role, I'm an enthusiast of the intricate world of embedded systems, finding joy in the whispers of Raspberry Pis and the choreography of Arduino circuits. They are my canvas and code, my paint. 🚀🤖
+I'm passionate about embedded systems, finding joy in tinkering with Raspberry Pis and Arduino circuits. 🚀🤖 Cloud computing, especially within Azure, fascinates me as I piece together the future, one service at a time! ☁️🧩
 
-My pursuit of knowledge doesn't stop there; I'm captivated by the vast potential of cloud computing and have a special fondness for the innovations within Azure. It's like piecing together a puzzle of the future, one service at a time! ☁️🧩
+On a personal note, I'm navigating the journey of resilience with CPTSD, advocating for mental health and fostering hope. 🌟💚 I love reading self-help and personal development books and sharing my learnings with others. 📚🌱
 
-I'm also navigating the path of personal growth and resilience, guided by my experiences with CPTSD. This journey has transformed me into a vocal advocate for mental health, committed to fostering hope and understanding. 🌟💚
+Join me on my blog for insights, sprinkled with humor, where your thoughts and experiences are always welcome. 😊🌈
 
-A voracious reader, I delve into the realms of self-help and personal development, always eager to share the wisdom gleaned with others. 📚🌱
-
-Dive into my blog for insights sprinkled with humor, where your thoughts and experiences are welcomed with open arms. Let's embark on this journey of learning and laughter together. 😊🌈
-
-And here's a sneak peek into my latest adventure: I'm currently learning Docker, adding yet another skill to my tech toolkit! 🐳💻 If you're curious about charting new career paths or diving into the tech universe, join me in exploration. Also, if you're on the lookout for a job, this might be a helpful resource: https://50waystogetajob.com/.
+I'm also diving into Docker, adding new skills to my tech toolkit! 🐳💻 If you're exploring career paths or job hunting, check out this resource: [50 Ways to Get a Job](https://50waystogetajob.com/).
