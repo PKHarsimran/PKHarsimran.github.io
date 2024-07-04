@@ -17,7 +17,7 @@ paginate: true
 comments: true
 ---
 
-Back in 2021, I wrote a [blog](https://www.harsim.ca/SecuringSSH/) post about how to manually harden the SSH configuration on a Raspberry Pi. While the post was helpful, I realized that automating the process would make it even more convenient and efficient. So, I created SSHieldPi - a powerful and user-friendly bash script to automate SSH security on your Raspberry Pi.
+Back in 2021, I wrote a [blog](https://harsim.ca/PKHarsimranOldGithubPages/SecuringSSH/) post about how to manually harden the SSH configuration on a Raspberry Pi. While the post was helpful, I realized that automating the process would make it even more convenient and efficient. So, I created SSHieldPi - a powerful and user-friendly bash script to automate SSH security on your Raspberry Pi.
 
 In this blog post, I'll guide you through the features of SSHieldPi, how to set it up, and how to use it.
 
