@@ -1,9 +1,9 @@
 ---
 date: 2022-10-20
 layout: post
-title: Securing SSH: Implementing Basic Security Measures to Harden the SSH Port
-subtitle: A Step-by-Step Guide to Enhancing Your SSH Security
-description: Explore essential steps to harden your SSH port and prevent unauthorized access in this concise guide. Learn key security measures to protect your systems effectively.
+title: "Securing SSH: Implementing Basic Security Measures to Harden the SSH Port"
+subtitle: "A Step-by-Step Guide to Enhancing Your SSH Security"
+description: "Explore essential steps to harden your SSH port and prevent unauthorized access in this concise guide. Learn key security measures to protect your systems effectively."
 image: /assets/img/ssh.png
 optimized_image: /assets/img/ssh.png
 category: blog
