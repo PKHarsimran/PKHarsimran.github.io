@@ -45,7 +45,7 @@ Let's break down the operation of UniversalWebTracker:
 
 The Dockerfile for UniversalWebTracker creates a streamlined environment for the script to run, ensuring consistency across different platforms:
   
-            ```dockerfile
+    ```dockerfile
             # Start with a lightweight Python 3.8 image.
             FROM python:3.8-slim
             
@@ -71,7 +71,7 @@ The Dockerfile for UniversalWebTracker creates a streamlined environment for the
             
             # Execute the script, then start cron and follow the log output.
             CMD python main.py && cron && tail -f /var/log/cron.log
-            ```
+    ```
             
 This Dockerfile is carefully crafted to ensure that the environment is prepared for the UniversalWebTracker to run as intended, with all its dependencies met and scheduling in place.
 
