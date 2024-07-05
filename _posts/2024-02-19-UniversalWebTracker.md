@@ -77,6 +77,7 @@ This Dockerfile is carefully crafted to ensure that the environment is prepared 
 
 The `main.py` script is where the monitoring action takes place. Let's go through its core components:
 
+  ```py
     # The necessary modules for HTTP requests, hashing, and logging are imported.
     import requests
     import hashlib
@@ -117,6 +118,7 @@ The `main.py` script is where the monitoring action takes place. Let's go throug
     # This is the standard boilerplate for running the main function in Python scripts.
     if __name__ == "__main__":
         monitor_website()
+  ```
 
 This script combines systematic web scraping with change detection and logging. It's a simple yet effective way to keep an eye on website updates without manual oversight.
 
