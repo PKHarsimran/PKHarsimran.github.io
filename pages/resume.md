@@ -17,8 +17,8 @@ Resourceful and analytical cybersecurity analyst with a robust IT background. Pr
 **Columba System Inc, Remote**  
 _Nov 2022 - Present_
 
-- Monitoring network traffic with Cortex XDR to identify potential threats.
-- Implementing Splunk rules and alerts for threat detection.
+- Monitoring endpoint activities with Cortex XDR to identify potential threats.
+- Implementing Splunk rules and alerts for advanced threat detection.
 - Managing and resolving tickets with Jira for efficient issue tracking.
 - Escalating critical issues to the IT team for rapid response.
 - Automating compliance checks and URL verifications with custom scripts.
