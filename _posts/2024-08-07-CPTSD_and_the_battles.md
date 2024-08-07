@@ -1,4 +1,3 @@
-
 ---
 date: 2024-08-07
 layout: post
