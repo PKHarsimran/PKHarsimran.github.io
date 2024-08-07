@@ -41,7 +41,7 @@ One of my breakthrough moments in therapy was realizing the strength I have when
 
 **Navigating Career Change: Embracing Cybersecurity**
 
-After studying three years in college for robotics and two years for electronics and controls, I thought working as a control engineer was what I wanted to do. But my curiosity had different plans. It was scary to say goodbye to my previous job as a cable technician, as I was uncertain if I would ever get it back again. However, I had a little light of trust in myself—no matter what happened, I would work hard and achieve my dream job.
+After studying three years in college for robotics and two years for electronics and controls, I thought working as a control engineer was what I wanted to do. But my curiosity had different plans. It was scary to say goodbye to my previous job as a control engineer, as I was uncertain if I would ever get it back again. However, I had a little light of trust in myself—no matter what happened, I would work hard and achieve my dream job.
 
 **Discovering My Passion for Cybersecurity**
 
