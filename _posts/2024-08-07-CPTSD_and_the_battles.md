@@ -25,15 +25,15 @@ Life is a journey filled with unexpected twists and turns. Sometimes, these chal
 
 **Understanding CPTSD: The Dark Clouds**
 
-Complex Post-Traumatic Stress Disorder, or CPTSD, is a condition that arises from prolonged trauma, often during childhood. Unlike PTSD, which is usually tied to a single event, CPTSD is rooted in ongoing exposure to trauma. For me, this trauma stemmed from a turbulent environment at home. My parents didn't get along from the start—they were always fighting, arguing, and talking negatively about each other and then about us kids because they weren't happy. Physical abuse was normal in my family, followed by emotional abuse because I was not up to their standards—too skinny, too dumb, not fast enough, too lazy. I heard these lines not just from my family but also outside, at school, college, and university.
+Complex Post-Traumatic Stress Disorder, or CPTSD, arises from prolonged trauma, often during childhood. For me, this trauma stemmed from a turbulent environment at home. My parents didn't get along—they were always fighting, arguing, and speaking negatively about each other and us kids. Physical abuse was normal in my family, followed by emotional abuse because I was not up to their standards—too skinny, too dumb, not fast enough, too lazy. These hurtful lines came not just from my family but also from school, college, and university.
 
 **Coping with Uncertainty and Fear**
 
-Coping with the constant fear and uncertainty was challenging. Now that I think about it, I coped mostly by being on the computer, playing games, and researching technology or the internet. My curiosity was my best friend during those times. By age 13, I had learned to program an HTML site because I was bored at home and had access to a computer. I also learned how to access the router and block my family members from using it. Curiosity was my coping mechanism. I loved breaking things apart and trying to understand how they worked. I remember a moment where I taped a battery and light I took from a toy to my watch so I could walk around with a light on my watch, and playing with DC motors.
+Coping with constant fear and uncertainty was challenging. Looking back, I coped by immersing myself in the computer, playing games, and researching technology or the internet. Curiosity became my best friend. By age 13, I had learned to program an HTML site out of boredom and access to a computer. I even learned to access the router and block my family members from using it. Curiosity was my coping mechanism. I loved breaking things apart to understand how they worked. I remember taping a battery and light from a toy to my watch to walk around with a light on it and playing with DC motors.
 
 **The Turning Point: Acknowledging CPTSD**
 
-Acknowledging the presence of CPTSD was the first step towards healing. The most challenging part was processing the pain I had bottled up inside me for many years since childhood. Talking in therapy made me realize a profound appreciation for myself and helped me learn how strong I am, even when I didn't know how much pain I had endured. Working every day with my inner child, who never received proper love, was crucial. Practicing self-parenting is still an ongoing process, as I have much to uncover.
+Acknowledging CPTSD was the first step toward healing. The most challenging part was processing the pain I had bottled up inside for many years since childhood. Therapy made me realize a profound appreciation for myself and helped me learn how strong I am, even when I didn't know how much pain I had endured. Working every day with my inner child, who never received proper love, was crucial. Practicing self-parenting is still an ongoing process, as I have much to uncover.
 
 **Breakthrough Moments in Therapy**
 
@@ -69,7 +69,7 @@ Finally, getting my first job as a Security Operations Center (SOC) Analyst was 
 
 **Valuable Lessons Learned**
 
-Through my journey, I have learned several valuable lessons about resilience and personal growth. I have learned that:
+Through my journey, I have learned several valuable lessons about resilience and personal growth:
 
 1. **Perseverance Pays Off:** Even when faced with failures and setbacks, continuing to push forward and not giving up leads to eventual success.
 2. **Self-Care is Crucial:** Taking care of oneself, both physically and mentally, is essential for overall well-being and long-term success.
@@ -89,4 +89,3 @@ To anyone who is working on themselves, especially on those days when the emptin
 If you are struggling with similar challenges, know that you are not alone. The path to healing and transformation is not easy, but it is possible. Embrace your journey, seek support, and believe in your capacity to overcome. Change may be daunting, but it often leads to incredible growth and renewal.
 
 Remember, it’s never too late to start anew. Your past does not define you, but it can empower you to build a brighter, more resilient future.
-
