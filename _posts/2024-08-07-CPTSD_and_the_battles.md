@@ -25,23 +25,56 @@ Life is a journey filled with unexpected twists and turns. Sometimes, these chal
 
 **Understanding CPTSD: The Dark Clouds**
 
-Complex Post-Traumatic Stress Disorder, or CPTSD, is a condition that arises from prolonged trauma, often during childhood. Unlike PTSD, which is usually tied to a single event, CPTSD is rooted in ongoing exposure to trauma. For me, this trauma stemmed from a turbulent environment at home. As a kid, I always had a turbulent environment at home. It was always random: what drama are we handling today? Who is getting beaten today for making a mistake or for no reason? As a kid, I thought this is how some families are, and maybe mine is not that bad. But as I grew up, working with my therapist made me realize how hard I had to survive in the family to keep myself happy—or was it to keep my parents happy by being less of a burden to them or being less of a kid? The symptoms were overwhelming: anxiety, flashbacks, emotional numbness, and a constant state of hyper-vigilance. These symptoms infiltrated every aspect of my life, making even the simplest tasks seem insurmountable.
+Complex Post-Traumatic Stress Disorder, or CPTSD, is a condition that arises from prolonged trauma, often during childhood. Unlike PTSD, which is usually tied to a single event, CPTSD is rooted in ongoing exposure to trauma. For me, this trauma stemmed from a turbulent environment at home. My parents didn't get along from the start—they were always fighting, arguing, and talking negatively about each other and then about us kids because they weren't happy. Physical abuse was normal in my family, followed by emotional abuse because I was not up to their standards—too skinny, too dumb, not fast enough, too lazy. I heard these lines not just from my family but also outside, at school, college, and university.
+
+**Coping with Uncertainty and Fear**
+
+Coping with the constant fear and uncertainty was challenging. Now that I think about it, I coped mostly by being on the computer, playing games, and researching technology or the internet. My curiosity was my best friend during those times. By age 13, I had learned to program an HTML site because I was bored at home and had access to a computer. I also learned how to access the router and block my family members from using it. Curiosity was my coping mechanism. I loved breaking things apart and trying to understand how they worked. I remember a moment where I taped a battery and light I took from a toy to my watch so I could walk around with a light on my watch, and playing with DC motors.
 
 **The Turning Point: Acknowledging CPTSD**
 
-Acknowledging the presence of CPTSD was the first step towards healing. It wasn’t an easy journey. It took countless hours of therapy, support from loved ones, and immense inner strength to confront the trauma and its effects. Understanding that my struggles were valid and that healing was possible gave me a new perspective on life.
+Acknowledging the presence of CPTSD was the first step towards healing. The most challenging part was processing the pain I had bottled up inside me for many years since childhood. Talking in therapy made me realize a profound appreciation for myself and helped me learn how strong I am, even when I didn't know how much pain I had endured. Working every day with my inner child, who never received proper love, was crucial. Practicing self-parenting is still an ongoing process, as I have much to uncover.
+
+**Breakthrough Moments in Therapy**
+
+One of my breakthrough moments in therapy was realizing the strength I have when I thought I was weak. This realization significantly contributed to my healing and reinforced my resilience. Now, I stand before you to show that you can also change your programming. You can decide who you want to be.
 
 **Navigating Career Change: Embracing Cybersecurity**
 
-As if managing CPTSD wasn't challenging enough, I also found myself at a crossroads in my career. After years in a field that no longer fulfilled me, I realized I needed a change. This was a daunting prospect. Leaving the familiar for the unknown required courage and determination, but I knew it was necessary for my well-being.
+After studying three years in college for robotics and two years for electronics and controls, I thought working as a control engineer was what I wanted to do. But my curiosity had different plans. It was scary to say goodbye to my previous job as a cable technician, as I was uncertain if I would ever get it back again. However, I had a little light of trust in myself—no matter what happened, I would work hard and achieve my dream job.
 
-**Embracing a New Path in Cybersecurity**
+**Discovering My Passion for Cybersecurity**
 
-I took a leap of faith and transitioned into cybersecurity, a field that had always intrigued me. With a background in IT and extensive experience in various roles, including as a Security Operations Center Analyst at Columba System Inc and a Cyber Security Analyst at SecureOps, I had a solid foundation to build upon. The learning curve was steep, and there were moments of doubt. However, with each step forward, I found a renewed sense of purpose and passion. My previous struggles had endowed me with a unique perspective and resilience that proved invaluable in my new career.
+My background in robotics and cable technology didn't directly influence my decision to choose cybersecurity; it was more of a process of discovery. My interest in cybersecurity led me down this path. The skills I gained in robotics—like automation and control systems—combined with my hands-on experience as a cable technician, provided a solid foundation for understanding complex systems and thinking analytically. This foundation, coupled with my curiosity, naturally led me to the world of cybersecurity.
 
-**Persistence and Skill Development**
+**Resilience in Action: My Journey with UofT SCS Boot Camps**
 
-The journey was not without its setbacks. There were days when the weight of CPTSD seemed too heavy to bear, and moments when the career shift felt like an insurmountable challenge. However, persistence and a supportive network helped me push through the tough times. My technical skills, including proficiency in programming languages like C++ and Python, and my ability to script in Shell and Bash, played a crucial role in my success. Each small victory reinforced my belief that change, while difficult, is possible and often necessary for growth.
+My journey was highlighted by UofT SCS Boot Camps in a blog post titled “Just Keep Trying: How Harsimran Sidhu Persevered to Learn Cybersecurity and Land a Job During COVID-19.” They shared how I transitioned from a background in robotics and cable technology to cybersecurity. My background in electronics gave me an edge, and my independent project—a home automation system—showcased my ability to innovate and solve problems independently, impressing potential employers during job interviews.
+
+Despite the obstacles, including the impact of COVID-19, I persevered. I achieved my CompTIA Security+ certification through self-study, even though I failed the first time. I knew I would pass the next time or the next, and that moment was profound as it proved to me that I am smart enough to do this. I received support from my boot camp coach, which eventually helped me land an entry-level cybersecurity job at Telecom Metric. Working virtually due to the pandemic, I thrived in my new role, controlling servers and assisting customers with technical issues. This job was precisely what I wanted, fulfilling my professional aspirations and marking a significant milestone in my journey.
+
+For more details about my journey, you can read the full blog post by UofT SCS Boot Camps [here](https://bootcamp.learn.utoronto.ca/blog/just-keep-trying-how-harsimran-sidhu-persevered-to-learn-cybersecurity-and-land-a-job-during-covid-19/).
+
+**A Personal Loss and Continued Resilience**
+
+After completing my boot camp, I faced another significant challenge: the loss of my grandfather to cancer. He was the only person in my life who showed kindness and calmness during my turbulent childhood. Losing him made my inner child scared and panic-stricken. At the same time, I was looking for jobs and trying to move away from a toxic environment. Despite the pain and fear, I continued to push forward, drawing strength from the resilience I had built over the years.
+
+**Moments of Pride**
+
+Throughout this journey, there have been moments that made me particularly proud of myself. One such moment was completing the CompTIA Security+ certification through self-study, despite failing the first attempt. I persevered, and passing the exam proved to me that I am capable and smart enough to achieve my goals.
+
+Another proud moment was when I moved out on my own and started learning to cook and take care of myself. This experience showed me how much I had grown and how independent I had become.
+
+Finally, getting my first job as a Security Operations Center (SOC) Analyst was a significant milestone. It validated all my hard work and determination, proving that I could succeed in my new career.
+
+**Valuable Lessons Learned**
+
+Through my journey, I have learned several valuable lessons about resilience and personal growth. I have learned that:
+
+1. **Perseverance Pays Off:** Even when faced with failures and setbacks, continuing to push forward and not giving up leads to eventual success.
+2. **Self-Care is Crucial:** Taking care of oneself, both physically and mentally, is essential for overall well-being and long-term success.
+3. **Change is Possible:** No matter how challenging the circumstances, it is possible to change one’s path and create a better future.
+4. **Inner Strength:** We often underestimate our inner strength. Realizing and embracing this strength can lead to profound personal growth and resilience.
 
 **A New Beginning in Cybersecurity**
 
@@ -56,3 +89,4 @@ To anyone who is working on themselves, especially on those days when the emptin
 If you are struggling with similar challenges, know that you are not alone. The path to healing and transformation is not easy, but it is possible. Embrace your journey, seek support, and believe in your capacity to overcome. Change may be daunting, but it often leads to incredible growth and renewal.
 
 Remember, it’s never too late to start anew. Your past does not define you, but it can empower you to build a brighter, more resilient future.
+
