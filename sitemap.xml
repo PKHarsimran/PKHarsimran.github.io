@@ -1,34 +1,285 @@
----
-layout: null
----
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    {% for page in site.pages %}
-        <url>
-            <loc>{{ page.url | prepend: site.baseurl | prepend: site.url }}</loc>
-            {% if page.layout == 'main' %}
-                <changefreq>weekly</changefreq>
-                <priority>1</priority>
-                <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
-            {% else %}
-                <changefreq>monthly</changefreq>
-                <priority>0.5</priority>
-            {% endif %}
-        </url>
-    {% endfor %}
-    {% for post in site.posts %}
-        <url>
-            <loc>{{ post.url | prepend: site.baseurl | prepend: site.url }}</loc>
-            <changefreq>weekly</changefreq>
-            <priority>0.8</priority>
-            <lastmod>{{ post.date | date: "%Y-%m-%d" }}</lastmod>
-        </url>
-    {% endfor %}
-    {% for author in site.authors %}
-        <url>
-            <loc>{{ author.url | prepend: site.baseurl | prepend: site.url }}</loc>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-    {% endfor %}
+<?xml version="1.0" encoding="UTF-8"?> 
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
+<url>
+  <loc>http://harsim.ca/</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/resume</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/about</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/Embracing_Change_CPTSD_and_Career_Transformation/</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/category/email-security</loc> <!-- Changed "email security" to "email-security" to be URL-friendly -->
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/Mastering-DKIM-Google-s-New-Email-Authentication-Rules-for-2024-Explained/</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#dkim</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#email-security</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#google-update</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#cybersecurity</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#spf</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#dmarc</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/category/cybersecurity</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/Evil-Genius-Turning-EDR-into-Malware-A-Deep-Dive-into-Shmuel-Cohens-Cortex-XDR-Exploit/</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#edr</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#palo-alto-networks</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#endpoint-security</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/Unraveling-the-XZ-Backdoor-A-Close-Call-for-Open-Source-Security/</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#xz-backdoor</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#supply-chain-attack</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#open-source-security</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#cve-2024-3094</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/category/technology</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/PiHole-The-Ultimate-Network-Ad-Blocker-With-Docker-Installation-Guide/</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#pi-hole</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#dns-sinkhole</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#ad-blocking</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#docker</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#network-security</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/UniversalWebTracker/</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#python</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#monitoring</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#automation</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#web-development</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/category/inspiration</loc> <!-- Fixed capitalization -->
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/Guide-to-CICD-via-github-and-azure/</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#blog</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#azure</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#github</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/AnalyticsHTB/</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#hackthebox</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#penetration-testing</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/category/blog</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/SecurringSSH/</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#ssh</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#ports</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
+<url>
+  <loc>http://harsim.ca/tags/#tutorials</loc>
+  <priority>0.5</priority>
+  <changefreq>monthly</changefreq>
+  <lastmod>2024-08-09</lastmod>
+</url>
 </urlset>
