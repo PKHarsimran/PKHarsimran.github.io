@@ -1,3 +1,4 @@
 # robotstxt.org/
 
 User-agent: *
+Sitemap: https://www.harsim.ca/sitemap.xml
