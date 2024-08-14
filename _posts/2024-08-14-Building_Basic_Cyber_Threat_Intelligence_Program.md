@@ -30,7 +30,7 @@ In this blog, I’ll guide you through setting up a straightforward CTI program 
 
 Before we jump into setting up a Cyber Threat Intelligence (CTI) program, it's important to get a clear picture of what CTI really is. In simple terms, CTI is like a security camera for your business—it monitors for potential cyber threats, analyzes the data, and helps you take the right actions to protect your assets.
 
-<div style="width:100%;height:0;padding-bottom:68%;position:relative;"><iframe src="https://giphy.com/embed/ELham0Mveox9e" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/world-attacks-snapshot-ELham0Mveox9e">via GIPHY</a></p>
+<img src="https://media.giphy.com/media/ELham0Mveox9e/giphy.gif" alt="Cyber Threat Intelligence" style="max-width:100%; height:auto;">
 
 CTI isn’t a one-size-fits-all concept. It’s divided into different types, each serving a unique purpose:
 
