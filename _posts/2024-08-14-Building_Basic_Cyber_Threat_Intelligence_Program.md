@@ -36,7 +36,7 @@ To build an effective Cyber Threat Intelligence (CTI) program, it’s crucial to
 
 <img src="https://media.giphy.com/media/ELham0Mveox9e/giphy.gif" alt="Cyber Threat Intelligence" style="max-width:100%; height:auto;">
 
-Cyber threats are constantly evolving and can come from anywhere in the world, as the GIF above illustrates. The real-time movement of cyber threats across the globe shows just how complex the threat landscape can be, making it essential to have a robust CTI program in place.
+Cyber threats are constantly evolving and can come from anywhere in the world. The real-time movement of cyber threats across the globe shows just how complex the threat landscape can be, making it essential to have a robust CTI program in place.
 
 ### Types of Cyber Threat Intelligence
 
