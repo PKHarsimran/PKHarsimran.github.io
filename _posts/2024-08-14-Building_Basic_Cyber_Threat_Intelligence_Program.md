@@ -187,7 +187,7 @@ Building a strong cybersecurity foundation doesn’t have to be overwhelming. He
 - **How to Use It:** Explore options from providers like **Chubb**, **Hiscox**, and **Coalition** to find a policy that suits your business’s needs.
 - **Links:**
   - [Chubb Cyber Insurance](https://www.chubb.com/us-en/business-insurance/cyber-enterprise-risk-management.aspx)
-  - [Hiscox Cyber Insurance](https://www.hiscox.com/cyber-insurance)
+  - [Hiscox Cyber Insurance](https://www.hiscox.com/small-business-insurance/cyber-security-insurance)
   - [Coalition Cyber Insurance](https://www.coalitioninc.com/)
 
 These resources are a great starting point for anyone looking to strengthen their cybersecurity. Whether you’re securing a personal account or protecting a business, these tools and services offer accessible and effective solutions to help you stay safe online.
