@@ -90,3 +90,47 @@ By understanding your risk tolerance and supplementing your security measures wi
 Whether you’re protecting your personal assets or your business’s digital resources, the principles of assessing your cybersecurity needs are universal. Start by understanding your current security posture, identify the specific threats you face, consider your available resources, and ensure your security measures fit into your life or business operations. By doing so, you’ll be well-equipped to build a CTI program—or any security strategy—that’s tailored to your unique situation, whether you’re guarding a car, personal data, or a whole business. 🚀
 
 
+### Resources for Everyone
+
+Building a strong cybersecurity foundation doesn’t have to be overwhelming. Here’s a list of tools and websites that can help you get started, whether you’re an individual looking to secure your personal data or a business aiming to protect its digital assets:
+
+#### **1. SecurityPlanner.org**  
+- **What It Is:** A free tool that provides personalized security recommendations based on your devices, accounts, and online habits.
+- **How to Use It:** Answer a few simple questions, and Security Planner will suggest tailored actions to improve your security posture.
+- **Website:** [SecurityPlanner.org](https://securityplanner.org)
+ 
+#### **2. Have I Been Pwned?**  
+- **What It Is:** A service that lets you check if your email or passwords have been compromised in a data breach.
+- **How to Use It:** Enter your email address to see if it’s been involved in any breaches, and take action to secure your accounts if necessary.
+- **Website:** [Have I Been Pwned?](https://haveibeenpwned.com/)
+
+#### **3. Bitwarden**  
+- **What It Is:** A free, open-source password manager that helps you generate and store strong, unique passwords for all your accounts.
+- **How to Use It:** Set up an account, and start securing your passwords in an encrypted vault that you can access from any device.
+- **Website:** [Bitwarden](https://bitwarden.com/)
+
+#### **4. Google Authenticator**  
+- **What It Is:** A free app that provides two-factor authentication (2FA) codes for added security on your accounts.
+- **How to Use It:** Enable 2FA on your important accounts and use Google Authenticator to generate time-based security codes for logging in.
+- **Website:** [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en)
+
+#### **5. Malwarebytes**  
+- **What It Is:** A popular anti-malware tool that provides protection against malware, ransomware, and other cyber threats.
+- **How to Use It:** Install Malwarebytes on your devices to scan for and remove malicious software. It’s available in both free and premium versions.
+- **Website:** [Malwarebytes](https://www.malwarebytes.com/)
+
+#### **6. CISA Known Exploited Vulnerabilities Catalog**  
+- **What It Is:** A regularly updated list of known exploited vulnerabilities provided by the Cybersecurity and Infrastructure Security Agency (CISA).
+- **How to Use It:** Stay informed about current vulnerabilities that could impact your devices and take action to patch them as needed.
+- **Website:** [CISA Vulnerabilities Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
+
+#### **7. Cyber Insurance Providers**  
+- **What It Is:** A list of recommended providers offering cyber insurance tailored to various business sizes.
+- **How to Use It:** Explore options from providers like **Chubb**, **Hiscox**, and **Coalition** to find a policy that suits your business’s needs.
+- **Links:**
+  - [Chubb Cyber Insurance](https://www.chubb.com/us-en/business-insurance/cyber-enterprise-risk-management.aspx)
+  - [Hiscox Cyber Insurance](https://www.hiscox.com/cyber-insurance)
+  - [Coalition Cyber Insurance](https://www.coalitioninc.com/)
+
+These resources are a great starting point for anyone looking to strengthen their cybersecurity. Whether you’re securing a personal account or protecting a business, these tools and services offer accessible and effective solutions to help you stay safe online.
+
