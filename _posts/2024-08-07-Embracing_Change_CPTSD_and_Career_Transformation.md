@@ -40,7 +40,7 @@ Recognizing and understanding CPTSD was my first crucial step toward recovery. L
 **Resilience in Action: My Cybersecurity Journey**
 
 Transitioning to cybersecurity wasn’t originally part of my plan. After earning diplomas in robotics and electronics, I started my career as a control engineer. But curiosity had other ideas. When the COVID-19 pandemic hit, I decided to shift paths. Enrolling in the University of Toronto SCS Cybersecurity Boot Camp became a turning point in my life.
-Despite failing the CompTIA Security+ exam on my first try, I didn’t give up. I studied harder, earned the certification, and proved to myself that I was more than capable. My independent project—a home automation system—showcased my technical skills and passion for problem-solving. It helped me land my first cybersecurity role at Telecom Metric during the height of the pandemic, working virtually as a SOC Analyst.
+Despite failing the CompTIA Security+ exam on my first try, I didn’t give up. I studied harder, earned the certification, and proved to myself that I was more than capable. My independent project—a home automation system—showcased my technical skills and passion for problem-solving. It helped me land my first IT role at Telecom Metric during the height of the pandemic, working virtually as a IT Specialist.
 
 **Facing Personal Loss with Continued Strength**
 
