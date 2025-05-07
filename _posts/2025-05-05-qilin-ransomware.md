@@ -76,7 +76,7 @@ Qilin combines two major tactics to pressure victims:
 
 Victims often receive ransom notes such as `README.txt` or `qilin_readme.txt`, which contain a Tor link to the negotiation portal and a unique victim ID.
 
-> As of the latest reports, Qilin has exposed over **30 organizations** via public leak sites.
+> Leaked data is often published on the Qilin leak site. As of May 2025, the group has publicly listed over 437 victims.
 
 ---
 
