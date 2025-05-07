@@ -711,29 +711,22 @@
     }
   }
 }
-// ✅ Responsive table wrapper for wide tables
+// 🔄 Make Markdown tables responsive
 .post-content table {
-  display: table;
+  display: block;
   width: 100%;
-  max-width: 100%;
   overflow-x: auto;
+  white-space: nowrap;
   border-collapse: collapse;
-  table-layout: auto;
 }
 
 .post-content th,
 .post-content td {
-  padding: rem(10px) rem(20px);
-  text-align: left;
+  min-width: 120px; // prevents collapsing
+  padding: rem(10px) rem(20px); // keep spacing nice
   border: rem(1px) solid #ccc;
+  text-align: left;
 }
 
-@media screen and (max-width: 768px) {
-  .post-content table {
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-}
 
 
