@@ -18,7 +18,7 @@ author: Harsimran Sidhu
 paginate: true
 comments: true
 ---
-> **TL;DR:** *Qilin (aka Agenda) is a cross‑platform, double‑extortion ransomware written in Go & Rust. In this post I’ll walk you through a realistic attack storyline mapped to MITRE ATT&CK, share fresh IOCs, and give you a seven‑step checklist to harden your environment—before the ransom note hits your inbox.*![image]
+> **TL;DR:** *Qilin (aka Agenda) is a cross‑platform, double‑extortion ransomware written in Go & Rust. In this post I’ll walk you through a realistic attack storyline mapped to MITRE ATT&CK, share fresh IOCs, and give you a seven‑step checklist to harden your environment—before the ransom note hits your inbox.*!
 
 ![Coffe gif](https://media.giphy.com/media/l4q8kQqDLUUEBVDk4/giphy.gif)
 
