@@ -53,6 +53,7 @@ jobs:
   deploy:
     runs-on: ubuntu-22.04
     needs: build
+    environment: github-pages # Added environment
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
