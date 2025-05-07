@@ -85,15 +85,15 @@ Victims often receive ransom notes such as `README.txt` or `qilin_readme.txt`, w
 <div style="overflow-x: auto;">
 
 | Tactic               | Technique       | Description                                      |
-|----------------------|------------------|--------------------------------------------------|
-| Initial Access        | T1078, T1190     | Valid accounts, vulnerable applications          |
-| Execution             | T1059            | PowerShell, WMI, LOLBAS abuse                    |
-| Persistence           | T1053            | Scheduled tasks, registry changes                |
-| Privilege Escalation  | T1548            | Token manipulation, UAC bypass                   |
-| Defense Evasion       | T1562            | AV/EDR disabling, obfuscation                    |
-| Credential Access     | T1003            | LSASS dumps, Chrome credential theft             |
-| Lateral Movement      | T1021            | RDP, SMB, PsExec                                 |
-| Impact                | T1486            | File system encryption and ransom extortion      |
+|----------------------|----------------|--------------------------------------------------|
+| Initial Access        | T1078, T1190   | Valid accounts, vulnerable applications          |
+| Execution             | T1059          | PowerShell, WMI, LOLBAS abuse                    |
+| Persistence           | T1053          | Scheduled tasks, registry changes                |
+| Privilege Escalation  | T1548          | Token manipulation, UAC bypass                   |
+| Defense Evasion       | T1562          | AV/EDR disabling, obfuscation                    |
+| Credential Access     | T1003          | LSASS dumps, Chrome credential theft             |
+| Lateral Movement      | T1021          | RDP, SMB, PsExec                                 |
+| Impact                | T1486          | File system encryption and ransom extortion      |
 
 </div>
 
