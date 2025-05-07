@@ -22,3 +22,10 @@ comments: true
 
 ![Coffe gif](https://media.giphy.com/media/l4q8kQqDLUUEBVDk4/giphy.gif)
 
+You're sipping your morning coffee, casually scanning your dashboards. Then something strange catches your eye — unfamiliar file extensions, odd filenames.
+A few virtual machines suddenly go dark. Moments later, a message pops up in your inbox: a ransom note.
+No, this isn't a Netflix plot. This is ransomware — and not just any strain. We're talking about Qilin, also known as Agenda.
+In this blog, I’ll guide you through a detailed hypothetical attack scenario rooted in real-world tactics used by this ransomware group. We'll explore how these attacks unfold, highlight common weaknesses that threat actors exploit, and provide clear actions you can take to strengthen your defenses.
+This isn’t fear-mongering. It’s preparation — the kind every organization should take seriously.
+
+
