@@ -1,5 +1,5 @@
 ---
-date: 2025-05-06
+date: 2025-05-05
 layout: post
 title: "Qilin (Agenda) Ransomware Explained: Real‑World Attack Timeline & 7 Fast Defenses"
 subtitle: "Stop Double‑Extortion Attacks Before They Start"
