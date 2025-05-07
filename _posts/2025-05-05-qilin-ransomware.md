@@ -183,3 +183,59 @@ This is often triggered by:
 Encryption begins quietly — typically during off-hours.  
 By the time the ransom note appears, the damage is already done.
 
+---
+
+## ⏱️ Detection & Response – When the Clock Starts Ticking
+
+Most teams don’t realize they’re in the middle of a ransomware attack until it’s well underway.
+
+By the time the ransom note appears, Qilin actors have usually spent days (or even weeks) in the environment — escalating privileges, stealing credentials, and staging data for exfiltration or encryption.
+
+---
+
+### 🚨 How Detection Usually Starts
+
+- A user reports strange file extensions like `.qilin` or `.qln`
+- EDR or antivirus flags unusual PowerShell or command line behavior
+- File servers start renaming thousands of files rapidly
+- Monitoring tools detect spikes in failed services or CPU usage
+- Someone gets locked out of a production system — and panics
+
+---
+
+### 🧭 The Chaos Phase
+
+Once an alert is confirmed, chaos often follows — especially without a practiced response plan:
+
+- **Identify patient zero**: Who opened the phishing email or got exploited?
+- **Isolate systems**: Shut down infected hosts or pull them off the network
+- **Convene a war room**: Slack, Teams, WhatsApp — anything that still works
+- **Assess the blast radius**:
+  - Which drives are encrypted?
+  - Is backup data safe?
+  - Did anything get exfiltrated?
+
+---
+
+### 💬 Leadership Questions Start Rolling In
+
+Expect a wave of pressure — especially if the attack affects critical systems:
+
+- “Can we restore from backup?”
+- “How long will it take?”
+- “Do we have to notify customers?”
+- “Should we call the lawyers?”
+- “Are we paying the ransom?”
+
+---
+
+### ⚠️ Without a Playbook...
+
+If you don’t have a defined and tested response plan, this is where everything slows down.  
+Decisions become bottlenecks. Communication becomes scattered.  
+And ransomware — which thrives on panic and indecision — continues to spread.
+
+**Lesson:** When ransomware hits, the clock is your enemy.  
+Preparedness isn’t optional — it’s what buys you time when you have none.
+
+
