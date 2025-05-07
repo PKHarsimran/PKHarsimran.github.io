@@ -726,9 +726,6 @@
   padding: rem(10px) rem(20px);
   text-align: left;
   border: rem(1px) solid #ccc;
-  word-break: break-word;       // force wrap long words (like SHA-256 hashes)
-  white-space: normal;          // allows wrapping within cells
-  min-width: rem(100px);        // prevent collapsing columns
 }
 
 @media screen and (max-width: 768px) {
