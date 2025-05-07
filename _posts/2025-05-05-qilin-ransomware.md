@@ -82,8 +82,6 @@ Victims often receive ransom notes such as `README.txt` or `qilin_readme.txt`, w
 
 ### 🧠 MITRE ATT&CK Mapping
 
-<div style="overflow-x: auto;">
-
 | Tactic               | Technique       | Description                                      |
 |----------------------|----------------|--------------------------------------------------|
 | Initial Access        | T1078, T1190   | Valid accounts, vulnerable applications          |
@@ -94,8 +92,6 @@ Victims often receive ransom notes such as `README.txt` or `qilin_readme.txt`, w
 | Credential Access     | T1003          | LSASS dumps, Chrome credential theft             |
 | Lateral Movement      | T1021          | RDP, SMB, PsExec                                 |
 | Impact                | T1486          | File system encryption and ransom extortion      |
-
-</div>
 
 ---
 
@@ -121,8 +117,6 @@ Always validate these IOCs in your own environment using sandboxed tools and you
 
 ### 🛠️ Tools Used by Qilin (Observed in the Wild)
 
-<div style="overflow-x: auto;">
-
 | Discovery | RMM Tools     | Defense Evasion                                           | Credential Theft | Offsec Tools   | Networking   | LOLBAS   | Exfiltration     |
 |-----------|---------------|-----------------------------------------------------------|------------------|----------------|--------------|----------|------------------|
 | Nmap      | ScreenConnect | EDRSandBlast                                              | Mimikatz         | Cobalt Strike  | Proxychains  | fsutil   | EasyUpload.io    |
@@ -130,8 +124,6 @@ Always validate these IOCs in your own environment using sandboxed tools and you
 |           |               | Toshiba Power Mgmt Driver (BYOVD)                         |                  | NetExec        |              | WinRM    |                  |
 |           |               | Updater for Carbon Black Cloud Sensor AV (`upd.exe`)      |                  |                |              |          |                  |
 |           |               | YDArk, Zemana Anti-Rootkit Driver                         |                  |                |              |          |                  |
-
-</div>
 
 > _Source: [Ransomware Tool Matrix](https://github.com/mandiant/Ransomware-Tool-Matrix)_
 
