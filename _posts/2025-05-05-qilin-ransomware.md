@@ -409,3 +409,70 @@ Document:
 > 💡 Consistency beats complexity.  
 > You don’t need perfect controls — just reliable, tested ones.
 
+---
+
+## ✅ 6. What Worked Well (and What You Should Steal)
+
+Even during chaotic ransomware incidents, a few things consistently make a big difference.
+
+Here’s what often works well when Qilin hits — and what defenders should borrow:
+
+---
+
+### 🛑 1. Fast Isolation > Fancy Detection
+
+The most effective teams act fast — not perfect.
+
+- If a host looks suspicious, isolate it immediately  
+- Don’t wait for conclusive alerts to pull plugs  
+- Overreaction is safer than hesitation during encryption
+
+---
+
+### 🔍 2. Visibility from EDR and Logging Tools
+
+Even basic tools helped track the attack:
+
+- Splunk, Defender, CrowdStrike, etc. revealed:
+  - Initial foothold methods
+  - Lateral movement paths
+  - Timing of the encryption event
+
+You don’t need full SIEM automation — partial visibility is better than none.
+
+---
+
+### 🧑‍🤝‍🧑 3. Clear Communication Saved Time
+
+When everyone knew their role, chaos was reduced:
+
+- Even using WhatsApp or Signal worked — as long as people stayed calm  
+- Central war rooms (virtual or physical) helped drive fast decisions  
+- Designated leads reduced “decision whiplash”
+
+---
+
+### 📋 4. Having Even a Basic Playbook Helped
+
+Even a shared Google Doc or printed SOP helped teams coordinate under pressure:
+
+- Who declares the incident  
+- Who notifies legal, PR, or vendors  
+- Who talks to executives
+
+The playbook didn’t need to be perfect — just available.
+
+---
+
+### 💡 Recommendations (Steal These)
+
+- ✅ Run tabletop exercises regularly — even 30-minute ones  
+- ✅ Assign incident roles *before* you're under attack  
+- ✅ Test restoring backups from scratch  
+- ✅ Print (or export) a hard copy of key contacts and IR steps  
+- ✅ Tag your most critical systems and crown jewels
+
+---
+
+> Ransomware punishes indecision.  
+> What buys you time isn’t technology — it’s trust, clarity, and practice.
