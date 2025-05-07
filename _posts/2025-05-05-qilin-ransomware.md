@@ -117,6 +117,8 @@ Always validate these IOCs in your own environment using sandboxed tools and you
 
 ### 🛠️ Tools Used by Qilin (Observed in the Wild)
 
+<div style="overflow-x: auto; margin-bottom: 1rem;">
+
 | Discovery | RMM Tools     | Defense Evasion                                           | Credential Theft | Offsec Tools   | Networking   | LOLBAS   | Exfiltration     |
 |-----------|---------------|-----------------------------------------------------------|------------------|----------------|--------------|----------|------------------|
 | Nmap      | ScreenConnect | EDRSandBlast                                              | Mimikatz         | Cobalt Strike  | Proxychains  | fsutil   | EasyUpload.io    |
@@ -124,6 +126,9 @@ Always validate these IOCs in your own environment using sandboxed tools and you
 |           |               | Toshiba Power Mgmt Driver (BYOVD)                         |                  | NetExec        |              | WinRM    |                  |
 |           |               | Updater for Carbon Black Cloud Sensor AV (`upd.exe`)      |                  |                |              |          |                  |
 |           |               | YDArk, Zemana Anti-Rootkit Driver                         |                  |                |              |          |                  |
+
+</div>
+
 
 > _Source: [Ransomware Tool Matrix](https://github.com/mandiant/Ransomware-Tool-Matrix)_
 
