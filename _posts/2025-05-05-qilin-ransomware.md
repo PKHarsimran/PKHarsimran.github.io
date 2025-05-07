@@ -139,3 +139,47 @@ Always validate these IOCs in your own environment using sandboxed tools and you
 - [Blackpoint Cyber: Qilin Threat Intel PDF](https://blackpointcyber.com/wp-content/uploads/2025/01/Qilin-3.pdf)
 
 ---
+
+## ✅ 3. The Hypothetical Incident Scenario
+
+### 🐍 Initial Access & Infection Flow
+
+It always starts small.
+
+Maybe it’s a phishing email — nothing flashy, just a fake invoice or a Dropbox link that looks legit.  
+Maybe it’s an exposed RDP port left open “just for testing.”  
+Or maybe it’s a stolen credential being reused by someone unaware it was already breached.
+
+Whatever the entry point, once they’re in — Qilin operators move fast. They establish a foothold and blend in using tools already native to your environment.
+
+**Common tactics include:**
+- Dropping a malicious DLL via `sc.exe` (service creation abuse)
+- Executing commands via PowerShell or WMI
+- Using a custom loader to fetch the actual ransomware payload
+
+---
+
+### 🔍 Early Red Flags
+
+While early-stage signals are subtle, they’re detectable if you're looking:
+
+- Credential stuffing attempts across VPN, RDP, or Citrix gateways
+- Creation of unusual services or registry key modifications
+- Lateral movement via SMB, RDP, or PsExec
+- Suspicious use of tools like `net.exe`, `whoami`, or `tasklist` by unexpected users
+- Unusual spikes in storage usage or file renames
+
+---
+
+### 💥 Payload Execution
+
+After the attackers map your environment and identify what matters — file shares, backups, credential stores — they deploy the Qilin payload.
+
+This is often triggered by:
+- A scheduled task
+- A remote PowerShell command
+- Manual execution through `PsExec` or `WinRM`
+
+Encryption begins quietly — typically during off-hours.  
+By the time the ransom note appears, the damage is already done.
+
