@@ -27,5 +27,6 @@ A few virtual machines suddenly go dark. Moments later, a message pops up in you
 No, this isn't a Netflix plot. This is ransomware — and not just any strain. We're talking about Qilin, also known as Agenda.
 In this blog, I’ll guide you through a detailed hypothetical attack scenario rooted in real-world tactics used by this ransomware group. We'll explore how these attacks unfold, highlight common weaknesses that threat actors exploit, and provide clear actions you can take to strengthen your defenses.
 This isn’t fear-mongering. It’s preparation — the kind every organization should take seriously.
+As of now, Qilin has publicly claimed responsibility for over 437 victims, and that number is still growing — according to [ransomware.live](https://www.ransomware.live/group/qilin).
 
 
