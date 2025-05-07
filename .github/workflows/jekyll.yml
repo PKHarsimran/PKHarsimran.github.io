@@ -27,34 +27,19 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Build job
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Ruby
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1'
-          bundler-cache: true
-          cache-version: 0
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v4
-      - name: Build with Jekyll
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
-        env:
-          JEKYLL_ENV: production
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+          ruby-version: 3.1
 
-  # Deployment job
-  deploy:
-    runs-on: ubuntu-22.04
-    needs: build
-    environment: github-pages # Added environment
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Build the site
+        run: bundle exec jekyll build
