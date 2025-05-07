@@ -125,7 +125,14 @@ Validate in sandboxes before blocking in prod.
 
 ## 9 — Further Reading
 
-- SentinelOne deep‑dive, HHS Threat Profile, SOCRadar intel, Blackpoint PDF.
+- [Ransomware.live – Qilin group page](https://www.ransomware.live/group/qilin) :contentReference[oaicite:0]{index=0}  
+- [SentinelOne: *Agenda (Qilin) Analysis*](https://www.sentinelone.com/anthology/agenda-qilin/) :contentReference[oaicite:1]{index=1}  
+- [U.S. HHS HC3: *Qilin Threat Profile* (PDF)](https://www.hhs.gov/sites/default/files/qilin-threat-profile-tlpclear.pdf) :contentReference[oaicite:2]{index=2}  
+- [Sophos X‑Ops: *Qilin ransomware caught stealing credentials stored in Google Chrome*](https://news.sophos.com/en-us/2024/08/22/qilin-ransomware-caught-stealing-credentials-stored-in-google-chrome/) :contentReference[oaicite:3]{index=3}  
+- [SOCRadar: *Dark Web Profile – Qilin / Agenda Ransomware*](https://socradar.io/dark-web-profile-qilin-agenda-ransomware/) :contentReference[oaicite:4]{index=4}  
+- [Blackpoint Cyber: *Qilin Ransomware Threat Profile* (PDF)](https://blackpointcyber.com/wp-content/uploads/2025/01/Qilin-3.pdf) :contentReference[oaicite:5]{index=5}  
+- [GitHub: *Ransomware Tool Matrix*](https://github.com/BushidoUK/Ransomware-Tool-Matrix) :contentReference[oaicite:6]{index=6}  
+- [MITRE ATT&CK Framework](https://attack.mitre.org/) (tactics map)
 
 ---
 
