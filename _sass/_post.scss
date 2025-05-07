@@ -711,3 +711,20 @@
     }
   }
 }
+// 🔄 Make Markdown tables responsive
+.post-content table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  border-collapse: collapse;
+}
+
+.post-content th,
+.post-content td {
+  min-width: 120px; // prevents collapsing
+  padding: rem(10px) rem(20px); // keep spacing nice
+  border: rem(1px) solid #ccc;
+  text-align: left;
+}
+
