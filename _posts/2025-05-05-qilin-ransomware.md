@@ -321,4 +321,91 @@ Delays here give the ransomware more time to spread — and more leverage.
 
 Good segmentation, lean privilege models, tested backups, and a calm, confident response process make all the difference.
 
+---
+
+## ✅ 5. Basic Cyber Hygiene – Your First Line of Defense
+
+You don’t need enterprise-grade tooling to stop ransomware.  
+The basics, done consistently, go a long way in defending against groups like Qilin.
+
+Here are practical actions that actually work:
+
+---
+
+### 🔐 1. Enforce MFA (Multi-Factor Authentication)
+
+Apply MFA anywhere it makes sense:
+
+- VPN and remote access portals  
+- RDP gateways  
+- Internal admin interfaces  
+
+MFA won’t stop all attacks, but it forces threat actors to work harder — or move on.
+
+---
+
+### 🧠 2. Limit Privileges Ruthlessly
+
+- Local admin should be rare, not the default  
+- Service accounts should be scoped to the bare minimum  
+- Regular audits help catch “access creep”
+
+---
+
+### 🔄 3. Patch Early, Patch Often
+
+Groups like Qilin move fast when a new vulnerability drops.  
+If it’s in Shodan and it’s unpatched, assume they’re scanning for it.
+
+Prioritize:
+- VPNs, firewalls, and public apps
+- Domain controllers and backup servers
+- RMM tools
+
+---
+
+### 🌐 4. Segment Your Network
+
+Make lateral movement harder by keeping systems in separate security zones.
+
+Examples:
+- Don’t let dev talk to prod  
+- Don’t let backups sit on the same VLAN as workstations  
+- Use firewall rules, not just VLANs
+
+---
+
+### 💾 5. Isolate and Test Your Backups
+
+- Store at least one copy offline or in immutable storage  
+- Ensure backups can’t be accessed with domain creds  
+- Run test restores regularly — speed matters
+
+---
+
+### 🔍 6. Monitor for Known Tactics
+
+Even basic logging and EDR can catch Qilin’s playbook.
+
+Watch for:
+- Suspicious service creation  
+- Odd PowerShell activity  
+- RDP/SMB traffic at odd hours  
+- Sudden file renames or spikes in write operations
+
+---
+
+### 📡 7. Have an Out-of-Band Comms Plan
+
+If your VPN, Teams, or Slack go down, how will your team coordinate?
+
+Document:
+- Emergency contacts (printed or offline copy)
+- Preferred backup channels (Signal, Zoom, etc.)
+- Who owns critical response decisions
+
+---
+
+> 💡 Consistency beats complexity.  
+> You don’t need perfect controls — just reliable, tested ones.
 
