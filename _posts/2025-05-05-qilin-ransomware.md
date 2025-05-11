@@ -66,58 +66,84 @@ The group later rebranded from Agenda to Qilin, evolving its tooling, improving 
 3. **Leverage** — Refuse to pay and the data is published on the leak portal.
 
 ---
-## 3 — MITRE ATT&CK Snapshot
+## 🧨 How Qilin Executes Each Step – From Initial Access to Impact
 
-### 🔍 MITRE ATT&CK Techniques and Real-World Examples
-
-**Initial Access**
-- Techniques: T1078 (Valid Accounts), T1190 (Exploit Public-Facing Apps)
-- Example: Qilin affiliates have used stolen RDP credentials and malicious phishing lures with trojanized tools like RVTools.
-- Source: [SentinelOne](https://www.sentinelone.com/anthology/agenda-qilin/)
-
-**Execution**
-- Techniques: T1059 (Command & Scripting Interpreter)
-- Example: Malicious PowerShell one-liners used to download payloads silently.
-- Source: [Sophos](https://news.sophos.com/en-us/2024/08/22/qilin-ransomware-caught-stealing-credentials-stored-in-google-chrome/)
-
-**Persistence**
-- Techniques: T1053 (Scheduled Task/Job)
-- Example: Qilin uses scheduled tasks to relaunch its binary post-reboot.
-
-**Privilege Escalation**
-- Techniques: T1548 (Abuse Elevation Control)
-- Example: Uses BYOVD (Bring Your Own Vulnerable Driver) tactics to disable AV/EDR.
-
-**Defense Evasion**
-- Techniques: T1562 (Impair Defenses)
-- Example: PowerTool, Zemana AntiRootkit drivers, Carbon Black updaters renamed to `upd.exe`.
-
-**Credential Access**
-- Techniques: T1003 (OS Credential Dumping)
-- Example: Mimikatz, LSASS memory dumping, and Chrome credential exfiltration.
-
-**Lateral Movement**
-- Techniques: T1021 (Remote Services)
-- Example: RDP and SMB abuse, using PsExec or stolen creds to pivot internally.
-
-**Impact**
-- Techniques: T1486 (Data Encrypted for Impact)
-- Example: Silent encryption using Qilin ransomware with extensions like `.qilin` or `.qln`.
-
-*If the IDs look cryptic, ATT&CK is just a public catalogue of hacker techniques.*
+Understanding Qilin’s attack chain isn’t just about listing tactics — it’s about knowing **how and when** they’re used in real intrusions. Below is a walkthrough of how each MITRE ATT&CK tactic might play out during a typical Qilin campaign, based on observed behavior.
 
 ---
 
-### 🚨 Hypothetical Attack Walkthrough
+### 🛠 Initial Access  
+**Techniques:**  
+- `T1078` – Valid Accounts  
+- `T1190` – Exploit Public-Facing Application  
 
-It starts small — a phishing email, a shared credential, or an exposed RDP port.
+It starts quietly. A phishing email mimicking Dropbox or invoicing software arrives — or an IT staffer unknowingly installs a **trojanized version of RVTools** from `rv-tool[.]net`. In other cases, attackers log in directly using **purchased or reused RDP credentials**.  
+**Source:** [SentinelOne](https://www.sentinelone.com/anthology/agenda-qilin/)
 
-Qilin gains access and establishes persistence. Tools like PowerShell and WMI help them blend in. You might miss the early signs:
-- Service creation with unknown binaries
-- Credential stuffing across VPN or Citrix
-- Sudden increase in PowerShell execution logs
+---
 
-Eventually, encryption is launched — silently, overnight — targeting shared drives, backups, and endpoints. When your users log in the next day, they’re met with ransom notes and unreadable files.
+### 🧬 Execution  
+**Technique:**  
+- `T1059` – Command and Scripting Interpreter  
+
+Once inside, Qilin drops custom payloads using native scripting tools. A PowerShell command silently downloads `NETXLOADER`, which pulls in the ransomware binary — all without triggering traditional antivirus.  
+**Source:** [Sophos](https://news.sophos.com/en-us/2024/08/22/qilin-ransomware-caught-stealing-credentials-stored-in-google-chrome/)
+
+---
+
+### 🔁 Persistence  
+**Technique:**  
+- `T1053` – Scheduled Task/Job  
+
+To maintain control, Qilin sets up a scheduled task that ensures the malware survives reboots and re-logins. These tasks often masquerade as system updates or maintenance jobs.
+
+---
+
+### 🔓 Privilege Escalation  
+**Technique:**  
+- `T1548` – Abuse Elevation Control Mechanism  
+
+They don’t wait for permission. Qilin brings their own **vulnerable drivers (BYOVD)** — like **Zemana AntiMalware** or **Toshiba power drivers** — to disable security tools and gain **SYSTEM-level access**.
+
+---
+
+### 🎭 Defense Evasion  
+**Technique:**  
+- `T1562` – Impair Defenses  
+
+Using renamed binaries like `upd.exe` (a spoof of legitimate AV updaters), Qilin disables EDR, clears logs, and bypasses detection. The malware might even exploit outdated **Carbon Black Cloud sensors** to remain hidden.
+
+---
+
+### 🛂 Credential Access  
+**Technique:**  
+- `T1003` – OS Credential Dumping  
+
+Once elevated, Qilin dumps LSASS memory and **extracts credentials from browsers like Chrome**. These are used to access other systems silently.  
+**Source:** [Sophos Report on Chrome Theft](https://news.sophos.com/en-us/2024/08/22/qilin-ransomware-caught-stealing-credentials-stored-in-google-chrome/)
+
+---
+
+### 🔄 Lateral Movement  
+**Technique:**  
+- `T1021` – Remote Services  
+
+With credentials in hand, Qilin moves laterally across the network using **SMB, RDP, WinRM, and PsExec**.  
+IT tools like **ScreenConnect** and **AnyDesk** are sometimes hijacked to extend access.
+
+---
+
+### 💥 Impact  
+**Technique:**  
+- `T1486` – Data Encrypted for Impact  
+
+When ready, Qilin triggers its payload. Files are encrypted with `.qilin` or `.qln` extensions.  
+Ransom notes like `README.txt` or `qilin_readme.txt` appear across file shares and desktop paths.  
+Backups, if reachable, are targeted and encrypted first.
+
+---
+
+> ℹ️ If the technique IDs look cryptic, they’re part of the [MITRE ATT&CK](https://attack.mitre.org) framework — a public catalog of adversary behavior used across cybersecurity.
 
 ---
 
