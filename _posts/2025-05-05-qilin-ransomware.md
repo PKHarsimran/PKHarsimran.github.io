@@ -72,7 +72,7 @@ Understanding Qilin’s attack chain isn’t just about listing tactics — it�
 
 ---
 
-### 🕵️ Abuse of Kickidler Monitoring Software
+## 🕵️ Abuse of Kickidler Monitoring Software
 
 Qilin affiliates have been observed abusing **Kickidler**, a legitimate employee-monitoring software, to enhance their visibility post-compromise.
 
@@ -97,7 +97,7 @@ These tactics show how attackers increasingly rely on *living-off-the-land* and 
 
 ---
 
-### 🛠 Initial Access  
+## 🛠 Initial Access  
 **Techniques:**  
 - `T1078` – Valid Accounts  
 - `T1190` – Exploit Public-Facing Application  
