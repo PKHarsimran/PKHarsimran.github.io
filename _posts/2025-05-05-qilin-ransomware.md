@@ -285,13 +285,16 @@ You’ve got time now. Use it.
 
 ---
 
-Further Reading & Sources
+## 📚 Further Reading & Sources
 
-[^1]: **Ransomware.live** – *Qilin victim list (live count).* <https://www.ransomware.live/group/qilin>  
-[^2]: **SentinelOne** – *Agenda/Qilin Deep Dive*. <https://www.sentinelone.com/anthology/agenda-qilin/>  
-[^3]: **U.S. HHS HC3** – *Qilin Threat Profile* (PDF). <https://www.hhs.gov/sites/default/files/qilin-threat-profile-tlpclear.pdf>  
-[^4]: **Sophos X‑Ops** – *Chrome credential‑stealing tactic.* <https://news.sophos.com/en-us/2024/08/22/qilin-ransomware-caught-stealing-credentials-stored-in-google-chrome/>  
-[^5]: **Blackpoint Cyber** – *Qilin Ransomware Threat Profile* (PDF). <https://blackpointcyber.com/wp-content/uploads/2024/08/Qilin-Ransomware-Threat-Profile_Adversary-Pursuit-Group-Blackpoint-Cyber_2024Q3.pdf>  
-[^6]: **SOCRadar** – *Dark‑web profile & leak‑site URL.* <https://socradar.io/dark-web-profile-qilin-agenda-ransomware/>  
-[^7]: **GitHub** – *Ransomware Tool Matrix*. <https://github.com/BushidoUK/Ransomware-Tool-Matrix>
-[^8]: **cyble** - *Ransomware Attacks April 2025: Qilin Emerges from Chaos* <https://cyble.com/blog/qilin-tops-april-2025-ransomware-report/>
+- [**Ransomware.live** – Qilin victim list (live count)](https://www.ransomware.live/group/qilin)  
+- [**SentinelOne** – Agenda/Qilin Deep Dive](https://www.sentinelone.com/anthology/agenda-qilin/)  
+- [**U.S. HHS HC3** – Qilin Threat Profile (PDF)](https://www.hhs.gov/sites/default/files/qilin-threat-profile-tlpclear.pdf)  
+- [**Sophos X-Ops** – Chrome credential-stealing tactic](https://news.sophos.com/en-us/2024/08/22/qilin-ransomware-caught-stealing-credentials-stored-in-google-chrome/)  
+- [**Blackpoint Cyber** – Qilin Ransomware Threat Profile (PDF)](https://blackpointcyber.com/wp-content/uploads/2024/08/Qilin-Ransomware-Threat-Profile_Adversary-Pursuit-Group-Blackpoint-Cyber_2024Q3.pdf)  
+- [**SOCRadar** – Dark-web profile & leak-site URL](https://socradar.io/dark-web-profile-qilin-agenda-ransomware/)  
+- [**GitHub** – Ransomware Tool Matrix](https://github.com/BushidoUK/Ransomware-Tool-Matrix)  
+- [**Cyble** – Ransomware Attacks April 2025: Qilin Emerges from Chaos](https://cyble.com/blog/qilin-tops-april-2025-ransomware-report/)  
+- [**BleepingComputer** – Kickidler software abused in ransomware attacks](https://www.bleepingcomputer.com/news/security/kickidler-employee-monitoring-software-abused-in-ransomware-attacks/)  
+- [**Rewterz** – Lazarus Qilin samples and hashes](https://www.rewterz.com/reports/)  
+
