@@ -116,11 +116,18 @@ Once inside, Qilin drops custom payloads using native scripting tools. A PowerSh
 
 ---
 
-### 🔁 Persistence  
-**Technique:**  
-- `T1053` – Scheduled Task/Job  
+**T1547.001 – Registry Run Keys / Startup Folder**  
+In at least one documented case, Qilin's loader disguised itself as a Windows "SystemHealthMonitor" tool and used the Registry Run key to establish persistence:
 
-To maintain control, Qilin sets up a scheduled task that ensures the malware survives reboots and re-logins. These tasks often masquerade as system updates or maintenance jobs.
+```powershell
+New-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" `
+  -Name "SystemHealthMonitor" `
+  -Value "C:\Windows\System32\wscript.exe //B //E:jscript C:\ProgramData\svchost.js" `
+  -PropertyType String -Force
+```
+
+This allowed the malicious script (svchost.js) to execute automatically on startup.
+🔗 Source: [Cyber Security News – Qilin Tops April 2025](https://cybersecuritynews.com/qilin-has-emerged-as-the-top-ransomware-group/)
 
 ---
 
