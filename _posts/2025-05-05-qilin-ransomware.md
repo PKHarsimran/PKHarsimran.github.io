@@ -277,6 +277,8 @@ Qilin isn’t unique in how it attacks — but in how well it exposes your gaps.
 
 Run a tabletop. Review your backups. Update your response tree.
 
+![tabletop](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmVrY2p4eHVoN2RxaXBienZvc211d2lpbGNjaXg1aXpvYXRxM2hjNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2djTZXzCEYek8yp3JQ/giphy.gif)
+
 You’ve got time now. Use it.
 
 **Stay safe. Stay ready.**
