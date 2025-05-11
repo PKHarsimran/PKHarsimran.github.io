@@ -19,7 +19,7 @@ paginate: true
 comments: true
 ---
 
-> **TL;DR** — **Qilin** (formerly *Agenda*) is a cross‑platform, double‑extortion ransomware written in Go and Rust.[^2]  
+> **TL;DR** — **Qilin** (formerly *Agenda*) is a cross‑platform, double‑extortion ransomware written in Go and Rust.
 
 ![Coffee break—before the chaos](https://media.giphy.com/media/l4q8kQqDLUUEBVDk4/giphy.gif)
 
