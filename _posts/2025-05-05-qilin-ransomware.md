@@ -127,6 +127,7 @@ New-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" `
 ```
 
 This allowed the malicious script (svchost.js) to execute automatically on startup.
+
 🔗 Source: [Cyber Security News – Qilin Tops April 2025](https://cybersecuritynews.com/qilin-has-emerged-as-the-top-ransomware-group/)
 
 ---
