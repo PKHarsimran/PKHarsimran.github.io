@@ -72,6 +72,31 @@ Understanding Qilin’s attack chain isn’t just about listing tactics — it�
 
 ---
 
+### 🕵️ Abuse of Kickidler Monitoring Software
+
+Qilin affiliates have been observed abusing **Kickidler**, a legitimate employee-monitoring software, to enhance their visibility post-compromise.
+
+After gaining access (often via a **trojanized RVTools installer** hosted on `rv-tool[.]net`), attackers deploy a PowerShell loader called **SMOKEDHAM**. This backdoor then installs **Kickidler** — allowing the attacker to:
+
+- 🎥 Record user sessions in real-time  
+- ⌨️ Capture keystrokes and credentials  
+- 👀 Monitor administrator behavior  
+- 🧭 Track internal movements across the network
+
+Originally built for workplace monitoring, Kickidler’s screen recording and session replay features are repurposed for credential theft, reconnaissance, and even backup system access.
+
+> 📎 **Source:** [BleepingComputer – Kickidler Abuse in Ransomware Attacks](https://www.bleepingcomputer.com/news/security/kickidler-employee-monitoring-software-abused-in-ransomware-attacks/)
+
+#### 🧰 Observed Tool Chain:
+- Initial lure via **fake Google Ads** impersonating RVTools
+- Trojanized installer from `rv-tool[.]net`
+- Loader: **SMOKEDHAM** PowerShell-based backdoor
+- Post-access: Deployment of **Kickidler** monitoring agent
+
+These tactics show how attackers increasingly rely on *living-off-the-land* and *legitimate software abuse* to bypass defenses and stay under the radar.
+
+---
+
 ### 🛠 Initial Access  
 **Techniques:**  
 - `T1078` – Valid Accounts  
