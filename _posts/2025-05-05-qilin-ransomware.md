@@ -141,15 +141,58 @@ Eventually, encryption is launched — silently, overnight — targeting shared 
 
 ---
 
-## 4 — Indicators of Compromise (IOCs)
+## 🧪 Indicators of Compromise (IOCs)
 
-| **Type** | **Value** | **Why it matters** |
-|----------|-----------|--------------------|
-| SHA‑256 | `aeddd8240c09777a84bb24b5be98e9f5465dc7638bec41fb67bbc209c3960ae1` | Hash for a common Windows encryptor[^5] |
-| Files | `upd.exe`, `main.exe`, `web.dat`, `TPwSav.sys`, `avupdate.dll` | Recurring payload components[^5] |
-| Leak site | `qilinxxc4zxthxse46tmrjppn6s2p7vnmw4nclsbxugrgfcgqz2wx4id.onion` | Where stolen data is posted[^6] |
+Below are the observed IOCs associated with Qilin/Agenda ransomware from multiple trusted sources including SentinelOne, HHS, Sophos, Blackpoint Cyber, and Cyble.
 
-*Always test in a sandbox before blocking in production.*
+### 📁 File Names
+- `upd[.]exe`
+- `main[.]exe`
+- `web[.]dat`
+- `TPwSav[.]sys`
+- `avupdate[.]dll`
+- `qilin_readme[.]txt`
+- `README[.]txt`
+
+**Source:** SentinelOne, Blackpoint Cyber, Sophos
+
+---
+
+### 🔐 SHA-256 Hashes
+- `aeddd8240c09777a84bb24b5be98e9f5465dc7638bec41fb67bbc209c3960ae1`
+- `3dfae7b75fbd029130ed4ea123d8bc37d5df0dbe456dbf403f755cb1ed5e6bc0`
+- `d3af11d6bb6382717bf7b6a3aceada24f42f49a9489811a66505e03dd76fd1af`
+- `011df46e94218cbb2f0b8da13ab3cec397246fdc63436e58b1bf597550a647f6`
+- `08224e4c619c7bbae1852d3a2d8dc1b7eb90d65bba9b73500ef7118af98e7e05`
+
+**Source:** SentinelOne, Rewterz, Blackpoint Cyber
+
+---
+
+### 🌐 Domains and IPs (Used for Payload Delivery or C2)
+- `rv-tool[.]net` – Fake RVTools site used to deliver loader (from Cyble, SentinelOne)
+- IPs related to payload hosting and exfiltration were not published directly, but traffic was observed connecting to unknown external hosts via PowerShell (`Invoke-WebRequest`) in sandbox testing by Cyble.
+
+**Source:** Cyble, SentinelOne
+
+---
+
+### 🔗 Leak Site (Tor)
+- `hxxp://qilinxxc4zxthxse46tmrjppn6s2p7vnmw4nclsbxugrgfcgqz2wx4id[.]onion/`
+
+**Source:** ransomware.live, Blackpoint Cyber
+
+---
+
+These IOCs should be monitored across:
+- EDR/XDR alerts
+- DNS resolution logs
+- Email gateways
+- Proxy and firewall connections
+- Process creation and PowerShell logs (Event IDs 4104, 4688)
+
+> ⚠️ Note: Always verify IOCs with internal telemetry to avoid false positives. Use them in conjunction with behavioral detections for maximum effectiveness.
+
 
 ---
 ### 🧼 Cyber Hygiene Tips That Actually Work
