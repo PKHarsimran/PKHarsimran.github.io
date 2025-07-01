@@ -75,7 +75,7 @@ My journey has been marked by significant moments of pride and empowerment:
 3. **Landing My First Cybersecurity Job:** No matter how challenging the circumstances, it is possible to change one’s path and create a better future.
 4. **Inner Strength:** We often underestimate our inner strength. Realizing and embracing this strength can lead to profound personal growth and resilience.
 
-**Key Lessons in Resilienc**
+**Key Lessons in Resilience**
 
 1. **Perseverance Pays Off:** Even when faced with failures and setbacks, continuing to push forward and not giving up leads to eventual success.
 2. **Self-Care is Crucial:** Taking care of oneself, both physically and mentally, is essential for overall well-being and long-term success.
