@@ -23,19 +23,35 @@ comments: true
 
 **Introduction**
 
-Life often surprises us with challenges that push us far beyond our perceived limits. My journey, deeply entwined with Complex Post-Traumatic Stress Disorder (CPTSD), is a testament to the strength we discover in adversity. By sharing my story of healing, personal growth, and career transformation, I aim to connect with, support, and inspire others navigating similar hardships—especially those exploring a path in cybersecurity.
+Life doesn't always unfold the way we expect. Sometimes, we grow up thinking our struggles are normal—until one day, we realize we've been surviving, not living. This is my story: a journey marked by trauma, illness, and loss, but also by healing, growth, and resilience. I want to share what Complex PTSD really is, how it shaped my life, and how I fought my way into a career in cybersecurity despite it all.
+
+**Lupus and the First Signs of Something Deeper**
+
+Since childhood, I struggled with unexplained fevers, body aches, and fatigue. My parents chalked it up to allergies or being a sensitive kid. But those weren’t just allergies—they were undiagnosed lupus flares. It wasn’t until much later in life, through therapy and education, that I realized my autoimmune flares were deeply connected to unprocessed trauma. My body wasn’t just sick—it was signaling something deeper: emotional injury.
 
 **From Pain to Power: My Early Journey**
 
-I was born in Northern India, in a modest two-story home within an industrial town. We were a typical middle-class family—our needs met but dreams modest. My father's job at the Bank of India meant frequent relocations, each transition feeling abrupt and unsettling. Every new school brought with it unfamiliar cultures and languages, heightening my feelings of isolation.
-As a young Punjabi Sikh wearing a turban, I stood out, often becoming a target for relentless bullying. Harsh words and cruel nicknames deeply scarred my self-esteem, pain I silently endured due to a lack of support and understanding. With each move, the emotional wounds grew deeper, manifesting in both mental and physical symptoms.
-At age 13, relocating to Canada brought a hopeful promise of a fresh start. Yet, racism and cultural insensitivity continued to shadow me. The compounded trauma from years of neglect and bullying culminated in severe emotional and physical symptoms, including struggles with potty training that persisted into my late teens—clear signs of untreated Complex PTSD.
+I was born in a modest home in Northern India. My father’s job required us to move often. Each move meant new schools, new languages, and new kids who didn’t understand me. Wearing a turban as a young Sikh child made me a visible target. The bullying was relentless. I learned to hide my emotions and became numb, thinking that was strength.
 
-**Understanding CPTSD: The Dark Clouds**
+When we moved to Canada at 13, I thought things would get better. They didn’t. Racism, isolation, and the pressure to succeed in a new country just added more weight. And the physical symptoms—joint pain, fatigue, digestive issues—got worse. But we didn’t talk about mental health. We didn’t talk about trauma. We just “pushed through.”
 
-Complex Post-Traumatic Stress Disorder, or CPTSD, often feels like living under persistent dark clouds, casting shadows over every aspect of life. Unlike PTSD, which typically arises from a single traumatic event, CPTSD results from prolonged, repeated trauma or neglect, usually beginning in childhood or adolescence. It’s characterized by deep emotional wounds that affect self-esteem, relationships, and overall emotional health.
-In my experience, CPTSD manifested as constant anxiety, chronic feelings of worthlessness, emotional numbness, and difficulties trusting others. Day-to-day tasks felt overwhelming, and forming healthy relationships was a challenge. For years, I carried an invisible burden that others couldn't easily understand.
-Recognizing and understanding CPTSD was my first crucial step toward recovery. Learning about the condition provided clarity, validating my experiences and emotions. It was the beginning of healing, illuminating pathways toward managing symptoms, rebuilding trust, and ultimately reclaiming control of my life.
+**Understanding CPTSD: The Trauma That Stays**
+
+Complex Post-Traumatic Stress Disorder (CPTSD) is different from PTSD. It’s not from one moment of trauma—it’s from many. Often, it begins in childhood. It's chronic, it's silent, and it rewires how you see yourself and the world. Kids like me don’t always grow up in war zones—but when love feels conditional, and safety isn’t guaranteed, your body learns to brace for pain, even when it’s not there.
+
+CPTSD isn’t always visible. It shows up as:
+
+- Always being on edge, even in safe spaces.
+
+- Deep shame and low self-worth.
+
+- Struggles with trust and relationships.
+
+- Emotional numbness or intense emotional outbursts.
+
+- Difficulty with boundaries or saying no.
+
+And when this trauma is left untreated, it seeps into everything—your health, your confidence, and your dreams.
 
 **Resilience in Action: My Cybersecurity Journey**
 
