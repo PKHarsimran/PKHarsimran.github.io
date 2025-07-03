@@ -24,7 +24,7 @@ comments: true
 ![Coffee break—before the chaos](https://media.giphy.com/media/l4q8kQqDLUUEBVDk4/giphy.gif)
 
 ---
-## 1 — Why You Should Care
+### ☕ Morning Brew, Interrupted
 
 You're sipping your morning coffee, casually scanning your dashboards. Then something strange catches your eye — unfamiliar file extensions, odd filenames.
 A few virtual machines suddenly go dark. Moments later, a message pops up in your inbox: a ransom note.
@@ -204,33 +204,38 @@ Backups, if reachable, are targeted and encrypted first.
 
 Below are the observed IOCs associated with Qilin/Agenda ransomware from multiple trusted sources including SentinelOne, HHS, Sophos, Blackpoint Cyber, and Cyble.
 
-### 📁 File Names
-- `upd[.]exe`
-- `main[.]exe`
-- `web[.]dat`
-- `TPwSav[.]sys`
-- `avupdate[.]dll`
-- `qilin_readme[.]txt`
-- `README[.]txt`
+### 📁 Malicious Files:
+
+- `upd.exe, main.exe, web.dat`
+
+- `TPwSav.sys, avupdate.dll`
+
+- `qilin_readme.txt, README.txt`
+
+- `NETXLOADER (.NET-based loader)`
 
 **Source:** SentinelOne, Blackpoint Cyber, Sophos
 
 ---
 
-### 🔐 SHA-256 Hashes
+### 🔑 SHA-256 Hashes:
 - `aeddd8240c09777a84bb24b5be98e9f5465dc7638bec41fb67bbc209c3960ae1`
 - `3dfae7b75fbd029130ed4ea123d8bc37d5df0dbe456dbf403f755cb1ed5e6bc0`
 - `d3af11d6bb6382717bf7b6a3aceada24f42f49a9489811a66505e03dd76fd1af`
 - `011df46e94218cbb2f0b8da13ab3cec397246fdc63436e58b1bf597550a647f6`
 - `08224e4c619c7bbae1852d3a2d8dc1b7eb90d65bba9b73500ef7118af98e7e05`
-
+- Existing hashes remain relevant; check latest threat intelligence for additional hashes related to **NETXLOADER**.
 **Source:** SentinelOne, Rewterz, Blackpoint Cyber
 
 ---
 
-### 🌐 Domains and IPs (Used for Payload Delivery or C2)
-- `rv-tool[.]net` – Fake RVTools site used to deliver loader (from Cyble, SentinelOne)
-- IPs related to payload hosting and exfiltration were not published directly, but traffic was observed connecting to unknown external hosts via PowerShell (`Invoke-WebRequest`) in sandbox testing by Cyble.
+### 🌐 Domains & IPs:
+
+- `rv-tool[.]net` (malicious payload hosting)
+- Leak site: `hxxp://qilinxxc4zxthxse46tmrjppn6s2p7vnmw4nclsbxugrgfcgqz2wx4id.onion/`
+- Additional IPs associated with C2 and exfiltration (e.g., `194.165.16[.]13, 93.115.25[.]139, 184.168.123.0/24` )
+
+Monitor these IOCs closely within your security stack.
 
 **Source:** Cyble, SentinelOne
 
@@ -304,5 +309,6 @@ You’ve got time now. Use it.
 - [**GitHub** – Ransomware Tool Matrix](https://github.com/BushidoUK/Ransomware-Tool-Matrix)  
 - [**Cyble** – Ransomware Attacks April 2025: Qilin Emerges from Chaos](https://cyble.com/blog/qilin-tops-april-2025-ransomware-report/)  
 - [**BleepingComputer** – Kickidler software abused in ransomware attacks](https://www.bleepingcomputer.com/news/security/kickidler-employee-monitoring-software-abused-in-ransomware-attacks/)  
-- [**Rewterz** – Lazarus Qilin samples and hashes](https://www.rewterz.com/reports/)  
+- [**Rewterz** – Lazarus Qilin samples and hashes](https://www.rewterz.com/reports/)
+- [**darktrace** – Qilin Ransomware: Detection and Analysis](https://www.darktrace.com/blog/a-busy-agenda-darktraces-detection-of-qilin-ransomware-as-a-service-operator)
 
