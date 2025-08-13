@@ -23,57 +23,61 @@ comments: true
 
 **Introduction**
 
-Life doesn't always unfold the way we expect. Sometimes, we grow up thinking our struggles are normal—until one day, we realize we've been surviving, not living. This is my story: a journey marked by trauma, illness, and loss, but also by healing, growth, and resilience. I want to share what Complex PTSD really is, how it shaped my life, and how I fought my way into a career in cybersecurity despite it all.
+At 10 years old, I spent months in bed with fevers, joint pain, and fatigue that never seemed to end. My family scrambled for answers but didn’t understand what was happening. They didn’t know it was an autoimmune flare — they just blamed it on my environment and moved on. Neglect wasn’t always loud; sometimes, it was silence, inaction, and the absence of care.
 
-**Lupus and the First Signs of Something Deeper**
+I didn’t know it then, but those flares were lupus. And beneath the illness was something deeper — unprocessed trauma. This is my journey of surviving Complex PTSD, finding healing, and building a career in cybersecurity against the odds.
 
-Since childhood, I struggled with unexplained fevers, body aches, and fatigue. My parents chalked it up to allergies or being a sensitive kid. But those weren’t just allergies—they were undiagnosed lupus flares. It wasn’t until much later in life, through therapy and education, that I realized my autoimmune flares were deeply connected to unprocessed trauma. My body wasn’t just sick—it was signaling something deeper: emotional injury.
+**Growing Up in Survival Mode**
 
-**From Pain to Power: My Early Journey**
+I was born in a modest home in Northern India. My father’s job meant constant moving — new schools, new languages, and new kids who didn’t understand me. Wearing a turban as a young Sikh child made me a visible target for relentless bullying. I learned to hide my emotions, thinking numbness was strength.
 
-I was born in a modest home in Northern India. My father’s job required us to move often. Each move meant new schools, new languages, and new kids who didn’t understand me. Wearing a turban as a young Sikh child made me a visible target. The bullying was relentless. I learned to hide my emotions and became numb, thinking that was strength.
+When we moved to Canada at 13, I thought things would get better. They didn’t. Racism, isolation, and pressure to succeed just added to the weight. The physical symptoms — fatigue, joint pain, digestive issues — worsened. But in my family, mental health wasn’t discussed. We just “pushed through.”
 
-When we moved to Canada at 13, I thought things would get better. They didn’t. Racism, isolation, and the pressure to succeed in a new country just added more weight. And the physical symptoms—joint pain, fatigue, digestive issues—got worse. But we didn’t talk about mental health. We didn’t talk about trauma. We just “pushed through.”
+**Understanding CPTSD**
 
-**Understanding CPTSD: The Trauma That Stays**
+Complex PTSD (CPTSD) isn’t caused by one event — it’s the result of many, often starting in childhood. It rewires how you see yourself and the world.
 
-Complex Post-Traumatic Stress Disorder (CPTSD) is different from PTSD. It’s not from one moment of trauma—it’s from many. Often, it begins in childhood. It's chronic, it's silent, and it rewires how you see yourself and the world. Kids like me don’t always grow up in war zones—but when love feels conditional, and safety isn’t guaranteed, your body learns to brace for pain, even when it’s not there.
-
-CPTSD isn’t always visible. It shows up as:
+For me, it showed up as:
 
 - Always being on edge, even in safe spaces.
 
 - Deep shame and low self-worth.
 
-- Struggles with trust and relationships.
+- Emotional numbness or sudden outbursts.
 
-- Emotional numbness or intense emotional outbursts.
+- Struggles with trust, boundaries, and relationships.
 
-- Difficulty with boundaries or saying no.
+Left untreated, it seeps into your health, confidence, and dreams. I didn’t realize my body’s pain was both physical and emotional — two battles I was fighting at once.
 
-And when this trauma is left untreated, it seeps into everything—your health, your confidence, and your dreams.
+**Turning Pain into Purpose**
 
-**Resilience in Action: My Cybersecurity Journey**
+When COVID-19 hit, I decided to change paths. I enrolled in the University of Toronto’s Cybersecurity Boot Camp — a move that would reshape my future.
 
-Transitioning to cybersecurity wasn’t originally part of my plan. After earning diplomas in robotics and electronics, I started my career as a control engineer. But curiosity had other ideas. When the COVID-19 pandemic hit, I decided to shift paths. Enrolling in the University of Toronto SCS Cybersecurity Boot Camp became a turning point in my life.
-Despite failing the CompTIA Security+ exam on my first try, I didn’t give up. I studied harder, earned the certification, and proved to myself that I was more than capable. My independent project—a home automation system—showcased my technical skills and passion for problem-solving. It helped me land my first IT role at Telecom Metric during the height of the pandemic, working virtually as a IT Specialist.
+I failed the CompTIA Security+ exam on my first try. But instead of quitting, I doubled down, studied harder, and passed. My first big break came during the pandemic as an IT Specialist at Telecom Metric, working entirely virtually.
 
-**Facing Personal Loss with Continued Strength**
+**Projects That Proved I Could**
 
-Soon after completing my boot camp, I faced a devastating loss—my grandfather, the only person who showed me calm and kindness during my chaotic childhood, passed away from cancer. At the same time, I was actively job hunting and trying to escape a toxic environment. The grief felt unbearable, but the resilience I had built over the years gave me the strength to push through and keep growing.
+The real turning point wasn’t just getting jobs — it was creating things that didn’t exist before:
 
-**Healing through Therapy: CBT and EMDR**
+- IOC-Inspector: A Python-based tool I built to scan and analyze malicious documents for Indicators of Compromise (IOCs). It automated what would normally take hours, proving I could build practical, impactful solutions from scratch.
 
-Therapy has played an essential role in my healing journey. Cognitive Behavioral Therapy (CBT) significantly helped me retrain my mind, teaching me to recognize and accept my experiences as genuine abuse, not just instances of people being rude or mean. CPTSD often distorts perceptions, making it difficult to distinguish abuse from everyday rudeness or negativity.
-Eye Movement Desensitization and Reprocessing (EMDR) therapy was transformative, enabling me to revisit and process deep-seated grief by connecting with my younger self. EMDR helped me confront emotional wounds I had long suppressed, facilitating profound emotional release and healing.
+- My Cybersecurity Blog: I launched my own blog without prior web development experience, figuring out everything from hosting to custom design. Every post became a way to share knowledge and make security more accessible.
 
-**Moments of Pride**
+These projects weren’t just technical milestones — they were proof that I could take ownership of my path, even when starting with nothing but curiosity and persistence.
 
-My journey has been marked by significant moments of pride and empowerment:
-1. **Achieving the CompTIA Security+ Certification:** Even when faced with failures and setbacks, continuing to push forward and not giving up leads to eventual success.
-2. **Embracing Independence:** Taking care of oneself, both physically and mentally, is essential for overall well-being and long-term success.
-3. **Landing My First Cybersecurity Job:** No matter how challenging the circumstances, it is possible to change one’s path and create a better future.
-4. **Inner Strength:** We often underestimate our inner strength. Realizing and embracing this strength can lead to profound personal growth and resilience.
+**Healing Through Therapy**
+
+Cognitive Behavioral Therapy (CBT) taught me to recognize and accept that what I experienced was genuine abuse, not “just” people being rude.
+Eye Movement Desensitization and Reprocessing (EMDR) helped me reconnect with my younger self, process grief, and release emotions I’d suppressed for years.
+
+Healing didn’t happen overnight, but therapy gave me tools to reclaim my life from both CPTSD and the weight of neglect.
+
+**What I’ve Learned**
+
+- Perseverance Pays Off: Failure is part of the process — not the end of it.
+- Self-Care is Non-Negotiable: Physical and mental health are the foundation for everything else.
+- You Can Build Your Own Future: Skills, careers, and identities can be rebuilt from scratch.
+- Inner Strength Is Real: You have more resilience than you think — sometimes you just need the chance to see it.
 
 **Key Lessons in Resilience**
 
@@ -84,9 +88,6 @@ My journey has been marked by significant moments of pride and empowerment:
 
 **A Message of Pride and Encouragement**
 
-To those navigating pain, change, or recovery—especially those living with CPTSD—know this: you’re not broken. You are building. And I am incredibly proud of you. Keep showing up for yourself. Every small step matters.
+If you’re living with CPTSD, chronic illness, or simply trying to rebuild after hardship — you’re not broken. You’re building. Every small step counts.
 
-**Conclusion: Your Journey Matters**
-
-Whether you're healing from trauma, reinventing your career, or simply learning to believe in yourself again—this story is proof that it's never too late. Embrace the journey. Honor the process. Trust your strength.
-Your past doesn't define your future. It equips you to build one that’s stronger, freer, and entirely your own.
+Your past does not define you. It equips you to create a future that’s stronger, freer, and entirely your own.
