@@ -23,9 +23,11 @@ comments: true
 
 **Introduction**
 
-At 10 years old, I spent months in bed with fevers, joint pain, and fatigue that never seemed to end. My family scrambled for answers but didn’t understand what was happening. They didn’t know it was an autoimmune flare — they just blamed it on my environment and moved on. Neglect wasn’t always loud; sometimes, it was silence, inaction, and the absence of care.
+At 10 years old, I was severely underweight, malnourished, and often dissociated from the world around me. I was a shy kid who didn’t know how to speak up, living in full people-pleaser mode without a real sense of self. My family didn’t see illness; they saw a “quiet” child and assumed I’d grow out of it.
 
-I didn’t know it then, but those flares were lupus. And beneath the illness was something deeper — unprocessed trauma. This is my journey of surviving Complex PTSD, finding healing, and building a career in cybersecurity against the odds.
+But neglect isn’t always loud — sometimes, it’s the silence, the inaction, and the absence of care. What no one realized then was that my body was already fighting lupus, and beneath that was something even deeper: unprocessed trauma.
+
+This is my journey of surviving Complex PTSD, finding healing, and building a career in cybersecurity against the odds.
 
 **Growing Up in Survival Mode**
 
