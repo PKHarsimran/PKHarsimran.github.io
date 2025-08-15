@@ -31,9 +31,11 @@ This is my journey of surviving Complex PTSD, finding healing, and building a ca
 
 **Growing Up in Survival Mode**
 
-I was born in a modest home in Northern India. My father’s job meant constant moving — new schools, new languages, and new kids who didn’t understand me. Wearing a turban as a young Sikh child made me a visible target for relentless bullying. I learned to hide my emotions, thinking numbness was strength.
+I was born in a modest home in Northern India. My father’s job meant constant moving — new schools, new languages, and new kids who didn’t understand me. Wearing a turban as a young Sikh child made me a visible target for relentless bullying. At school, my silence and shyness were seen as weakness, an open invitation for bullies to pick on me. That pattern followed me into college and university, where my fear of speaking up and my need to please people kept me from setting boundaries. I didn’t know how to say, “Please stop, I don’t like how you’re treating me.”
 
-When we moved to Canada at 13, I thought things would get better. They didn’t. Racism, isolation, and pressure to succeed just added to the weight. The physical symptoms — fatigue, joint pain, digestive issues — worsened. But in my family, mental health wasn’t discussed. We just “pushed through.”
+At home, things were no better. My parents were emotionally distant and, at times, physically and emotionally abusive. They didn’t like the way I looked, or how I expressed myself. Once, around age nine or ten, I was beaten because I couldn’t answer my father’s boss when he asked me the meaning of my own name. Experiences like that taught me to hide my emotions, thinking numbness was strength.
+
+When we moved to Canada at 13, I thought things would get better. They didn’t. Racism, isolation, and pressure to succeed only added to the weight. The physical symptoms — fatigue, joint pain, digestive issues — worsened. But in my family, mental health wasn’t discussed. We just “pushed through.”
 
 **Understanding CPTSD**
 
