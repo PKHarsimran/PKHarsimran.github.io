@@ -20,3 +20,5 @@ On a personal note, I'm navigating the journey of resilience with CPTSD, advocat
 Join me on my blog for insights, sprinkled with humor, where your thoughts and experiences are always welcome. 😊🌈
 
 I'm also diving into Docker, adding new skills to my tech toolkit! 🐳💻 If you're exploring career paths or job hunting, check out this resource: [50 Ways to Get a Job](https://50waystogetajob.com/).
+
+<img src="https://tryhackme-badges.s3.amazonaws.com/PKVIRUS.png" alt="Your Image Badge" />
