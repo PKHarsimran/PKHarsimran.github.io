@@ -8,7 +8,7 @@ permalink: /about/
 ---
 
 <img class="img-rounded" src="/assets/img/uploads/pro.png" alt="Harsimran" width="200">
-
+<iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=148051" style='border:none;'></iframe>
 # About
 
 Hello and welcome! 😄 I'm Harsimran, a Security Operations Center Analyst dedicated to safeguarding the digital world. By day, I unravel the mysteries of cyber threats, ensuring a secure digital realm. 💻🛡️
@@ -21,4 +21,3 @@ Join me on my blog for insights, sprinkled with humor, where your thoughts and e
 
 I'm also diving into Docker, adding new skills to my tech toolkit! 🐳💻 If you're exploring career paths or job hunting, check out this resource: [50 Ways to Get a Job](https://50waystogetajob.com/).
 
-<img src="https://tryhackme-badges.s3.amazonaws.com/PKVIRUS.png" alt="Your Image Badge" />
