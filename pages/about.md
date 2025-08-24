@@ -8,7 +8,14 @@ permalink: /about/
 ---
 
 <img class="img-rounded" src="/assets/img/uploads/pro.png" alt="Harsimran" width="200">
-<iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=148051" style='border:none;'></iframe>
+<div style="text-align:center; margin:20px 0;">
+  <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=148051" 
+          style="border:none;" 
+          width="350" 
+          height="350">
+  </iframe>
+</div>
+
 # About
 
 Hello and welcome! 😄 I'm Harsimran, a Security Operations Center Analyst dedicated to safeguarding the digital world. By day, I unravel the mysteries of cyber threats, ensuring a secure digital realm. 💻🛡️
