@@ -8,13 +8,7 @@ permalink: /about/
 ---
 
 <img class="img-rounded" src="/assets/img/uploads/pro.png" alt="Harsimran" width="200">
-<div style="text-align:center; margin:20px 0;">
-  <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=148051" 
-          style="border:none;" 
-          width="350" 
-          height="350">
-  </iframe>
-</div>
+<img src="https://tryhackme-badges.s3.amazonaws.com/PKVIRUS.png" alt="Your Image Badge" />
 
 # About
 
