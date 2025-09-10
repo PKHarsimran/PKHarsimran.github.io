@@ -4,7 +4,7 @@ photo: /assets/img/uploads/pro.png
 name: Harsimran Sidhu
 display_name: Harsimran Sidhu
 position: The One
-bio: Hacker who is passinate about IoT and DevOps
+bio: Hacker who is passionate about IoT and DevOps
 github_username: PKHarsimran
 facebook_username: facebook_username
 twitter_username: twitter_username
