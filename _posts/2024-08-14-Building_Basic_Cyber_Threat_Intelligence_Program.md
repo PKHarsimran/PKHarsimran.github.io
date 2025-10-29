@@ -4,6 +4,8 @@ layout: post
 title: "Building a Basic Cyber Threat Intelligence Program for Any Size Business"
 subtitle: "Protect Your Business with Essential Cyber Threat Intelligence"
 description: "Learn how to set up a basic Cyber Threat Intelligence (CTI) program for your business, regardless of its size. This guide covers the essentials, from understanding CTI to choosing the right tools and getting your team on board."
+keywords: "cyber threat intelligence, CTI program, cybersecurity for small business, threat feeds, Splunk dashboards"
+canonical_url: "https://harsim.ca/Building_Basic_Cyber_Threat_Intelligence_Program/"
 image: /assets/img/cyber-threat-intelligence.png
 optimized_image: /assets/img/cyber-threat-intelligence.png
 category: cybersecurity
@@ -25,6 +27,8 @@ Imagine waking up to find your business's critical data encrypted by cybercrimin
 Think of CTI as your digital watchdog 🐕—but without the 2 a.m. barking. It keeps an eye on potential dangers and alerts you before things get out of hand. The best part? You can start small and grow your CTI program as your business evolves.
 
 In this guide, I’ll show small and medium-sized business owners how to set up a basic CTI program tailored to protect their companies from cyber threats.
+
+If you’re new to email authentication or sending best practices, check out my post on [Mastering DKIM: Google’s New Email Authentication Rules for 2024 Explained](/Mastering_DKIM_Google_Email_Authentication_Rules_2024/).
 
 ## Understanding Cyber Threat Intelligence
 
