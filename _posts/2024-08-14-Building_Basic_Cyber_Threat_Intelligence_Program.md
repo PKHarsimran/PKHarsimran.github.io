@@ -21,6 +21,7 @@ comments: true
 ---
 
 ## Introduction
+Cyber threats aren’t just an enterprise problem — even small businesses and individuals are being targeted daily. In this post, we’ll explore how to build a simple but effective Cyber Threat Intelligence (CTI) program from scratch.
 
 Imagine waking up to find your business's critical data encrypted by cybercriminals demanding a ransom. This alarming scenario underscores the urgent need for robust cybersecurity measures. Today, cyber threats like ransomware attacks are like uninvited guests who show up to your party and then demand your car keys. Securing your business isn't just a good idea—it’s essential. Whether you’re running a small business, managing a large company, or protecting your personal data, cyber threats don’t take a day off. Luckily, you don’t need a huge budget or a big team to start. A basic Cyber Threat Intelligence (CTI) program can go a long way in keeping those pesky cyber criminals at bay. 🔒
 
@@ -30,11 +31,19 @@ In this guide, I’ll show small and medium-sized business owners how to set up 
 
 If you’re new to email authentication or sending best practices, check out my post on [Mastering DKIM: Google’s New Email Authentication Rules for 2024 Explained](/Mastering_DKIM_Google_Email_Authentication_Rules_2024/).
 
+**Table of Contents**
+- [Understanding Cyber Threat Intelligence](#understanding-cyber-threat-intelligence)
+- [Assessing Your Cybersecurity Needs](#assessing-your-cybersecurity-needs-from-individuals-to-businesses)
+- [Gathering and Analyzing Threat Intelligence](#gathering-and-analyzing-threat-intelligence)
+- [Actionable Intelligence and Decision Making](#actionable-intelligence-and-decision-making)
+- [Continuous Improvement](#continuous-improvement)
+- [Resources for Everyone](#resources-for-everyone)
+
 ## Understanding Cyber Threat Intelligence
 
 To build an effective CTI program, you need to understand the basics. CTI involves gathering, analyzing, and using information about potential cyber threats to safeguard your business. Think of it as a security camera that not only watches for intruders but also predicts their next move. 🎯 Because who doesn't want to be one step ahead of the bad guys?
 
-<img src="https://media.giphy.com/media/ELham0Mveox9e/giphy.gif" alt="Cyber Threat Intelligence" style="max-width:100%; height:auto;">
+<img src="https://media.giphy.com/media/ELham0Mveox9e/giphy.gif" alt="Map of cyber attack" style="max-width:100%; height:auto;">
 
 Cyber threats are constantly evolving and can come from anywhere in the world. 🌍 Just like a virus on your computer, they always seem to find a way. That’s why having a strong CTI program is so important.
 
