@@ -41,3 +41,54 @@ In production environments, you rarely get a clean answer upfront. You get parti
 Over time, I stopped treating WAF login alerts as something to react to and started treating them as something to **investigate**.
 
 This post walks through how I approach WAF login attacks in the SOC — how I triage them, which signals I trust early on, how I reduce false positives, and how I decide when to block, rate-limit, or simply keep watching. This isn’t vendor-specific and it’s not theoretical. It’s the mental model I use when these alerts show up in a real production environment.
+
+## What a WAF Login Attack Actually Looks Like
+
+One of the biggest mistakes teams make when investigating login attacks is expecting them to look *obvious*.
+
+In reality, most WAF login alerts don’t come with a clear label that says *“credential stuffing”* or *“brute force.”* What you usually see instead is a collection of small signals that only start to make sense once you zoom out.
+
+At a high level, WAF login attacks tend to share a few common characteristics:
+
+- Repeated requests to the same authentication endpoint  
+- Elevated volumes of failed authentication responses (typically 401 or 403)  
+- A short time window with unusually high login activity  
+- Reuse of usernames, email addresses, or account identifiers  
+
+On their own, none of these are definitive. Together, they start to form a pattern.
+
+### Brute Force vs Credential Stuffing (At a Glance)
+
+A traditional brute-force attack usually looks noisy and concentrated:
+- One or a few IPs
+- High request volume
+- Rapid retries against the same account
+
+Credential stuffing, on the other hand, often looks quieter but broader:
+- Many IP addresses
+- Fewer attempts per IP
+- Repeated use of the same usernames across different sources
+
+From a WAF perspective, both can initially trigger the same alert. The difference only becomes clear once you start correlating **who**, **how often**, and **from where**.
+
+### Why These Alerts Are So Easy to Misjudge
+
+Here’s where things get tricky.
+
+Legitimate traffic can look surprisingly similar:
+- Mobile apps retrying failed logins
+- Monitoring tools validating credentials
+- Users mistyping passwords repeatedly
+- Shared IPs from ISPs or corporate networks
+
+All of these can generate bursts of failed logins that look suspicious in isolation.
+
+That’s why treating every WAF login alert as an automatic block is risky. Without understanding the *shape* of the traffic, it’s easy to disrupt real users or business-critical integrations.
+
+The goal at this stage isn’t to decide on a response yet.  
+It’s to recognize whether you’re looking at:
+- A focused attack
+- A distributed abuse pattern
+- Or normal behavior amplified by timing or volume
+
+Once you understand what the traffic actually looks like, triage becomes much more deliberate — and much less reactive.
