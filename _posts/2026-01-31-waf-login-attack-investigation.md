@@ -159,7 +159,7 @@ When I look at IP behavior, I focus on:
 - Timing and burst patterns
 - Reuse of IPs across different accounts
 
-**Illustrative example (synthetic):**
+**Illustrative example (synthetic/Fake):**
 
 | Source IP | Login Attempts | Time Window |
 |----------|----------------|-------------|
@@ -172,7 +172,7 @@ Low-volume attempts spread across many IPs in a short window often point toward 
 
 By contrast, a traditional brute-force pattern usually looks more concentrated:
 
-**Illustrative example (synthetic):**
+**Illustrative example (synthetic/Fake):**
 
 | Source IP | Login Attempts | Time Window |
 |----------|----------------|-------------|
