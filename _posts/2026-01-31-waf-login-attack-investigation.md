@@ -109,7 +109,7 @@ Before looking at volume or IPs, I always confirm *what* is actually being targe
 - Is it a primary authentication path or a legacy route?
 - Is it a human-facing page or an API endpoint?
 
-**Illustrative example (synthetic):**
+**Illustrative example (synthetic/Fake):**
 
 ```text
 POST /api/auth/login
@@ -129,7 +129,7 @@ The first questions I ask are simple:
 
 WAF login attacks often create a very uneven response distribution. A high volume of failures concentrated in a short time window usually means someone (or something) is guessing credentials rather than normal users mistyping passwords.
 
-**Illustrative example (synthetic):**
+**Illustrative example (synthetic/Fake):**
 
 | Response Code | Percentage of Requests |
 |--------------|------------------------|
@@ -199,7 +199,7 @@ At this stage, I’m looking for patterns like:
 - Repeated attempts against a small set of accounts
 - Login attempts targeting accounts that haven’t been active recently
 
-**Illustrative example (synthetic):**
+**Illustrative example (synthetic/Fake):**
 
 | Username | Source IPs | Total Attempts |
 |---------|------------|----------------|
@@ -249,7 +249,7 @@ Over time, I’ve noticed a few recurring sources of false positives that consis
 
 ### Monitoring and Health-Check Tools
 
-Synthetic monitoring systems often validate authentication flows on a schedule. When those checks fail — due to backend latency, credential changes, or temporary outages — they can generate bursts of failed login attempts.
+Any monitoring systems often validate authentication flows on a schedule. When those checks fail — due to backend latency, credential changes, or temporary outages — they can generate bursts of failed login attempts.
 
 These usually show up as:
 - Repeated requests to the same login endpoint
