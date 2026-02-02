@@ -19,7 +19,6 @@ author: Harsimran Sidhu
 paginate: true
 comments: true
 ---
-
 ## Introduction
 
 If you’ve worked in a SOC long enough, you’ve seen this alert before.
@@ -40,7 +39,8 @@ In production environments, you rarely get a clean answer upfront. You get parti
 
 Over time, I stopped treating WAF login alerts as something to react to and started treating them as something to **investigate**.
 
-This post walks through how I approach **WAF login attack investigations in the SOC** — from initial triage and signal validation to separating real abuse from false positives and deciding when blocking is actually justified. This isn’t vendor-specific and it isn’t theoretical. It’s the mental model I use when these alerts show up in a real production environment. This isn’t vendor-specific and it’s not theoretical. It’s the mental model I use when these alerts show up in a real production environment.
+This post walks through how I approach **WAF login attack investigations in the SOC** — from initial triage and signal validation to separating real abuse from false positives and deciding when blocking is actually justified. This isn’t vendor-specific or theoretical. It’s the mental model I use when these alerts show up in a real production environment.
+
 
 ## What a WAF Login Attack Actually Looks Like
 
