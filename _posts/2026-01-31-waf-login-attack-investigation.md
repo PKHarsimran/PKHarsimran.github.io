@@ -1,5 +1,5 @@
 ---
-date: 2025-08-14
+date: 2026-02-10
 layout: post
 title: "How to Investigate WAF Login Attacks (A SOC Playbook)"
 subtitle: "A practical, real-world guide to triaging, detecting, and responding to login abuse"
