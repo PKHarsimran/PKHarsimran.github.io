@@ -9,7 +9,7 @@ permalink: /resume/
 ![Harsimran Sidhu](/assets/img/uploads/pro.png){: .img-rounded width="200px"}
 # Harsimran Sidhu
 
-Resourceful and analytical cybersecurity analyst with a robust IT background. Proficient in cloud safety, automation, and both offensive and defensive security. Strong communicator, persistent problem solver, and an optimistic team player.
+Security Operations and Threat Intelligence Analyst specializing in incident response, endpoint security, WAF investigations and detection engineering. I turn real-world investigations into practical playbooks for security analysts.
 
 ## Experience
 
