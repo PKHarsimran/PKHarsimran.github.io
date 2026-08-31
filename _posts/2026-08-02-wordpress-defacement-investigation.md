@@ -3,10 +3,16 @@ layout: post
 title: "How to Investigate a Hacked WordPress Site (A SOC Playbook)"
 subtitle: "Tracing a site takeover from rogue admin accounts back to root cause — and the hardening checklist to prevent the next one"
 date: 2026-08-02 10:00:00 -0300
-categories: cybersecurity
+last_modified_at: 2026-08-31
+category: cybersecurity
 tags: [WordPress Security, Web Defacement, Incident Response, DFIR, SOC Analyst, Webshell, Threat Hunting, Cybersecurity]
-image: /assets/img/wordpress-defacement-investigation.png
+image: /assets/img/wordpress-defacement-investigation.webp
+optimized_image: /assets/img/wordpress-defacement-investigation.webp
+image_width: 1200
+image_height: 630
 description: "A hands-on guide for SOC analysts on how to investigate a hacked or defaced WordPress site. Learn how to scope the compromise, contain without destroying evidence, read Apache and PHP logs, tell a dropped webshell apart from live AJAX abuse, and harden the site so it doesn't happen again."
+author: Harsimran Sidhu
+comments: true
 ---
 
 ## Introduction

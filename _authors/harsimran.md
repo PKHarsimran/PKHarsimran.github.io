@@ -3,13 +3,8 @@ layout: author
 photo: /assets/img/uploads/pro.png
 name: Harsimran Sidhu
 display_name: Harsimran Sidhu
-position: The One
-bio: Hacker who is passionate about IoT and DevOps
+position: Security Operations Center Analyst
+bio: SOC analyst focused on threat investigation, incident response, detection engineering, and practical security education.
 github_username: PKHarsimran
-facebook_username: facebook_username
-twitter_username: twitter_username
-instagram_username: instagram_username
 linkedin_username: harsimransidhu
-medium_username: medium_username
 ---
-

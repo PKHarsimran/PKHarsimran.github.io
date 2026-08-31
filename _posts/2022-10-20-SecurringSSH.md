@@ -1,15 +1,18 @@
 ---
 date: 2022-10-20
+last_modified_at: 2026-08-31
 layout: post
 title: "Securing SSH: Implementing Basic Security Measures to Harden the SSH Port"
 subtitle: "A Step-by-Step Guide to Enhancing Your SSH Security"
 description: "Explore essential steps to harden your SSH port and prevent unauthorized access in this concise guide. Learn key security measures to protect your systems effectively."
-image: /assets/img/ssh.png
-optimized_image: /assets/img/ssh.png
+image: /assets/img/ssh.webp
+optimized_image: /assets/img/ssh.webp
+image_width: 1024
+image_height: 1024
 category: blog
 tags:
   - SSH
-  - cybersecurity
+  - Cybersecurity
   - ports
   - tutorials
 author: Harsimran Sidhu
@@ -19,7 +22,7 @@ comments: true
 
 🔒 **Securing SSH: Implementing Basic Security Measures to Harden the SSH Port**
 
-Back in 2021, I wrote a [blog post](https://harsim.ca/PKHarsimranOldGithubPages/SecuringSSH/) about manually hardening SSH configuration on a Raspberry Pi. While that guide was useful, I realized an automated approach would make the process more convenient and efficient. That's why I created **PiSecure-SSH**—a powerful, user-friendly bash script designed to automate SSH security on your Raspberry Pi.
+Back in 2021, I wrote an earlier guide about manually hardening SSH on a Raspberry Pi. I later created **PiSecure-SSH** to make the repeatable parts of that process more convenient while keeping the configuration review explicit.
 
 In this post, I'll introduce you to PiSecure-SSH, detailing its features, setup process, and usage. Let's dive in! 🚀
 
@@ -29,12 +32,12 @@ Securing your SSH port is crucial in preventing unauthorized access to your syst
 
 ## Features of PiSecure-SSH 🌟
 
-PiSecure-SSH offers a streamlined solution to secure your Raspberry Pi's SSH access. Here are its key features:
+PiSecure-SSH offers a streamlined starting point for Raspberry Pi SSH hardening. Review the script before running it and test changes from a second session so you do not lock yourself out. Its key features are:
 
 - **User Management:** Adds a new user with a custom username and password.
 - **Sudo Privileges:** Grants sudo privileges to the new user.
 - **SSH Configuration:** Adjusts SSH settings for enhanced security.
-- **Custom Port:** Allows modification of the SSH port to a custom value.
+- **Custom Port:** Allows modification of the SSH port to reduce routine scan noise. A port change is not a substitute for strong authentication or firewall rules.
 - **Service Restart:** Restarts the SSH service to apply changes.
 
 ## Setting Up PiSecure-SSH 🛠️
@@ -63,14 +66,9 @@ Before we begin, ensure you have a Raspberry Pi running Raspbian or a compatible
 
 ### Using PiSecure-SSH 🚀
 
-1. **Edit the Script:**
-    - Open `secure-ssh-setup.sh` in a text editor.
-    - Replace the placeholders for `USERNAME` and `PASSWORD` with your desired username and a strong password.
-
-    ```bash
-    USERNAME="your-username"
-    PASSWORD="your-strong-password"
-    ```
+1. **Review the Script:**
+    - Read `secure-ssh-setup.sh` before granting it root access.
+    - Do not hard-code a reusable password in the file or commit credentials to Git. Prefer an SSH key protected by a passphrase, and create the account interactively if the script does not support secure prompting.
 
 2. **Uncomment Relevant Lines:**
     - Depending on your system (Debian/Ubuntu or CentOS/RHEL), uncomment the appropriate lines for adding the user to the sudoers group and restarting the SSH service.
@@ -92,11 +90,11 @@ Before we begin, ensure you have a Raspberry Pi running Raspbian or a compatible
     sudo ./secure-ssh-setup.sh
     ```
 
-4. **Apply Changes:**
-    - The script will create a new user, grant sudo privileges, and apply the recommended SSH settings. The SSH service will be restarted to apply these changes.
+4. **Validate and Apply Changes:**
+    - Keep the current SSH session open, validate the configuration with `sudo sshd -t`, and only then reload the service. Test a second login before closing the recovery session.
 
-5. **Test the Configuration:**
-    - Test the new SSH setup by logging in with the newly created user and the custom SSH port.
+5. **Harden Authentication:**
+    - After confirming key-based login works, disable direct root login and password authentication where your environment permits. Restrict inbound SSH with a host or network firewall and keep OpenSSH patched.
 
 ## Conclusion 🎉
 

@@ -1,11 +1,14 @@
 ---
 date: 2024-02-22
+last_modified_at: 2026-08-31
 layout: post
 title: "Pi-hole: Your Ultimate Solution for a Cleaner, Faster Internet Experience"
 subtitle: "How Installing Pi-hole via Docker Can Transform Your Home Network"
 description: "Unlock the full potential of your home network with Pi-hole, the open-source software that blocks ads, trackers, and malware domains on all your devices. This guide walks you through the simple steps of installing Pi-hole using Docker, ensuring a secure, ad-free internet experience without the hassle."
-image: /assets/img/pihole-network-protection.png
-optimized_image: /assets/img/pihole-network-protection.png
+image: /assets/img/pihole-network-protection.webp
+optimized_image: /assets/img/pihole-network-protection.webp
+image_width: 1024
+image_height: 1024
 category: technology
 tags:
   - Pi-hole
@@ -67,7 +70,7 @@ Before starting, ensure you have:
 ```
 
 2. **Run the Pi-hole Container**
-Next, run the Pi-hole container with the following command. This command includes basic configurations such as setting your web admin interface password (`YOUR_PASSWORD_HERE`), specifying network settings, and defining DNS preferences. Adjust the command as needed for your setup:
+Next, run the Pi-hole v6 container. Replace the timezone and password before running it; for a shared system, prefer Docker secrets instead of keeping the password in shell history. This follows Pi-hole's current [Docker configuration guidance](https://docs.pi-hole.net/docker/configuration/):
   
         docker run -d \
         --name pihole \
@@ -75,9 +78,9 @@ Next, run the Pi-hole container with the following command. This command include
         -p 80:80 \
         -p 443:443 \
         -e TZ="YOUR_TIMEZONE" \
-        -e WEBPASSWORD="YOUR_PASSWORD_HERE" \
+        -e FTLCONF_webserver_api_password="YOUR_PASSWORD_HERE" \
+        -e FTLCONF_dns_listeningMode="all" \
         --restart=unless-stopped \
-        --dns=127.0.0.1 --dns=1.1.1.1 \
         --hostname pi.hole \
         -v "$(pwd)/etc-pihole/:/etc/pihole/" \
         -v "$(pwd)/etc-dnsmasq.d/:/etc/dnsmasq.d/" \
@@ -85,7 +88,7 @@ Next, run the Pi-hole container with the following command. This command include
 
 ### **Finalizing Your Pi-hole Setup**
 
-After deploying Pi-hole with Docker, a few critical steps remain to ensure its optimal operation. Replace `YOUR_TIMEZONE` with the appropriate setting for your location, such as `Europe/London`, and choose a strong, unique password for `YOUR_PASSWORD_HERE` to secure the Pi-hole admin interface.
+After deploying Pi-hole with Docker, replace `YOUR_TIMEZONE` with the appropriate IANA timezone, such as `Europe/London`, and choose a strong, unique password for `YOUR_PASSWORD_HERE`. Pi-hole v6 replaced the old `WEBPASSWORD` and `DNSMASQ_LISTENING` variables with `FTLCONF_webserver_api_password` and `FTLCONF_dns_listeningMode`.
 
 ### **Ensuring Seamless Operation**
 
@@ -134,5 +137,3 @@ When using Pi-hole and NextDNS together, consider the following for optimal perf
 - **Custom Configuration:** Take advantage of both platforms' customization capabilities to fine-tune your network's security and content filtering according to your needs.
 
 By incorporating NextDNS into your network, you benefit from an added layer of security and content filtering, making your online experience safer and more personalized.
-
-

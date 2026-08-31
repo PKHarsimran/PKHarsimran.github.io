@@ -108,7 +108,8 @@
   .box-body {
     img {
       width: 100%;
-      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
       margin: 0 auto;
       transition: all 0.2s ease-in-out;
     }

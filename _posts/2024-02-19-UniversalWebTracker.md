@@ -4,8 +4,10 @@ layout: post
 title: "UniversalWebTracker: The Efficient Way to Monitor Website Changes"
 subtitle: "Stay Ahead of the Curve with Real-Time Web Monitoring"
 description: "Discover the power of UniversalWebTracker, a Python-based script designed for effortless website monitoring. Whether you're tracking updates or changes, this tool keeps you informed with precision and ease."
-image: /assets/img/universal-web-tracker.png
-optimized_image: /assets/img/universal-web-tracker-optimized.png
+image: /assets/img/universal-web-tracker.webp
+optimized_image: /assets/img/universal-web-tracker.webp
+image_width: 1024
+image_height: 1024
 category: technology
 tags:
   - Python

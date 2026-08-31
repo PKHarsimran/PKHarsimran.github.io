@@ -4,9 +4,11 @@ layout: post
 title: "Hack The Box Write-Up: Analytics"
 subtitle: "A Deep Dive into Penetration Testing"
 description: Dive into the fascinating world of penetration testing with my latest adventure on Hack The Box's "Analytics" challenge. From initial reconnaissance to successful system exploitation, explore the intricate steps of a cyber sleuth.
-image: /assets/img/HTBAnalytics.png
-optimized_image: /assets/img/HTBAnalytics.png
-category: Cybersecurity
+image: /assets/img/HTBAnalytics.webp
+optimized_image: /assets/img/HTBAnalytics.webp
+image_width: 1024
+image_height: 1024
+category: cybersecurity
 tags:
   - HackTheBox
   - Penetration Testing
@@ -170,7 +172,4 @@ This confirmed my root access, as shown in the uploaded screenshot, where the pr
 Finally, I was able to read the contents of root.txt and capture the root flag, marking the culmination of this CTF challenge.
 
 ![image](/assets/htbA/r2.png)
-
-
-
 

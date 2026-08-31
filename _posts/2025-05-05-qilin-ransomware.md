@@ -1,11 +1,14 @@
 ---
 date: 2025-05-05
+last_modified_at: 2026-08-31
 layout: post
 title: "Qilin (Agenda) Ransomware Explained: Real‑World Attack Timeline & 7 Fast Defenses"
 subtitle: "Stop Double‑Extortion Attacks Before They Start"
-description: "Walk through a realistic Qilin ransomware breach mapped to MITRE ATT&CK, review fresh IOCs, and leave with a seven‑step hardening checklist you can apply before the ransom note arrives."
+description: "Walk through a realistic Qilin ransomware breach mapped to MITRE ATT&CK, review campaign indicators collected for this article, and apply a seven-step hardening checklist."
 image: /assets/img/qilinPoster.webp        
 optimized_image: /assets/img/qilinPoster.webp
+image_width: 1024
+image_height: 1536
 category: ransomware
 tags:
   - Qilin Ransomware
@@ -32,7 +35,7 @@ No, this isn't a Netflix plot. This is ransomware — and not just any strain. W
 In this blog, I’ll guide you through a detailed hypothetical attack scenario rooted in real-world tactics used by this ransomware group. We'll explore how these attacks unfold, highlight common weaknesses that threat actors exploit, and provide clear actions you can take to strengthen your defenses.
 This isn’t fear-mongering. It’s preparation — the kind every organization should take seriously.
 
-> As of now, Qilin has publicly claimed responsibility for over **437 victims**, and that number is still growing — according to [ransomware.live](https://www.ransomware.live/group/qilin).
+> **Data note:** The victim count and indicators in this article reflect the sources available when it was written in May 2025. Treat public leak-site counts as claims, and verify indicators against current threat-intelligence sources before using them in detections.
 
 ---
 ### 🧬 What Is Qilin (aka Agenda) Ransomware?
@@ -311,4 +314,3 @@ You’ve got time now. Use it.
 - [**BleepingComputer** – Kickidler software abused in ransomware attacks](https://www.bleepingcomputer.com/news/security/kickidler-employee-monitoring-software-abused-in-ransomware-attacks/)  
 - [**Rewterz** – Lazarus Qilin samples and hashes](https://www.rewterz.com/reports/)
 - [**darktrace** – Qilin Ransomware: Detection and Analysis](https://www.darktrace.com/blog/a-busy-agenda-darktraces-detection-of-qilin-ransomware-as-a-service-operator)
-

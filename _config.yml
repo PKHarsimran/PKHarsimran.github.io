@@ -1,12 +1,12 @@
 # Site Settings
 name: Harsimran Sidhu
-title: Harsimran's Blog - Cybersecurity & Tech
-description: Join Harsimran's journey through the world of cybersecurity. Get expert insights, in-depth tech analysis, and much more.
+title: Harsimran Sidhu | Cybersecurity Field Notes
+description: Practical SOC playbooks, threat investigations, security engineering guides, and lessons from Harsimran Sidhu.
 tags:
   - blog
   - tech
-  - jekyll
-  - github
+  - SOC
+  - incident response
   - cybersecurity
 show_hero: true
 menu:
@@ -16,41 +16,36 @@ menu:
     url: /resume
   - title: About
     url: /about
-#  - title: Contact
-#    url: /contact
+  - title: Contact
+    url: /contact
   - title: Feed
     url: /feed.xml
 email: harsimransidhu770@gmail.com
 # See: https://disqus.com/
 disqus_username: pkvirus 
-# Contact Form Setting
-# See: https://formspree.io/
-formspree_form_id: formspree_form_id
-
-
 # Social Media Settings
-# Remove the item if you don't need it
 github_username: PKHarsimran
-facebook_username: facebook_username
-twitter_username: twitter_username
-instagram_username: instagram_username
 linkedin_username: harsimransidhu
+social:
+  name: Harsimran Sidhu
+  links:
+    - https://github.com/PKHarsimran
+    - https://www.linkedin.com/in/harsimransidhu
 
 
 # Posts Settings
 show_time_bar: true
-show_modal_on_exit: true
-show_modal_on_finish_post: true
+show_modal_on_exit: false
+show_modal_on_finish_post: false
 two_columns_layout: true
 
 
 # Advanced Settings
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://harsim.ca" # the base hostname & protocol for your site
-google_analytics: "G-RCYMWMYYF9"
 language: "en"
 categories_folder: category
-sent_message_url: "/contact/message-sent/"
+logo: /assets/img/logo.png
 
 
 # Build settings
@@ -60,27 +55,8 @@ permalink: /:title/
 collections:
   authors:
     output: true
-paginate_path: "/page/:num/"
-show_get_theme_btn: true
+show_get_theme_btn: false
 use_logo: false
-
-# Content paginator
-paginate_content:
-  enabled: true
-  debug: false
-  collections:
-    - posts
-  auto: false
-  separator: "--page-break--"
-  permalink: "/:num/"
-  seo_canonical: true
-  properties:
-    part:
-      is_generated: true
-    last:
-      is_generated: true
-    single:
-      is_generated: true
 
 # SASS
 sass:
@@ -88,26 +64,18 @@ sass:
 
 # Plugins
 plugins:
-  - jekyll-paginate
-  - jekyll-paginate-content
+  - jekyll-seo-tag
   - jekyll-sitemap
-# Exclude my node related stuff
-exclude: [
-  'docs/',
-  'vendor/',
-  'LICENSE',
-  'CHANGELOG.md',
-  'jekflix.gemspec',
-  'package.json',
-  'package-lock.json',
-  'src',
-  'node_modules',
-  'initpost.sh',
-  'Gemfile',
-  'Gemfile.lock',
-  'gulpfile.js',
-  'README.md'
-]
-
-# Theme
-version: v3.1.2
+exclude:
+  - admin/
+  - docs/
+  - vendor/
+  - LICENSE
+  - CHANGELOG.md
+  - jekflix.gemspec
+  - src/
+  - node_modules/
+  - initpost.sh
+  - Gemfile
+  - Gemfile.lock
+  - README.md

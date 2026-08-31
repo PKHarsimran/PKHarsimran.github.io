@@ -4,8 +4,10 @@ layout: post
 title: "Unraveling the XZ Backdoor: A Close Call for Open Source Security"
 subtitle: "Insight into the Foiled XZ Utils Supply Chain Attack"
 description: "An in-depth analysis of the recent XZ Backdoor incident, highlighting the resilience of the open source community in the face of a sophisticated supply chain attack. This post unpacks the details of the CVE-2024-3094 event, where a well-executed backdoor nearly compromised major Linux distributions, and the collaborative effort that led to its discovery and mitigation."
-image: /assets/img/xz-backdoor-alert.png
-optimized_image: /assets/img/xz-backdoor-alert.png
+image: /assets/img/xz-backdoor-alert.webp
+optimized_image: /assets/img/xz-backdoor-alert.webp
+image_width: 1280
+image_height: 731
 category: cybersecurity
 tags:
 - XZ Backdoor
@@ -87,6 +89,4 @@ The XZ Backdoor incident, CVE-2024-3094, is a complex topic with many facets to 
 Each source offers a unique perspective and contributes to a holistic understanding of the incident and its impact on the open-source community and cybersecurity landscape.
 
 _Stay informed, stay connected, and above all, stay secure._
-
-
 

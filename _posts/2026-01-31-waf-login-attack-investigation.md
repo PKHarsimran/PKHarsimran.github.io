@@ -4,8 +4,10 @@ layout: post
 title: "How to Investigate WAF Login Attacks (A SOC Playbook)"
 subtitle: "A practical, real-world guide to triaging, detecting, and responding to login abuse"
 description: "A hands-on guide for SOC analysts on how to investigate WAF login attacks in real-world environments. Learn how to triage alerts, identify attack patterns, reduce false positives, and make confident response decisions."
-image: /assets/img/waf-login-attacks.png
-optimized_image: /assets/img/waf-login-attacks.png
+image: /assets/img/waf-login-attacks.webp
+optimized_image: /assets/img/waf-login-attacks.webp
+image_width: 1280
+image_height: 731
 category: cybersecurity
 tags:
   - WAF
@@ -347,4 +349,3 @@ Approached this way, WAF login alerts stop being noisy interruptions and become 
 This is why effective WAF login attack detection depends less on single indicators and more on how multiple weak signals line up over time.
 
 Once you build that confidence loop, WAF login attacks stop being stressful alerts and start becoming familiar patterns.
-
