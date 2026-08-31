@@ -375,7 +375,8 @@
   ol {
     position: absolute;
     right: 0;
-    width: min(rem(390px), 80vw);
+    width: 80vw;
+    max-width: rem(390px);
     max-height: 55vh;
     overflow-y: auto;
     margin: rem(8px) 0 0;
@@ -807,4 +808,3 @@
   border: rem(1px) solid #ccc;
   text-align: left;
 }
-
