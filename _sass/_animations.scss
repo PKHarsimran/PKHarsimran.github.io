@@ -1,5 +1,6 @@
 .flex-grid article {
-  opacity: 0;
+  // Post content must remain visible when animation JavaScript is unavailable.
+  opacity: 1;
 }
 
 .flex-grid article.shown {
