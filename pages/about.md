@@ -6,7 +6,7 @@ description: About Harsimran Sidhu, a SOC analyst writing practical cybersecurit
 permalink: /about/
 ---
 
-<img class="img-rounded" src="/assets/img/uploads/pro.png" alt="Harsimran Sidhu" width="200" height="200">
+<img class="img-rounded" src="/assets/img/uploads/pro.webp" alt="Harsimran Sidhu" width="200" height="200" decoding="async">
 <img src="https://tryhackme-badges.s3.amazonaws.com/PKVIRUS.png" alt="Harsimran Sidhu's TryHackMe profile badge" width="329" height="88" loading="lazy" decoding="async">
 
 # About

@@ -13,6 +13,12 @@ image_height: 630
 description: "A hands-on guide for SOC analysts on how to investigate a hacked or defaced WordPress site. Learn how to scope the compromise, contain without destroying evidence, read Apache and PHP logs, tell a dropped webshell apart from live AJAX abuse, and harden the site so it doesn't happen again."
 author: Harsimran Sidhu
 comments: true
+investigation_steps:
+  - Preserve evidence
+  - Scope shared hosting
+  - Contain accounts and host
+  - Trace the access path
+  - Eradicate and harden
 ---
 
 ## Introduction

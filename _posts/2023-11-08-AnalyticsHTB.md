@@ -18,7 +18,7 @@ paginate: true
 comments: true
 ---
 
-# Hack The Box Write-Up: Analytics
+## Investigation overview
 In this post, I'm going to walk through my process of tackling the "Analytics" box on Hack The Box. I'll detail the steps taken, from initial reconnaissance to gaining access and eventual system exploitation.
 
 ## Initial Reconnaissance
@@ -172,4 +172,3 @@ This confirmed my root access, as shown in the uploaded screenshot, where the pr
 Finally, I was able to read the contents of root.txt and capture the root flag, marking the culmination of this CTF challenge.
 
 ![image](/assets/htbA/r2.png)
-

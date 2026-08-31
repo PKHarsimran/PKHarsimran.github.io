@@ -1,6 +1,6 @@
 # Site Settings
 name: Harsimran Sidhu
-title: Harsimran Sidhu | Cybersecurity Field Notes
+title: Cybersecurity Field Notes
 description: Practical SOC playbooks, threat investigations, security engineering guides, and lessons from Harsimran Sidhu.
 tags:
   - blog
@@ -46,6 +46,7 @@ url: "https://harsim.ca" # the base hostname & protocol for your site
 language: "en"
 categories_folder: category
 logo: /assets/img/logo.png
+image: /assets/img/soc-case-files-hero.webp
 
 
 # Build settings
@@ -79,3 +80,5 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - output/
+  - tmp/

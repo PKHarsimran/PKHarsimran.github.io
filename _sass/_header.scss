@@ -78,6 +78,8 @@ body {
     padding: 0;
     color: inherit;
     background: transparent;
+    min-width: rem(44px);
+    min-height: rem(44px);
   }
 
   #menu {
@@ -86,8 +88,10 @@ body {
 
   .dosearch {
     float: right;
-    width: rem(30px);
-    height: rem(30px);
+    width: auto;
+    height: rem(44px);
+    display: flex;
+    align-items: center;
     cursor: pointer;
     margin: 0;
     @include media(">=sm") {
@@ -100,6 +104,19 @@ body {
     height: rem(20px);
     fill: $accentDark;
     margin: rem(5px);
+  }
+
+  .search-shortcut {
+    display: none;
+    margin-right: rem(8px);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: rem(4px);
+    padding: rem(2px) rem(6px);
+    background: rgba(255, 255, 255, 0.06);
+    color: $accentDark;
+    font: inherit;
+    font-size: rem(11px);
+    @include media(">=sm") { display: inline-block; }
   }
 
   .get-theme {
