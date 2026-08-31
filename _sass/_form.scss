@@ -1,6 +1,17 @@
 .contact-form {
   @include mainFont();
-  padding: rem(10px);
+  max-width: rem(640px);
+  margin: 0 auto;
+  padding: rem(10px) rem(20px);
+
+  .button {
+    display: inline-block;
+    padding: rem(12px) rem(24px);
+    border-radius: rem(4px);
+    color: #fff;
+    background: $themeColor;
+    text-decoration: none;
+  }
 
   fieldset {
     border: none;

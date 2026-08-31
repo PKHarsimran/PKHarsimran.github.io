@@ -470,20 +470,6 @@
     background-color: #ccc;
   }
 
-  .time-completed,
-  .time-remaining {
-    @include mainFont(400);
-    font-size: rem(18px);
-    color: #fff;
-  }
-
-  .time-completed {
-    float: left;
-  }
-
-  .time-remaining {
-    float: right;
-  }
 }
 
 /* Recommendation */
@@ -727,6 +713,5 @@
   border: rem(1px) solid #ccc;
   text-align: left;
 }
-
 
 

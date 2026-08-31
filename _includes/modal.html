@@ -1,8 +1,6 @@
-<div class="modal{% if include.showOnExit %} exit{% endif %}{% if include.closed %} closed{% endif %}">
+<div class="modal{% if include.showOnExit %} exit{% endif %}{% if include.closed %} closed{% endif %}" role="dialog" aria-modal="true" aria-label="Article recommendations">
     <div class="window">
-        <svg class="close">
-            <use xlink:href="#icon-close"></use>
-        </svg>
+        <button class="close" type="button" aria-label="Close recommendations"><svg aria-hidden="true"><use xlink:href="#icon-close"></use></svg></button>
         <div class="header">
             <h2>{{ include.title }}</h2>
             <p>{{ include.subtitle }}</p>
@@ -16,11 +14,11 @@
                         <a href="{{ post.url | prepend: site.baseurl }}">
                             <figure>
                                 {% if post.optimized_image %}
-                                    <img src="{{ post.optimized_image }}">
+                                    <img src="{{ post.optimized_image | relative_url }}" alt="{{ post.title | escape }}" width="{{ post.image_width }}" height="{{ post.image_height }}" loading="lazy" decoding="async">
                                 {% elsif post.image %}
-                                    <img src="{{ post.image }}">
+                                    <img src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}" width="{{ post.image_width }}" height="{{ post.image_height }}" loading="lazy" decoding="async">
                                 {% else %}
-                                    <img src="/assets/img/off.jpg">
+                                    <img src="{{ '/assets/img/off.jpg' | relative_url }}" alt="{{ post.title | escape }}" loading="lazy" decoding="async">
                                 {% endif %}
                             </figure>
                             <h3>{{ post.title }}</h3>

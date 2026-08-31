@@ -28,7 +28,11 @@ body {
       text-decoration: none;
       font-size: rem(32px);
       position: relative;
-      outline: 0;
+      white-space: nowrap;
+
+      @include media("<sm") {
+        font-size: rem(24px);
+      }
     }
 
     svg {
@@ -66,6 +70,18 @@ body {
     @include media(">=sm") {
       margin: rem(5px) rem(20px) rem(5px) rem(25px);
     }
+  }
+
+  > button {
+    appearance: none;
+    border: 0;
+    padding: 0;
+    color: inherit;
+    background: transparent;
+  }
+
+  #menu {
+    float: left;
   }
 
   .dosearch {

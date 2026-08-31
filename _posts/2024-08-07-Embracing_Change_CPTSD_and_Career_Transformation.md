@@ -4,9 +4,11 @@ layout: post
 title: "I Didn't Heal First"
 subtitle: "CPTSD, lupus, and how being the odd kid with a computer became a career in threat hunting"
 description: "I used to think healing led me into cybersecurity. It was the other way around. A story about Complex PTSD, a lupus diagnosis I ignored, a failed exam, and the ransomware incident where the thing I learned as a lonely kid finally became useful."
-image: /assets/img/cptsd-career-change.png
-optimized_image: /assets/img/cptsd-career-change.png
-category: personal growth
+image: /assets/img/cptsd-career-change.webp
+optimized_image: /assets/img/cptsd-career-change.webp
+image_width: 1024
+image_height: 1024
+category: personal-growth
 tags:
 - CPTSD
 - Cybersecurity

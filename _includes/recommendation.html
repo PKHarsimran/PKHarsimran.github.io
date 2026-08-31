@@ -2,7 +2,7 @@
     <div class="message">
         <strong>{{ site.translations.recommendation.text | default: "Why don't you read something next?" }}</strong>
         <div>
-            <button>
+            <button type="button">
                 <svg><use xlink:href="#icon-arrow-right"></use></svg>
                 <span>{{ site.translations.recommendation.back_btn | default: "Go back to top" }}</span>
             </button>
@@ -18,11 +18,11 @@
     <a href="{{ recommendation.url | prepend: site.baseurl }}" class="post-preview">
         <div class="image">
             {% if recommendation.optimized_image %}
-                <img src="{{ recommendation.optimized_image }}">
+                <img src="{{ recommendation.optimized_image | relative_url }}" alt="{{ recommendation.title | escape }}" width="{{ recommendation.image_width }}" height="{{ recommendation.image_height }}" loading="lazy" decoding="async">
             {% elsif recommendation.image %}
-                <img src="{{ recommendation.image }}">
+                <img src="{{ recommendation.image | relative_url }}" alt="{{ recommendation.title | escape }}" width="{{ recommendation.image_width }}" height="{{ recommendation.image_height }}" loading="lazy" decoding="async">
             {% else %}
-                <img src="/assets/img/off.jpg">
+                <img src="{{ '/assets/img/off.jpg' | relative_url }}" alt="{{ recommendation.title | escape }}" loading="lazy" decoding="async">
             {% endif %}
         </div>
         <h3 class="title">{{ recommendation.title }}</h3>

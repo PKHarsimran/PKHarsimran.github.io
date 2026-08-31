@@ -10,27 +10,18 @@
                 <div id="grid" class="row flex-grid">
                     {% assign posts = site.posts | where_exp:"post","post.is_generated != true" %}
                     {% for post in posts %}
-                        {% if post.category == page.slug %}
+                        {% assign post_category_slug = post.category | slugify %}
+                        {% if post_category_slug == page.slug %}
                             <article class="box-item">
                                 <div class="box-body">
                                     {% if post.image %}
                                         <a class="cover" href="{{ post.url | prepend: site.baseurl }}">
-                                            {% include loader.html %}
                                             {% if post.optimized_image %}
-                                                <img src="/assets/img/placeholder.png" width="100%" data-url="{{ post.optimized_image }}" class="preload">
-                                                <noscript>
-                                                    <img src="{{ post.optimized_image }}" width="100%">
-                                                </noscript>
+                                                <img src="{{ post.optimized_image | relative_url }}" alt="{{ post.title | escape }}" width="{{ post.image_width }}" height="{{ post.image_height }}" loading="lazy" decoding="async">
                                             {% elsif post.image %}
-                                                <img src="/assets/img/placeholder.png" width="100%" data-url="{{ post.image }}" class="preload">
-                                                <noscript>
-                                                    <img src="{{ post.image }}" width="100%">
-                                                </noscript>
+                                                <img src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}" width="{{ post.image_width }}" height="{{ post.image_height }}" loading="lazy" decoding="async">
                                             {% else %}
-                                                <img src="/assets/img/placeholder.png" width="100%" data-url="/assets/img/off.jpg" class="preload">
-                                                <noscript>
-                                                    <img src="/assets/img/off.jpg" width="100%">
-                                                </noscript>
+                                                <img src="{{ '/assets/img/off.jpg' | relative_url }}" alt="{{ post.title | escape }}" loading="lazy" decoding="async">
                                             {% endif %}
                                             {% include new-post-tag.html date=post.date %}
                                             {% include read-icon.html %}
@@ -66,6 +57,4 @@
         {% include footer.html %}
     </body>
 </html>
-
-
 

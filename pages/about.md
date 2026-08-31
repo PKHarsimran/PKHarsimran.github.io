@@ -1,24 +1,20 @@
 ---
 layout: page
 menu: false
-date: '2020-02-27 01:53:59'
 title: About
-description: Some description.
+description: About Harsimran Sidhu, a SOC analyst writing practical cybersecurity investigations, defensive playbooks, and technical guides.
 permalink: /about/
 ---
 
-<img class="img-rounded" src="/assets/img/uploads/pro.png" alt="Harsimran" width="200">
-<img src="https://tryhackme-badges.s3.amazonaws.com/PKVIRUS.png" alt="Your Image Badge" />
+<img class="img-rounded" src="/assets/img/uploads/pro.png" alt="Harsimran Sidhu" width="200" height="200">
+<img src="https://tryhackme-badges.s3.amazonaws.com/PKVIRUS.png" alt="Harsimran Sidhu's TryHackMe profile badge" width="329" height="88" loading="lazy" decoding="async">
 
 # About
 
-Hello and welcome! 😄 I'm Harsimran, a Security Operations Center Analyst dedicated to safeguarding the digital world. By day, I unravel the mysteries of cyber threats, ensuring a secure digital realm. 💻🛡️
+Hello, I’m Harsimran, a Security Operations Center Analyst focused on turning noisy alerts into clear, defensible decisions.
 
-I'm passionate about embedded systems, finding joy in tinkering with Raspberry Pis and Arduino circuits. 🚀🤖 Cloud computing, especially within Azure, fascinates me as I piece together the future, one service at a time! ☁️🧩
+I write practical investigation playbooks, threat research, and lessons from building security and automation projects. I’m also interested in embedded systems, Raspberry Pi, Docker, and Azure.
 
-On a personal note, I'm navigating the journey of resilience with CPTSD, advocating for mental health and fostering hope. 🌟💚 I love reading self-help and personal development books and sharing my learnings with others. 📚🌱
+Outside of security, I write honestly about resilience, CPTSD, chronic illness, and career growth. Those experiences shape how I approach difficult problems and how I support others entering the field.
 
-Join me on my blog for insights, sprinkled with humor, where your thoughts and experiences are always welcome. 😊🌈
-
-I'm also diving into Docker, adding new skills to my tech toolkit! 🐳💻 If you're exploring career paths or job hunting, check out this resource: [50 Ways to Get a Job](https://50waystogetajob.com/).
-
+You can find my work on [GitHub](https://github.com/PKHarsimran) or connect with me on [LinkedIn](https://www.linkedin.com/in/harsimransidhu).
