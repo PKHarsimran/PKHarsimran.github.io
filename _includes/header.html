@@ -1,7 +1,8 @@
+<input id="menu" class="menu-state visually-hidden" type="checkbox" tabindex="-1" aria-hidden="true">
 <header class="bar-header">
-    <button id="menu" type="button" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false">
+    <label class="menu-toggle" for="menu" role="button" tabindex="0" aria-label="Open menu" aria-controls="sidebar" aria-expanded="false">
         <svg id="open" class="icon-menu"><use xlink:href="#icon-menu"></use></svg>
-    </button>
+    </label>
     <div class="logo">
         <a href="{{ site.baseurl }}/">
             {% if site.use_logo %}
@@ -24,7 +25,7 @@
     {% endcomment %}
 </header>
 
-<div id="mask" class="overlay"></div>
+<div id="mask" class="overlay" aria-hidden="true"></div>
 
 {% include menu.html %}
 {% include search.html %}

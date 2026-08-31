@@ -3,8 +3,10 @@
 
   var body = document.body;
   var menuButton = document.getElementById("menu");
+  var menuToggle = document.querySelector(".menu-toggle");
   var sidebar = document.getElementById("sidebar");
   var mask = document.getElementById("mask");
+  var menuClose = sidebar && sidebar.querySelector(".menu-close");
   var searchButton = document.getElementById("search");
   var searchWrapper = document.getElementById("site-search");
   var searchForm = searchWrapper && searchWrapper.querySelector(".search-form");
@@ -16,17 +18,25 @@
   var previousFocus;
 
   function openMenu() {
-    body.classList.add("push-menu-to-right");
+    menuButton.checked = true;
+    body.classList.add("menu-open");
     sidebar.classList.add("open");
     mask.classList.add("show");
-    menuButton.setAttribute("aria-expanded", "true");
+    sidebar.setAttribute("aria-hidden", "false");
+    menuToggle.setAttribute("aria-expanded", "true");
+    menuToggle.setAttribute("aria-label", "Close menu");
+    if (menuClose) menuClose.focus();
   }
 
   function closeMenu() {
-    body.classList.remove("push-menu-to-right");
+    menuButton.checked = false;
+    body.classList.remove("menu-open");
     sidebar.classList.remove("open");
     mask.classList.remove("show");
-    menuButton.setAttribute("aria-expanded", "false");
+    sidebar.setAttribute("aria-hidden", "true");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open menu");
+    menuToggle.focus();
   }
 
   function loadSearchIndex() {
@@ -87,9 +97,38 @@
     searchStatus.textContent = posts.length ? posts.length + " result" + (posts.length === 1 ? "" : "s") : "No case files found. Try another threat, tool, or topic.";
   }
 
-  if (menuButton && sidebar && mask) {
-    menuButton.addEventListener("click", openMenu);
+  function activateControlOnKeydown(event, action) {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    action();
+  }
+
+  if (menuButton && menuToggle && sidebar && mask) {
+    menuButton.addEventListener("change", function () {
+      menuButton.checked ? openMenu() : closeMenu();
+    });
+    menuToggle.addEventListener("click", function (event) {
+      event.preventDefault();
+      menuButton.checked ? closeMenu() : openMenu();
+    });
+    menuToggle.addEventListener("keydown", function (event) {
+      activateControlOnKeydown(event, function () {
+        menuButton.checked ? closeMenu() : openMenu();
+      });
+    });
+    if (menuClose) {
+      menuClose.addEventListener("click", function (event) {
+        event.preventDefault();
+        closeMenu();
+      });
+      menuClose.addEventListener("keydown", function (event) {
+        activateControlOnKeydown(event, closeMenu);
+      });
+    }
     mask.addEventListener("click", closeMenu);
+    sidebar.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", closeMenu);
+    });
   }
 
   if (searchButton && searchWrapper && searchInput && searchClose && searchResults) {
@@ -122,7 +161,7 @@
     }
     if (event.key !== "Escape") return;
     if (body.classList.contains("search-overlay")) closeSearch();
-    if (body.classList.contains("push-menu-to-right")) closeMenu();
+    if (body.classList.contains("menu-open")) closeMenu();
   });
 
   var filterButtons = document.querySelectorAll("[data-filter]");

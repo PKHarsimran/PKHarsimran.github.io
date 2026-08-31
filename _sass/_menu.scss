@@ -4,49 +4,71 @@
   box-sizing: border-box;
 }
 
-body.has-push-menu,
-body.has-push-menu aside,
-body.has-push-menu .progress-bar {
-  transition: all 0.3s ease;
-}
-
 body.has-push-menu {
   overflow-x: hidden;
-  position: relative;
-  left: 0;
 
-  &.push-menu-to-right {
-    left: rem(240px);
+  &.menu-open { overflow: hidden; }
+}
 
-    .progress-bar {
-      left: rem(240px);
-    }
+.menu-state:checked ~ aside.sidebar {
+  transform: translateX(0);
+  visibility: visible;
+  transition-delay: 0s;
+}
 
-    .bar-header {
-      left: rem(240px);
-    }
-  }
+.menu-state:checked ~ .overlay {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.menu-state:focus-visible ~ .bar-header .menu-toggle {
+  outline: 3px solid $themeColor;
+  outline-offset: 3px;
 }
 
 aside.sidebar {
   position: fixed;
   width: rem(240px);
-  height: 100%;
+  height: 100vh;
   top: 0;
-  left: rem(-240px);
+  left: 0;
+  overflow-y: auto;
+  transform: translateX(-100%);
   background-color: $accentDark;
   z-index: 20;
+  visibility: hidden;
+  transition: transform 0.3s ease, visibility 0s linear 0.3s;
 
   @include media(">=sm") {
     padding: rem(10px) 0 0;
   }
 
   &.open {
-    left: 0;
+    transform: translateX(0);
+    visibility: visible;
+    transition-delay: 0s;
+  }
+
+  .menu-close {
+    position: absolute;
+    top: rem(8px);
+    right: rem(8px);
+    display: grid;
+    width: rem(44px);
+    height: rem(44px);
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: $primaryDark;
+    cursor: pointer;
+
+    svg { width: rem(20px); height: rem(20px); fill: currentColor; }
+    &:hover { background: rgba(0, 0, 0, 0.08); }
   }
 
   h2 {
-    margin: 0 rem(20px) 0;
+    margin: 0 rem(60px) 0 rem(20px);
     @include mainFont(400);
     font-size: rem(18px);
     color: $primaryDark;
