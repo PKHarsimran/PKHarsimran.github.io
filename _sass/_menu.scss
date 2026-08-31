@@ -10,22 +10,6 @@ body.has-push-menu {
   &.menu-open { overflow: hidden; }
 }
 
-.menu-state:checked ~ aside.sidebar {
-  transform: translateX(0);
-  visibility: visible;
-  transition-delay: 0s;
-}
-
-.menu-state:checked ~ .overlay {
-  pointer-events: auto;
-  opacity: 1;
-}
-
-.menu-state:focus-visible ~ .bar-header .menu-toggle {
-  outline: 3px solid $themeColor;
-  outline-offset: 3px;
-}
-
 aside.sidebar {
   position: fixed;
   width: rem(240px);
@@ -62,6 +46,7 @@ aside.sidebar {
     background: transparent;
     color: $primaryDark;
     cursor: pointer;
+    touch-action: manipulation;
 
     svg { width: rem(20px); height: rem(20px); fill: currentColor; }
     &:hover { background: rgba(0, 0, 0, 0.08); }

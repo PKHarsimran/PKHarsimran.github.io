@@ -5,10 +5,14 @@
   padding-right: 5%;
   padding-left: 5%;
   transform: translateY(-200px);
+  visibility: hidden;
+  pointer-events: none;
   z-index: 19;
 
   &.active {
     transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
   }
 }
 
