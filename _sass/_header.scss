@@ -82,8 +82,11 @@ body {
     min-height: rem(44px);
   }
 
-  #menu {
+  .menu-toggle {
     float: left;
+    display: block;
+    min-width: rem(44px);
+    min-height: rem(44px);
   }
 
   .dosearch {
