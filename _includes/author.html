@@ -14,32 +14,32 @@
       <p class="desc">{{ author.bio }}</p>
       <p>
         {% if author.github_username %}
-          <a href="https://github.com/{{ author.github_username }}" title="GitHub" rel="me">
+          <a href="https://github.com/{{ author.github_username }}" title="GitHub" aria-label="{{ author.display_name }} on GitHub" rel="me">
             <svg><use xlink:href="#icon-github"></use></svg>
           </a>
         {% endif %}
         {% if author.facebook_username %}
-          <a href="https://www.facebook.com/{{ author.facebook_username }}" title="Facebook">
+          <a href="https://www.facebook.com/{{ author.facebook_username }}" title="Facebook" aria-label="{{ author.display_name }} on Facebook">
             <svg><use xlink:href="#icon-facebook"></use></svg>
           </a>
         {% endif %}
         {% if author.twitter_username %}
-          <a href="https://twitter.com/{{ author.twitter_username }}" title="Twitter">
+          <a href="https://twitter.com/{{ author.twitter_username }}" title="Twitter" aria-label="{{ author.display_name }} on Twitter">
             <svg><use xlink:href="#icon-twitter"></use></svg>
           </a>
         {% endif %}
         {% if author.medium_username %}
-          <a href="https://medium.com/@{{ author.medium_username }}" title="Medium">
+          <a href="https://medium.com/@{{ author.medium_username }}" title="Medium" aria-label="{{ author.display_name }} on Medium">
             <svg><use xlink:href="#icon-medium"></use></svg>
           </a>
         {% endif %}
         {% if author.instagram_username %}
-          <a href="https://www.instagram.com/{{ author.instagram_username }}" title="Instagram">
+          <a href="https://www.instagram.com/{{ author.instagram_username }}" title="Instagram" aria-label="{{ author.display_name }} on Instagram">
             <svg><use xlink:href="#icon-instagram"></use></svg>
           </a>
         {% endif %}
         {% if author.linkedin_username %}
-          <a href="https://www.linkedin.com/in/{{ author.linkedin_username }}" title="LinkedIn" rel="me">
+          <a href="https://www.linkedin.com/in/{{ author.linkedin_username }}" title="LinkedIn" aria-label="{{ author.display_name }} on LinkedIn" rel="me">
             <svg><use xlink:href="#icon-linkedin"></use></svg>
           </a>
         {% endif %}

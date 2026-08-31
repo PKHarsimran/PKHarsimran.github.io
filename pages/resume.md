@@ -6,10 +6,12 @@ description: Harsimran Sidhu's detailed resume showcasing expertise in cybersecu
 permalink: /resume/
 ---
 
-![Harsimran Sidhu](/assets/img/uploads/pro.png){: .img-rounded width="200px"}
+![Harsimran Sidhu](/assets/img/uploads/pro.webp){: .img-rounded width="200px" height="200px"}
 # Harsimran Sidhu
 
 Security Operations and Threat Intelligence Analyst specializing in incident response, endpoint security, WAF investigations and detection engineering. I turn real-world investigations into practical playbooks for security analysts.
+
+[Download resume (PDF)](/assets/files/Harsimran-Sidhu-Resume.pdf){: .button .resume-download download="Harsimran-Sidhu-Resume.pdf"}
 
 ## Experience
 
@@ -70,4 +72,3 @@ Emphasis on engineering principles and technological system management.
 *Humber College, Toronto, ON*  
 _Sept 2013 – Apr 2016_  
 Combination of practical technical skills and electromechanical theory.
-

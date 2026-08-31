@@ -19,7 +19,7 @@ paginate: true
 comments: true
 ---
 
-# Silent Alarm: The XZ Backdoor Narrowly Averted
+## Silent Alarm: The XZ Backdoor Narrowly Averted
 Imagine if one of the most trusted locks in your digital life could be silently picked. That's the story of the XZ Backdoor—a tale of how the keen eyes of a few safeguarded the many.
 
 ## 🕵️ The Discovery: An Unusual Digital Hiccup
@@ -89,4 +89,3 @@ The XZ Backdoor incident, CVE-2024-3094, is a complex topic with many facets to 
 Each source offers a unique perspective and contributes to a holistic understanding of the incident and its impact on the open-source community and cybersecurity landscape.
 
 _Stay informed, stay connected, and above all, stay secure._
-

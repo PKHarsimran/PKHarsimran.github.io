@@ -11,7 +11,9 @@
   var searchInput = searchWrapper && searchWrapper.querySelector(".search-field");
   var searchClose = searchWrapper && searchWrapper.querySelector(".search-close");
   var searchResults = searchWrapper && searchWrapper.querySelector(".search-results");
+  var searchStatus = searchWrapper && searchWrapper.querySelector(".search-status");
   var searchIndex;
+  var previousFocus;
 
   function openMenu() {
     body.classList.add("push-menu-to-right");
@@ -27,31 +29,43 @@
     menuButton.setAttribute("aria-expanded", "false");
   }
 
-  function openSearch() {
-    searchWrapper.classList.add("active");
-    searchForm.classList.add("active");
-    searchWrapper.setAttribute("aria-hidden", "false");
-    searchButton.setAttribute("aria-expanded", "true");
-    body.classList.add("search-overlay");
-    searchInput.focus();
+  function loadSearchIndex() {
     if (!searchIndex) {
       searchIndex = fetch("/search.json")
         .then(function (response) {
           if (!response.ok) throw new Error("Search index unavailable");
           return response.json();
         })
-        .catch(function () { return []; });
+        .catch(function () {
+          if (searchStatus) searchStatus.textContent = "Search is temporarily unavailable.";
+          return [];
+        });
     }
+    return searchIndex;
+  }
+
+  function openSearch() {
+    if (!searchWrapper || !searchForm || !searchInput) return;
+    previousFocus = document.activeElement;
+    searchWrapper.classList.add("active");
+    searchForm.classList.add("active");
+    searchWrapper.setAttribute("aria-hidden", "false");
+    searchButton.setAttribute("aria-expanded", "true");
+    body.classList.add("search-overlay");
+    searchInput.focus();
+    loadSearchIndex();
   }
 
   function closeSearch() {
+    if (!searchWrapper || !searchForm) return;
     searchWrapper.classList.remove("active");
     searchForm.classList.remove("active");
     searchWrapper.setAttribute("aria-hidden", "true");
     searchButton.setAttribute("aria-expanded", "false");
     body.classList.remove("search-overlay");
     searchResults.replaceChildren();
-    searchButton.focus();
+    if (searchStatus) searchStatus.textContent = "";
+    if (previousFocus && previousFocus.focus) previousFocus.focus();
   }
 
   function renderSearchResults(posts) {
@@ -70,6 +84,7 @@
       item.appendChild(link);
       searchResults.appendChild(item);
     });
+    searchStatus.textContent = posts.length ? posts.length + " result" + (posts.length === 1 ? "" : "s") : "No case files found. Try another threat, tool, or topic.";
   }
 
   if (menuButton && sidebar && mask) {
@@ -84,21 +99,96 @@
       var query = searchInput.value.trim().toLowerCase();
       if (query.length < 2) {
         searchResults.replaceChildren();
+        searchStatus.textContent = query.length ? "Type one more character to search." : "";
         return;
       }
-      searchIndex.then(function (posts) {
+      loadSearchIndex().then(function (posts) {
         renderSearchResults(posts.filter(function (post) {
-          return [post.title, post.tags, post.categories].join(" ").toLowerCase().includes(query);
+          return [post.title, post.tags, post.categories, post.description, post.content].join(" ").toLowerCase().includes(query);
         }));
       });
     });
   }
 
+  document.querySelectorAll("[data-open-search]").forEach(function (button) {
+    button.addEventListener("click", openSearch);
+  });
+
   document.addEventListener("keydown", function (event) {
+    if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+      event.preventDefault();
+      body.classList.contains("search-overlay") ? closeSearch() : openSearch();
+      return;
+    }
     if (event.key !== "Escape") return;
     if (body.classList.contains("search-overlay")) closeSearch();
     if (body.classList.contains("push-menu-to-right")) closeMenu();
   });
+
+  var filterButtons = document.querySelectorAll("[data-filter]");
+  var caseFiles = document.querySelectorAll("[data-case-file]");
+  var visibleCount = document.querySelector("[data-visible-count]");
+  var noResults = document.querySelector("[data-no-results]");
+  filterButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      var filter = button.dataset.filter;
+      var count = 0;
+      filterButtons.forEach(function (item) {
+        var active = item === button;
+        item.classList.toggle("active", active);
+        item.setAttribute("aria-pressed", active.toString());
+      });
+      caseFiles.forEach(function (item) {
+        var visible = filter === "all" || item.dataset.category === filter;
+        item.hidden = !visible;
+        if (visible) count += 1;
+      });
+      if (visibleCount) visibleCount.textContent = count.toString();
+      if (noResults) noResults.hidden = count !== 0;
+    });
+  });
+
+  function copyText(text, button, successLabel) {
+    if (!navigator.clipboard) return;
+    navigator.clipboard.writeText(text).then(function () {
+      var original = button.textContent;
+      button.textContent = successLabel;
+      window.setTimeout(function () { button.textContent = original; }, 1600);
+    });
+  }
+
+  document.querySelectorAll(".post-content pre").forEach(function (pre) {
+    var code = pre.querySelector("code");
+    if (!code) return;
+    var button = document.createElement("button");
+    button.type = "button";
+    button.className = "code-copy";
+    button.textContent = "Copy";
+    button.setAttribute("aria-label", "Copy code");
+    button.addEventListener("click", function () { copyText(code.innerText, button, "Copied"); });
+    pre.appendChild(button);
+  });
+
+  var tocList = document.querySelector("[data-toc-list]");
+  if (tocList) {
+    document.querySelectorAll(".post-content > h2, .post-content > h3").forEach(function (heading, index) {
+      if (heading.closest(".investigation-path")) return;
+      if (!heading.id) heading.id = "section-" + (index + 1);
+      var item = document.createElement("li");
+      var link = document.createElement("a");
+      link.href = "#" + heading.id;
+      link.textContent = heading.textContent;
+      if (heading.tagName === "H3") item.className = "toc-subsection";
+      item.appendChild(link);
+      tocList.appendChild(item);
+    });
+    if (!tocList.children.length) tocList.closest("details").hidden = true;
+  }
+
+  var printButton = document.querySelector("[data-print-playbook]");
+  if (printButton) printButton.addEventListener("click", function () { window.print(); });
+  var copyLinkButton = document.querySelector("[data-copy-link]");
+  if (copyLinkButton) copyLinkButton.addEventListener("click", function () { copyText(window.location.href, copyLinkButton, "Link copied"); });
 
   document.querySelectorAll('a[target="_blank"]').forEach(function (link) {
     link.rel = "noopener noreferrer";
@@ -107,10 +197,7 @@
   var recommendationButton = document.querySelector(".recommendation .message button");
   if (recommendationButton) {
     recommendationButton.addEventListener("click", function () {
-      window.scrollTo({
-        top: 0,
-        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
-      });
+      window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
     });
   }
 
@@ -118,7 +205,6 @@
   var article = document.querySelector(".post-content");
   var recommendation = document.querySelector(".recommendation");
   var ticking = false;
-
   function updateScrollState() {
     body.classList.toggle("light", window.scrollY > 0);
     if (timeBar && article) {
@@ -135,7 +221,6 @@
     }
     ticking = false;
   }
-
   window.addEventListener("scroll", function () {
     if (!ticking) {
       window.requestAnimationFrame(updateScrollState);

@@ -19,6 +19,29 @@
   outline-offset: 3px;
 }
 
+body:not(.main-page) a.button,
+body:not(.main-page) button.button {
+  display: inline-flex;
+  min-height: rem(44px);
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $themeColor;
+  border-radius: rem(5px);
+  padding: rem(10px) rem(16px);
+  background: $themeColor;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body:not(.main-page) a.button:hover,
+body:not(.main-page) button.button:hover { background: darken($themeColor, 8%); color: #fff; }
+
+.recovery-actions { display: flex; flex-wrap: wrap; gap: rem(10px); justify-content: center; }
+.resume-download { margin: rem(10px) 0 rem(18px); }
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

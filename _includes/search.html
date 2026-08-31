@@ -1,8 +1,12 @@
 <div class="search-wrapper" id="site-search" role="search" aria-hidden="true">
     <div class="search-form">
+        <p class="search-eyebrow">COMMAND SEARCH</p>
+        <h2>Find a case file</h2>
+        <p class="search-help">Search by threat, tool, topic, or tactic. Press <kbd>Esc</kbd> to close.</p>
         <label class="visually-hidden" for="search-field">Search articles</label>
-        <input id="search-field" type="search" class="search-field" placeholder="{{ site.translations.text.search | default: 'Search' }}" autocomplete="off">
+        <input id="search-field" type="search" class="search-field" placeholder="Try “WAF”, “incident response”, or “Splunk”" autocomplete="off">
         <button class="search-close" type="button" aria-label="Close search"><svg class="icon-remove-sign" aria-hidden="true"><use xlink:href="#icon-close"></use></svg></button>
-        <ul class="search-results search-list" aria-live="polite"></ul>
+        <p class="search-status" aria-live="polite"></p>
+        <ul class="search-results search-list"></ul>
     </div>
 </div>

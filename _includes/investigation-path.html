@@ -1,0 +1,9 @@
+{% if page.investigation_steps %}
+  <section class="investigation-path" aria-labelledby="investigation-path-title">
+    <p class="path-kicker">PLAYBOOK FLOW</p>
+    <h2 id="investigation-path-title">Investigation path</h2>
+    <ol>
+      {% for step in page.investigation_steps %}<li><span>{{ forloop.index }}</span>{{ step }}</li>{% endfor %}
+    </ol>
+  </section>
+{% endif %}

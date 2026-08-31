@@ -8,6 +8,8 @@
       "title"      : {{ post.title | jsonify }},
       "tags"       : {{ post.tags | array_to_sentence_string | jsonify }},
       "categories" : {{ post.category | jsonify }},
+      "description": {{ post.description | default: post.subtitle | jsonify }},
+      "content"    : {{ post.content | strip_html | normalize_whitespace | jsonify }},
       "url"        : {{ post.url | relative_url | jsonify }},
       "date"       : {{ post.date | date: date_format | jsonify }}
     } {% unless forloop.last %},{% endunless %}

@@ -1,6 +1,6 @@
 ---
 layout: author
-photo: /assets/img/uploads/pro.png
+photo: /assets/img/uploads/pro.webp
 name: Harsimran Sidhu
 display_name: Harsimran Sidhu
 position: Security Operations Center Analyst

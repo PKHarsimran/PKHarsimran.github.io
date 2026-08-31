@@ -7,86 +7,81 @@ layout: main
 {% else %}
     {% assign posts = site.posts | where_exp:"post","post.is_generated != true" %}
 {% endif %}
+{% assign featured = posts.first %}
 
-{% if site.show_hero and paginator == nil or paginator.page == 1 %}
-    {% assign offset = 1 %}
-{% else %}
-    {% assign offset = 0 %}
-{% endif %}
-
-<main class="home {% if site.show_hero and paginator == nil or paginator.page == 1 %}no-padding{% endif %}" role="main">
+<main class="home no-padding" role="main">
     {% if site.show_hero and paginator == nil or paginator.page == 1 %}
-        <!-- Hero -->
-        {% assign featured = posts.first %}
-        <section class="hero" style="background-image: url('{{ featured.image | relative_url }}')">
-            <div class="pixels"></div>
-            <div class="gradient"></div>
+        <section class="hero" aria-labelledby="hero-title">
+            <img class="hero-art" src="{{ '/assets/img/soc-case-files-hero.webp' | relative_url }}" alt="Abstract incident telemetry converging on a protected core" width="1672" height="941" decoding="async" fetchpriority="high">
+            <div class="hero-shade" aria-hidden="true"></div>
             <div class="content">
-                <time datetime="{{ featured.date | date_to_xmlschema }}" class="date">
-                    {% if site.date_format == nil %}
-                        {{ featured.date | date: "%m.%d.%Y" }}
-                    {% else %}
-                        {{ featured.date | date: site.date_format }}
-                    {% endif %}
-                </time>
-                <h1 class="title">{{ featured.title }}</h1>
-                <p class="description">{{ featured.subtitle }}</p>
+                <p class="hero-eyebrow">SOC CASE FILES</p>
+                <h1 class="title" id="hero-title">Investigate.<br>Contain. Learn.</h1>
+                <p class="description">Practical security operations playbooks, threat investigations, and lessons from the field.</p>
                 <div class="buttons">
-                    <a href="{{ featured.url | prepend: site.baseurl }}" role="button" class="button">
-                        <svg><use xlink:href="#icon-read"></use></svg>
-                        <span>{{ site.translations.button.read_now | default: "Read Now" }}</span>
-                    </a>
+                    <a href="#case-files" class="button button-primary">Explore case files</a>
+                    <a href="{{ '/resume/' | relative_url }}" class="button button-secondary">View experience</a>
                 </div>
+                <a class="hero-latest" href="{{ featured.url | relative_url }}">
+                    <span>Latest investigation</span>
+                    <strong>{{ featured.title }}</strong>
+                </a>
+                <dl class="hero-stats" aria-label="Field notes statistics">
+                    <div><dt>{{ posts | size }}</dt><dd>field notes</dd></div>
+                    <div><dt>{{ site.categories | size }}</dt><dd>focus areas</dd></div>
+                    <div><dt>{{ site.time | date: "%Y" }}</dt><dd>current</dd></div>
+                </dl>
             </div>
         </section>
     {% endif %}
-    <!-- Posts -->
-    <section id="grid" class="row flex-grid">
-        {% for post in posts offset: offset %}
-            <article class="box-item">
-                <span class="category">
-                    <a href="{{ site.baseurl }}/{{ site.categories_folder | default: 'category' }}/{{ post.category | slugify }}/">
-                        <span>{{ post.category }}</span>
-                    </a>
-                </span>
-                <div class="box-body">
-                    <a class="cover" href="{{ post.url | prepend: site.baseurl }}">
-                        {% if post.optimized_image %}
-                            <img src="{{ post.optimized_image | relative_url }}" alt="{{ post.title | escape }}" width="{{ post.image_width }}" height="{{ post.image_height }}" loading="lazy" decoding="async">
-                        {% elsif post.image %}
-                            <img src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}" width="{{ post.image_width }}" height="{{ post.image_height }}" loading="lazy" decoding="async">
-                        {% else %}
-                            <img src="{{ '/assets/img/off.jpg' | relative_url }}" alt="{{ post.title | escape }}" loading="lazy" decoding="async">
-                        {% endif %}
-                        {% include new-post-tag.html date=post.date %}
-                        {% include read-icon.html %}
-                    </a>
-                    <div class="box-info">
-                        <time datetime="{{ post.date | date_to_xmlschema }}" class="date">
-                            {% include date.html date=post.date %}
-                        </time>
-                        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
-                            <h2 class="post-title">
-                                {{ post.title }}
-                            </h2>
+
+    <section class="case-files" id="case-files" aria-labelledby="case-files-title">
+        <div class="case-files-heading">
+            <div>
+                <p class="section-kicker">FIELD NOTES</p>
+                <h2 id="case-files-title">Case files</h2>
+            </div>
+            <p><span data-visible-count>{{ posts | size }}</span> investigations, playbooks, and engineering guides.</p>
+        </div>
+        <div class="case-filters" aria-label="Filter case files">
+            <button type="button" class="case-filter active" data-filter="all" aria-pressed="true">All</button>
+            {% assign sorted_categories = site.categories | sort %}
+            {% for category in sorted_categories %}
+                <button type="button" class="case-filter" data-filter="{{ category[0] | slugify }}" aria-pressed="false">{{ category[0] }}</button>
+            {% endfor %}
+        </div>
+        <div id="grid" class="row flex-grid" aria-live="polite">
+            {% for post in posts %}
+                <article class="box-item" data-case-file data-category="{{ post.category | slugify }}">
+                    <span class="category"><a href="{{ site.baseurl }}/{{ site.categories_folder | default: 'category' }}/{{ post.category | slugify }}/"><span>{{ post.category }}</span></a></span>
+                    <div class="box-body">
+                        <a class="cover" href="{{ post.url | relative_url }}">
+                            {% if post.optimized_image %}
+                                <img src="{{ post.optimized_image | relative_url }}" alt="" width="{{ post.image_width }}" height="{{ post.image_height }}" loading="lazy" decoding="async">
+                            {% elsif post.image %}
+                                <img src="{{ post.image | relative_url }}" alt="" width="{{ post.image_width }}" height="{{ post.image_height }}" loading="lazy" decoding="async">
+                            {% else %}
+                                <img src="{{ '/assets/img/off.jpg' | relative_url }}" alt="" loading="lazy" decoding="async">
+                            {% endif %}
+                            {% include new-post-tag.html date=post.date %}
+                            {% include read-icon.html %}
                         </a>
-                        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+                        <div class="box-info">
+                            <time datetime="{{ post.date | date_to_xmlschema }}" class="date">{% include date.html date=post.date %}</time>
+                            <a class="post-link" href="{{ post.url | relative_url }}"><h3 class="post-title">{{ post.title }}</h3></a>
                             <p class="description">{{ post.description }}</p>
-                        </a>
-                        <div class="tags">
-                            {% for tag in post.tags %}
-                                {% if tag != "" %}
-                                    <a href="{{ site.baseurl}}/tags/#{{tag | slugify }}">#{{ tag }}</a>
-                                {% endif %}
-                            {% endfor %}
+                            <div class="tags" aria-label="Topics">
+                                {% for tag in post.tags limit:3 %}
+                                    {% if tag != "" %}<a href="{{ site.baseurl }}/tags/#{{ tag | slugify }}">#{{ tag }}</a>{% endif %}
+                                {% endfor %}
+                                {% if post.tags.size > 3 %}<span class="more-tags">+{{ post.tags.size | minus: 3 }}</span>{% endif %}
+                            </div>
                         </div>
                     </div>
-                </div>
-            </article>
-        {% endfor %}
+                </article>
+            {% endfor %}
+        </div>
+        <p class="no-case-results" data-no-results hidden>No case files match this filter.</p>
     </section>
-    <!-- Pagination -->
-    {% if site.paginate %}
-        {% include pagination-home.html %}
-    {% endif %}
+    {% if site.paginate %}{% include pagination-home.html %}{% endif %}
 </main>

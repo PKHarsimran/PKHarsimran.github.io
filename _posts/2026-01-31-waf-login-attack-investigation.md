@@ -20,6 +20,12 @@ tags:
 author: Harsimran Sidhu
 paginate: true
 comments: true
+investigation_steps:
+  - Validate the signal
+  - Profile responses
+  - Correlate identities
+  - Decide the response
+  - Tune detections
 ---
 ## Introduction
 
