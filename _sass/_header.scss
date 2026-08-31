@@ -84,9 +84,13 @@ body {
 
   .menu-toggle {
     float: left;
-    display: block;
+    display: flex;
     min-width: rem(44px);
     min-height: rem(44px);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    touch-action: manipulation;
   }
 
   .dosearch {

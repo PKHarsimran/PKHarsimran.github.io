@@ -3,7 +3,6 @@
 
   var body = document.body;
   var menuButton = document.getElementById("menu");
-  var menuToggle = document.querySelector(".menu-toggle");
   var sidebar = document.getElementById("sidebar");
   var mask = document.getElementById("mask");
   var menuClose = sidebar && sidebar.querySelector(".menu-close");
@@ -18,25 +17,23 @@
   var previousFocus;
 
   function openMenu() {
-    menuButton.checked = true;
     body.classList.add("menu-open");
     sidebar.classList.add("open");
     mask.classList.add("show");
     sidebar.setAttribute("aria-hidden", "false");
-    menuToggle.setAttribute("aria-expanded", "true");
-    menuToggle.setAttribute("aria-label", "Close menu");
+    menuButton.setAttribute("aria-expanded", "true");
+    menuButton.setAttribute("aria-label", "Close menu");
     if (menuClose) menuClose.focus();
   }
 
   function closeMenu() {
-    menuButton.checked = false;
     body.classList.remove("menu-open");
     sidebar.classList.remove("open");
     mask.classList.remove("show");
     sidebar.setAttribute("aria-hidden", "true");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Open menu");
-    menuToggle.focus();
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.setAttribute("aria-label", "Open menu");
+    menuButton.focus();
   }
 
   function loadSearchIndex() {
@@ -97,33 +94,10 @@
     searchStatus.textContent = posts.length ? posts.length + " result" + (posts.length === 1 ? "" : "s") : "No case files found. Try another threat, tool, or topic.";
   }
 
-  function activateControlOnKeydown(event, action) {
-    if (event.key !== "Enter" && event.key !== " ") return;
-    event.preventDefault();
-    action();
-  }
-
-  if (menuButton && menuToggle && sidebar && mask) {
-    menuButton.addEventListener("change", function () {
-      menuButton.checked ? openMenu() : closeMenu();
-    });
-    menuToggle.addEventListener("click", function (event) {
-      event.preventDefault();
-      menuButton.checked ? closeMenu() : openMenu();
-    });
-    menuToggle.addEventListener("keydown", function (event) {
-      activateControlOnKeydown(event, function () {
-        menuButton.checked ? closeMenu() : openMenu();
-      });
-    });
+  if (menuButton && sidebar && mask) {
+    menuButton.addEventListener("click", openMenu);
     if (menuClose) {
-      menuClose.addEventListener("click", function (event) {
-        event.preventDefault();
-        closeMenu();
-      });
-      menuClose.addEventListener("keydown", function (event) {
-        activateControlOnKeydown(event, closeMenu);
-      });
+      menuClose.addEventListener("click", closeMenu);
     }
     mask.addEventListener("click", closeMenu);
     sidebar.querySelectorAll("a").forEach(function (link) {
