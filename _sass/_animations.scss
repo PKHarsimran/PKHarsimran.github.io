@@ -64,3 +64,64 @@
     opacity: 1;
   }
 }
+
+// Progressive enhancement: JavaScript adds these classes only when
+// IntersectionObserver is available, so content never disappears on failure.
+html.motion-ready .reveal-on-scroll {
+  opacity: 0;
+  transform: translate3d(0, rem(28px), 0) scale(0.985);
+  transition:
+    opacity 650ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+html.motion-ready .reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  will-change: auto;
+}
+
+@keyframes heroReveal {
+  from { opacity: 0; transform: translate3d(0, rem(24px), 0); filter: blur(6px); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); filter: blur(0); }
+}
+
+@keyframes heroDrift {
+  from { transform: scale(1.035) translate3d(0, 0, 0); }
+  to { transform: scale(1.075) translate3d(-0.7%, -0.4%, 0); }
+}
+
+@keyframes headerDrop {
+  from { opacity: 0; transform: translate3d(0, rem(-18px), 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes filterReveal {
+  from { opacity: 0; transform: translate3d(0, rem(16px), 0) scale(0.97); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@keyframes filterPulse {
+  0% { box-shadow: 0 0 0 0 rgba(239, 63, 74, 0.4); }
+  100% { box-shadow: 0 0 0 rem(8px) rgba(239, 63, 74, 0); }
+}
+
+@keyframes lightSweep {
+  0%, 68% { transform: translate3d(-140%, 0, 0) skewX(-18deg); }
+  82%, 100% { transform: translate3d(220%, 0, 0) skewX(-18deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  html.motion-ready .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
+}
