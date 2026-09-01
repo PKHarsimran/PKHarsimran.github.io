@@ -1,13 +1,28 @@
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+{% if site.google_analytics %}
 <script>
-  var host = window.location.hostname;
-  if (host != 'localhost') {
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  (function (window, document, measurementId) {
+    "use strict";
 
-    gtag('config', '{{ site.google_analytics }}');
-  }
+    var hostname = window.location.hostname.replace(/^www\./, "");
+    if (hostname !== "harsim.ca") return;
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () {
+      window.dataLayer.push(arguments);
+    };
+
+    window.gtag("js", new Date());
+    window.gtag("config", measurementId, {
+      allow_ad_personalization_signals: false,
+      allow_google_signals: false,
+      cookie_domain: "auto",
+      cookie_flags: "SameSite=Lax;Secure"
+    });
+
+    var script = document.createElement("script");
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(measurementId);
+    document.head.appendChild(script);
+  })(window, document, "{{ site.google_analytics | escape }}");
 </script>
-  
+{% endif %}
