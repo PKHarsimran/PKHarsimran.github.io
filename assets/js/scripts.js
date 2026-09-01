@@ -15,7 +15,13 @@
   var searchStatus = searchWrapper && searchWrapper.querySelector(".search-status");
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var searchIndex;
+  var searchEventTimer;
   var previousFocus;
+
+  function trackEvent(name, parameters) {
+    if (typeof window.gtag !== "function") return;
+    window.gtag("event", name, parameters || {});
+  }
 
   function openMenu() {
     body.classList.add("menu-open");
@@ -25,6 +31,7 @@
     menuButton.setAttribute("aria-expanded", "true");
     menuButton.setAttribute("aria-label", "Close menu");
     if (menuClose) menuClose.focus();
+    trackEvent("navigation_menu_open");
   }
 
   function closeMenu() {
@@ -62,6 +69,7 @@
     body.classList.add("search-overlay");
     searchInput.focus();
     loadSearchIndex();
+    trackEvent("search_open");
   }
 
   function closeSearch() {
@@ -76,7 +84,7 @@
     if (previousFocus && previousFocus.focus) previousFocus.focus();
   }
 
-  function renderSearchResults(posts) {
+  function renderSearchResults(posts, query) {
     searchResults.replaceChildren();
     posts.slice(0, 10).forEach(function (post) {
       var item = document.createElement("li");
@@ -88,11 +96,23 @@
       date.className = "entry-date";
       date.textContent = post.date;
       link.href = post.url;
+      link.addEventListener("click", function () {
+        trackEvent("select_content", {
+          content_type: "search_result",
+          item_id: post.url,
+          item_name: post.title,
+          search_term: query
+        });
+      });
       link.append(category, document.createTextNode(post.title + " "), date);
       item.appendChild(link);
       searchResults.appendChild(item);
     });
     searchStatus.textContent = posts.length ? posts.length + " result" + (posts.length === 1 ? "" : "s") : "No case files found. Try another threat, tool, or topic.";
+    window.clearTimeout(searchEventTimer);
+    searchEventTimer = window.setTimeout(function () {
+      trackEvent("search", { search_term: query, result_count: posts.length });
+    }, 750);
   }
 
   if (menuButton && sidebar && mask) {
@@ -119,7 +139,7 @@
       loadSearchIndex().then(function (posts) {
         renderSearchResults(posts.filter(function (post) {
           return [post.title, post.tags, post.categories, post.description, post.content].join(" ").toLowerCase().includes(query);
-        }));
+        }), query);
       });
     });
   }
@@ -168,6 +188,43 @@
       });
       if (visibleCount) visibleCount.textContent = count.toString();
       if (noResults) noResults.hidden = count !== 0;
+      trackEvent("select_content", {
+        content_type: "case_file_filter",
+        item_id: filter,
+        result_count: count
+      });
+    });
+  });
+
+  document.querySelectorAll("[data-case-file] .cover, [data-case-file] .post-link").forEach(function (link) {
+    link.addEventListener("click", function () {
+      var card = link.closest("[data-case-file]");
+      var title = card && card.querySelector(".post-title");
+      trackEvent("select_content", {
+        content_type: "case_file",
+        item_id: link.getAttribute("href"),
+        item_name: title ? title.textContent.trim() : "",
+        item_category: card ? card.dataset.category : ""
+      });
+    });
+  });
+
+  document.querySelectorAll(".hero .button, .hero-latest").forEach(function (link) {
+    link.addEventListener("click", function () {
+      trackEvent("select_content", {
+        content_type: link.classList.contains("hero-latest") ? "latest_investigation" : "hero_cta",
+        item_id: link.getAttribute("href"),
+        item_name: link.textContent.trim().replace(/\s+/g, " ")
+      });
+    });
+  });
+
+  document.querySelectorAll('a[href$=".pdf"], a[href*=".pdf?"]').forEach(function (link) {
+    link.addEventListener("click", function () {
+      trackEvent("resume_download", {
+        file_name: link.getAttribute("href").split("/").pop().split("?")[0],
+        link_text: link.textContent.trim()
+      });
     });
   });
 
@@ -220,7 +277,10 @@
     button.className = "code-copy";
     button.textContent = "Copy";
     button.setAttribute("aria-label", "Copy code");
-    button.addEventListener("click", function () { copyText(code.innerText, button, "Copied"); });
+    button.addEventListener("click", function () {
+      copyText(code.innerText, button, "Copied");
+      trackEvent("copy_code", { article_title: document.title });
+    });
     pre.appendChild(button);
   });
 
@@ -241,9 +301,15 @@
   }
 
   var printButton = document.querySelector("[data-print-playbook]");
-  if (printButton) printButton.addEventListener("click", function () { window.print(); });
+  if (printButton) printButton.addEventListener("click", function () {
+    trackEvent("print_playbook", { article_title: document.title });
+    window.print();
+  });
   var copyLinkButton = document.querySelector("[data-copy-link]");
-  if (copyLinkButton) copyLinkButton.addEventListener("click", function () { copyText(window.location.href, copyLinkButton, "Link copied"); });
+  if (copyLinkButton) copyLinkButton.addEventListener("click", function () {
+    copyText(window.location.href, copyLinkButton, "Link copied");
+    trackEvent("share", { method: "copy_link", content_type: "article", item_id: window.location.pathname });
+  });
 
   document.querySelectorAll('a[target="_blank"]').forEach(function (link) {
     link.rel = "noopener noreferrer";
@@ -259,6 +325,8 @@
   var timeBar = document.querySelector(".time-bar");
   var article = document.querySelector(".post-content");
   var recommendation = document.querySelector(".recommendation");
+  var readingMilestones = [25, 50, 75, 100];
+  var reachedMilestones = {};
   var ticking = false;
   function updateScrollState() {
     body.classList.toggle("light", window.scrollY > 0);
@@ -273,6 +341,14 @@
       timeBar.setAttribute("aria-valuenow", Math.round(progress * 100).toString());
       timeBar.style.bottom = progress < 1 ? "0" : "-100%";
       if (recommendation) recommendation.style.bottom = progress >= 0.98 ? "0" : "-100%";
+      readingMilestones.forEach(function (milestone) {
+        if (progress * 100 < milestone || reachedMilestones[milestone]) return;
+        reachedMilestones[milestone] = true;
+        trackEvent("article_progress", {
+          article_title: document.title,
+          percent_scrolled: milestone
+        });
+      });
     }
     ticking = false;
   }
