@@ -4,35 +4,98 @@
     "use strict";
 
     var hostname = window.location.hostname.replace(/^www\./, "");
-    if (hostname !== "harsim.ca") return;
+    var isProduction = hostname === "harsim.ca";
 
-    window.plausible = window.plausible || function () {
-      (window.plausible.q = window.plausible.q || []).push(arguments);
-    };
+    var storageKey = "harsim-measurement-consent-v1";
+    var scriptsLoaded = false;
+    var savedChoice = null;
 
-    var plausibleScript = document.createElement("script");
-    plausibleScript.defer = true;
-    plausibleScript.dataset.domain = "harsim.ca";
-    plausibleScript.src = "https://plausible.io/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js";
-    document.head.appendChild(plausibleScript);
+    try {
+      savedChoice = window.localStorage.getItem(storageKey);
+    } catch (error) {
+      savedChoice = null;
+    }
 
     window.dataLayer = window.dataLayer || [];
     window.gtag = window.gtag || function () {
       window.dataLayer.push(arguments);
     };
 
-    window.gtag("js", new Date());
-    window.gtag("config", measurementId, {
-      allow_ad_personalization_signals: false,
-      allow_google_signals: false,
-      cookie_domain: "auto",
-      cookie_flags: "SameSite=Lax;Secure"
+    var initiallyGranted = savedChoice === "allow";
+    window.measurementConsentGranted = initiallyGranted;
+    window.gtag("consent", "default", {
+      ad_storage: initiallyGranted ? "granted" : "denied",
+      analytics_storage: initiallyGranted ? "granted" : "denied",
+      ad_user_data: initiallyGranted ? "granted" : "denied",
+      ad_personalization: "denied",
+      wait_for_update: 500
     });
 
-    var script = document.createElement("script");
-    script.async = true;
-    script.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(measurementId);
-    document.head.appendChild(script);
+    function loadMeasurementScripts() {
+      if (scriptsLoaded || !isProduction) return;
+      scriptsLoaded = true;
+
+      window.plausible = window.plausible || function () {
+        (window.plausible.q = window.plausible.q || []).push(arguments);
+      };
+
+      var plausibleScript = document.createElement("script");
+      plausibleScript.defer = true;
+      plausibleScript.dataset.domain = "harsim.ca";
+      plausibleScript.src = "https://plausible.io/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js";
+      document.head.appendChild(plausibleScript);
+
+      window.gtag("js", new Date());
+      window.gtag("config", measurementId, {
+        allow_ad_personalization_signals: false,
+        allow_google_signals: false,
+        cookie_domain: "auto",
+        cookie_flags: "SameSite=Lax;Secure"
+      });
+
+      var script = document.createElement("script");
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(measurementId);
+      document.head.appendChild(script);
+    }
+
+    function clearMeasurementCookies() {
+      document.cookie.split(";").forEach(function (cookie) {
+        var name = cookie.split("=")[0].trim();
+        if (!/^_(ga|gcl)/.test(name)) return;
+        document.cookie = name + "=;Max-Age=0;path=/;SameSite=Lax";
+        document.cookie = name + "=;Max-Age=0;path=/;domain=.harsim.ca;SameSite=Lax";
+      });
+    }
+
+    function setChoice(choice) {
+      var granted = choice === "allow";
+      savedChoice = granted ? "allow" : "reject";
+      window.measurementConsentGranted = granted;
+
+      try {
+        window.localStorage.setItem(storageKey, savedChoice);
+      } catch (error) {
+        /* The choice still applies to this page when storage is unavailable. */
+      }
+
+      window.gtag("consent", "update", {
+        ad_storage: granted ? "granted" : "denied",
+        analytics_storage: granted ? "granted" : "denied",
+        ad_user_data: granted ? "granted" : "denied",
+        ad_personalization: "denied"
+      });
+
+      if (granted) loadMeasurementScripts();
+      else clearMeasurementCookies();
+    }
+
+    window.sitePrivacy = {
+      getChoice: function () { return savedChoice; },
+      setChoice: setChoice
+    };
+
+    if (initiallyGranted) loadMeasurementScripts();
   })(window, document, "{{ site.google_analytics | escape }}");
 </script>
 {% endif %}
