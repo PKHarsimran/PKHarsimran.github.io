@@ -34,10 +34,27 @@
 
     {% include links.html %}
 
+    <nav class="footer-legal" aria-label="Legal">
+      <a href="{{ '/privacy-policy/' | relative_url }}">Privacy Policy</a>
+      <button type="button" data-open-privacy-settings>Cookie settings</button>
+    </nav>
+
     <p>
       &copy; {{ site.time | date: '%Y' }} {{ site.name }}. Built with Jekyll.
     </p>
 </footer>
+
+<section class="privacy-consent" id="privacy-consent" aria-labelledby="privacy-consent-title" aria-live="polite" hidden>
+  <div>
+    <strong id="privacy-consent-title">Your privacy choices</strong>
+    <p>Optional analytics and advertising measurement help improve the site and measure campaigns. Advertising personalization stays off.</p>
+    <a href="{{ '/privacy-policy/' | relative_url }}">Read the Privacy Policy</a>
+  </div>
+  <div class="privacy-consent-actions">
+    <button type="button" data-privacy-choice="reject">Reject optional</button>
+    <button type="button" class="primary" data-privacy-choice="allow">Allow measurement</button>
+  </div>
+</section>
 
 <!-- Include the website scripts -->
 <script src="{{ '/assets/js/scripts.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>

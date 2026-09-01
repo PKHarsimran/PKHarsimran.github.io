@@ -21,9 +21,39 @@
   var previousFocus;
 
   function trackEvent(name, parameters) {
-    if (typeof window.gtag !== "function") return;
+    if (!window.measurementConsentGranted || typeof window.gtag !== "function") return;
     window.gtag("event", name, parameters || {});
   }
+
+  var privacyConsent = document.getElementById("privacy-consent");
+  var privacyChoices = document.querySelectorAll("[data-privacy-choice]");
+  var privacySettingsButtons = document.querySelectorAll("[data-open-privacy-settings]");
+
+  function openPrivacySettings() {
+    if (!privacyConsent) return;
+    privacyConsent.hidden = false;
+    var firstChoice = privacyConsent.querySelector("[data-privacy-choice]");
+    if (firstChoice) firstChoice.focus();
+  }
+
+  function closePrivacySettings() {
+    if (privacyConsent) privacyConsent.hidden = true;
+  }
+
+  if (privacyConsent && (!window.sitePrivacy || !window.sitePrivacy.getChoice())) {
+    privacyConsent.hidden = false;
+  }
+
+  privacyChoices.forEach(function (button) {
+    button.addEventListener("click", function () {
+      if (window.sitePrivacy) window.sitePrivacy.setChoice(button.dataset.privacyChoice);
+      closePrivacySettings();
+    });
+  });
+
+  privacySettingsButtons.forEach(function (button) {
+    button.addEventListener("click", openPrivacySettings);
+  });
 
   function focusableElements(container) {
     return Array.from(container.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), summary, [tabindex]:not([tabindex="-1"])')).filter(function (element) {

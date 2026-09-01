@@ -431,7 +431,7 @@
 }
 
 @media print {
-  .bar-header, .article-tools, .see-also, footer, .share, .author, .comments, .time-bar, .recommendation, .pagination { display: none !important; }
+  .bar-header, .article-tools, .see-also, footer, .share, .author, .time-bar, .recommendation, .pagination { display: none !important; }
   .post, .post.two-columns { top: 0; display: block; max-width: none; padding: 0; }
   .post.two-columns .post-content { padding: 0; }
   .post-content { overflow: visible; }

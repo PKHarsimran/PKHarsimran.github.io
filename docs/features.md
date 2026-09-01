@@ -15,7 +15,6 @@ _Jekflix_ comes with features to help you create/edit/share content and provide 
 - [Contact page](features.md#contact-page)
 - [404 error page](features.md#404-error-page)
 - [Feed RSS](features.md#feed-rss)
-- [Disqus](features.md#disqus) *(optional)*
 - [Featured post](features.md#featured-post) *(optional)*
 - [Home page pagination](features.md#home-page-pagination) *(optional)*
 - [Posts sidebar](features.md#posts-sidebar) *(optional)*
@@ -119,14 +118,6 @@ Check it out [here](https://jekflix.rossener.com/404/).
 A feed file is automatically generated on every build.
 
 Check it out a sample [here](https://jekflix.rossener.com/feed.xml).
-
-## Disqus
-
-*(Optional)*
-
-Jekflix Template implements the Disqus plugin, allowing visitors to comment in posts.
-
-See the [docs](settings.md#disqus_username) to configure it.
 
 ## Featured post
 
