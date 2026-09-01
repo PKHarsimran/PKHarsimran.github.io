@@ -30,7 +30,7 @@
 }
 
 .post-content {
-  overflow-x: auto;
+  min-width: 0;
   padding: rem(40px) 0;
 
   &.fullwidth {
@@ -340,8 +340,7 @@
 
 .article-tools {
   @include center(rem(800px));
-  position: sticky;
-  top: rem(66px);
+  position: static;
   z-index: 5;
   display: flex;
   flex-wrap: wrap;
@@ -355,6 +354,11 @@
   background: rgba(255, 255, 255, 0.96);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
   backdrop-filter: blur(10px);
+
+  @include media(">=sm") {
+    position: sticky;
+    top: rem(82px);
+  }
 
   button, summary {
     min-height: rem(44px);
@@ -387,7 +391,12 @@
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.13);
   }
   li { padding: rem(4px) 0; font-size: rem(14px); line-height: 1.35; }
-  a { color: $primaryDark; }
+  a {
+    display: inline-block;
+    color: $primaryDark;
+    transition: color 180ms ease, transform 180ms ease;
+  }
+  a[aria-current="location"] { transform: translateX(rem(4px)); color: $themeColor; font-weight: 700; }
 }
 
 .investigation-path {

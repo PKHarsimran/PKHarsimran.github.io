@@ -52,6 +52,8 @@
 @media (prefers-reduced-motion: no-preference) {
   .bar-header { animation: headerDrop 520ms cubic-bezier(0.22, 1, 0.36, 1) both; }
   .hero .hero-art { animation: heroDrift 18s ease-in-out infinite alternate; will-change: transform; }
+  .hero.motion-managed:not(.is-in-view) .hero-art,
+  .hero.motion-managed:not(.is-in-view) .hero-latest::after { animation-play-state: paused; }
   .hero .content > * { opacity: 0; animation: heroReveal 760ms cubic-bezier(0.22, 1, 0.36, 1) forwards; }
   .hero .content > :nth-child(1) { animation-delay: 100ms; }
   .hero .content > :nth-child(2) { animation-delay: 180ms; }
