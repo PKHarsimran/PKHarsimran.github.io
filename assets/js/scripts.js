@@ -219,7 +219,7 @@
     });
   });
 
-  document.querySelectorAll('a[href$=".pdf"], a[href*=".pdf?"]').forEach(function (link) {
+  document.querySelectorAll("a.resume-download").forEach(function (link) {
     link.addEventListener("click", function () {
       trackEvent("resume_download", {
         file_name: link.getAttribute("href").split("/").pop().split("?")[0],

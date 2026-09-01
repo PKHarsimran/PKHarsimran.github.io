@@ -575,25 +575,32 @@
   left: 0;
   right: 0;
   bottom: -100%;
-  display: block;
+  z-index: 20;
   width: 100%;
-  padding: rem(10px);
+  max-height: 38vh;
+  padding: rem(12px) rem(16px);
   transition: bottom 0.5s;
   background-color: rgba(0, 0, 0, 0.85);
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  gap: rem(14px);
+  backdrop-filter: blur(rem(10px));
 
   @include media(">=sm") {
-    padding: rem(15px);
+    max-height: rem(230px);
+    padding: rem(14px) rem(24px);
   }
 
   .message {
     display: flex;
+    flex: 1 1 auto;
     flex-direction: column;
     justify-content: space-between;
-    font-size: rem(16px);
+    min-width: 0;
+    padding-right: 0;
+    font-size: rem(14px);
     color: #fff;
-    padding-right: rem(20px);
 
     @include media(">=sm") {
       font-size: rem(20px);
@@ -601,7 +608,8 @@
 
     strong {
       display: block;
-      margin: rem(10px) 0;
+      margin: 0 0 rem(10px);
+      line-height: 1.25;
     }
 
     button {
@@ -642,17 +650,18 @@
   }
   .post-preview {
     display: flex;
+    flex: 0 1 58%;
     align-items: center;
-    flex-direction: column;
+    min-width: 0;
+    max-width: rem(660px);
+    overflow: hidden;
     background-color: #000;
-    padding: rem(5px);
-    max-width: 35%;
+    padding: rem(8px) rem(12px);
+    border-radius: rem(6px);
     text-decoration: none;
 
     @include media(">=sm") {
-      flex-direction: row;
-      padding: rem(5px) rem(50px) rem(5px) rem(5px);
-      max-width: 50%;
+      padding: rem(8px) rem(24px) rem(8px) rem(8px);
     }
 
     &:hover {
@@ -666,22 +675,43 @@
       }
     }
 
-    .image,
+    .image {
+      display: none;
+      flex: 0 0 rem(110px);
+      height: rem(72px);
+      overflow: hidden;
+      border-radius: rem(4px);
+
+      @include media(">=sm") {
+        display: block;
+        flex-basis: rem(180px);
+        height: rem(110px);
+      }
+    }
+
     .image > img {
       display: block;
       width: 100%;
-      max-width: rem(200px);
-      transition: all 0.3s;
+      height: 100%;
+      max-width: none;
+      object-fit: cover;
+      transition: filter 0.3s;
     }
 
     .title {
       font-size: rem(16px);
       color: #fff;
-      margin: rem(5px) 0;
-      transition: all 0.3s;
+      display: -webkit-box;
+      overflow: hidden;
+      margin: 0;
+      line-height: 1.25;
+      transition: color 0.3s;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
       @include media(">=sm") {
-        font-size: rem(23px);
+        font-size: rem(19px);
         margin: 0 0 0 rem(20px);
+        -webkit-line-clamp: 2;
       }
     }
   }
