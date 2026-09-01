@@ -93,6 +93,10 @@
   position: relative;
   z-index: 1;
 
+  &[hidden] {
+    display: none;
+  }
+
   @include media(">=sm") {
     margin: 0 rem($itemMargin) rem(30px);
   }
