@@ -1,0 +1,98 @@
+.resume-page {
+  --resume-panel: #1c1c1c;
+  --resume-border: rgba(255, 255, 255, 0.12);
+  max-width: rem(1180px);
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.78);
+
+  a { color: inherit; }
+
+  .resume-hero {
+    display: grid;
+    gap: rem(28px);
+    align-items: center;
+    margin-bottom: rem(54px);
+    border: 1px solid var(--resume-border);
+    border-radius: rem(18px);
+    padding: clamp(1.4rem, 5vw, 3.5rem);
+    background: radial-gradient(circle at 100% 0, rgba(239, 63, 74, 0.2), transparent 35%), linear-gradient(135deg, #1c1c1c, #101010);
+    @include media(">=sm") { grid-template-columns: rem(180px) 1fr; }
+  }
+
+  .resume-photo {
+    width: rem(150px);
+    height: rem(150px);
+    border: 3px solid $themeColor;
+    border-radius: 50%;
+    object-fit: cover;
+    @include media(">=sm") { width: rem(180px); height: rem(180px); }
+  }
+
+  .resume-eyebrow, .resume-section-number { margin: 0 0 rem(8px); color: #ef596b; font-size: rem(12px); font-weight: 700; letter-spacing: 0.16em; }
+  h1 { margin: 0; color: #fff; font-size: clamp(2.7rem, 7vw, 5.2rem); line-height: 0.92; }
+  .resume-headline { margin: rem(14px) 0 rem(12px); color: #fff; font-weight: 700; letter-spacing: 0.04em; }
+  .resume-summary { max-width: rem(760px); margin: 0; color: rgba(255, 255, 255, 0.74); font-size: rem(18px); line-height: 1.55; }
+  .resume-actions { display: flex; flex-wrap: wrap; gap: rem(10px); margin-top: rem(24px); }
+  .resume-download { margin: 0; }
+  .resume-secondary { border-color: var(--resume-border); background: transparent; }
+
+  .resume-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(8px) rem(18px);
+    margin: rem(22px) 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: rem(14px);
+    li { margin: 0; }
+    a { color: rgba(255, 255, 255, 0.65); text-decoration-color: rgba(255, 255, 255, 0.24); }
+  }
+
+  .resume-layout { display: grid; gap: rem(52px); border-radius: rem(18px); padding: clamp(1.4rem, 4vw, 3rem); background: #141414; @include media(">=56rem") { grid-template-columns: minmax(0, 2fr) minmax(rem(270px), 0.8fr); } }
+  .resume-section { margin-bottom: rem(58px); }
+  .resume-section > h2 { margin: 0 0 rem(25px); color: #fff; font-size: clamp(1.9rem, 4vw, 2.7rem); }
+
+  .resume-role {
+    margin-bottom: rem(18px);
+    border: 1px solid var(--resume-border);
+    border-left: 3px solid $themeColor;
+    border-radius: 0 rem(12px) rem(12px) 0;
+    padding: rem(22px);
+    background: var(--resume-panel);
+    h3 { margin: 0; color: #fff; font-size: rem(21px); }
+    ul { margin: rem(17px) 0 0; padding-left: rem(20px); }
+    li { margin-bottom: rem(9px); color: rgba(255, 255, 255, 0.76); line-height: 1.5; }
+  }
+
+  .resume-role-heading {
+    display: flex;
+    flex-direction: column;
+    gap: rem(7px);
+    @include media(">=sm") { flex-direction: row; justify-content: space-between; }
+    p { margin: rem(3px) 0 0; color: rgba(255, 255, 255, 0.58); }
+    time { flex: 0 0 auto; color: #ef596b; font-size: rem(14px); font-weight: 700; }
+  }
+
+  .resume-work-grid { display: grid; gap: rem(14px); @include media(">=sm") { grid-template-columns: repeat(3, 1fr); } }
+  .resume-work-card {
+    display: flex;
+    min-height: rem(245px);
+    flex-direction: column;
+    border: 1px solid var(--resume-border);
+    border-radius: rem(12px);
+    padding: rem(20px);
+    background: var(--resume-panel);
+    h3 { margin: 0 0 rem(12px); font-size: rem(19px); line-height: 1.25; }
+    h3 a { color: #fff; text-decoration: none; }
+    p { margin: 0; color: rgba(255, 255, 255, 0.7); line-height: 1.5; }
+    .resume-work-link { margin-top: auto; padding-top: rem(18px); color: #ef596b; font-weight: 700; text-decoration: none; }
+  }
+
+  .resume-sidebar .resume-section { border-top: 1px solid var(--resume-border); padding-top: rem(20px); }
+  .resume-skill-group { margin-bottom: rem(24px); h3 { margin: 0 0 rem(6px); color: #fff; font-size: rem(17px); } p { margin: 0; color: rgba(255, 255, 255, 0.7); line-height: 1.55; } }
+  .resume-education { margin-bottom: rem(24px); h3 { margin: 0 0 rem(4px); color: #fff; font-size: rem(17px); line-height: 1.3; } p { margin: 0 0 rem(2px); color: rgba(255, 255, 255, 0.62); line-height: 1.45; } p:last-child { color: #ef596b; font-size: rem(13px); } }
+}
+
+@media print {
+  .resume-page .resume-actions, .resume-page .resume-photo { display: none; }
+}

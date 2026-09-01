@@ -2,73 +2,88 @@
 layout: page
 menu: false
 title: Resume
-description: Harsimran Sidhu's detailed resume showcasing expertise in cybersecurity, IT infrastructure, and development.
+description: Harsimran Sidhu is a security operations analyst specializing in incident response, threat investigation, detection engineering, and security automation.
 permalink: /resume/
 ---
 
-![Harsimran Sidhu](/assets/img/uploads/pro.webp){: .img-rounded width="200px" height="200px"}
-# Harsimran Sidhu
+{% assign resume = site.data.resume %}
+<div class="resume-page">
+  <section class="resume-hero" aria-labelledby="resume-name">
+    <img class="resume-photo" src="/assets/img/uploads/pro.webp" alt="Harsimran Sidhu" width="180" height="180" decoding="async">
+    <div>
+      <p class="resume-eyebrow">SECURITY OPERATIONS</p>
+      <h1 id="resume-name">{{ resume.name }}</h1>
+      <p class="resume-headline">{{ resume.headline }}</p>
+      <p class="resume-summary">{{ resume.summary }}</p>
+      <div class="resume-actions">
+        <a class="button resume-download" href="/assets/files/Harsimran-Sidhu-Resume.pdf" download="Harsimran-Sidhu-Resume.pdf">Download PDF</a>
+        <a class="button resume-secondary" href="{{ resume.linkedin }}">Connect on LinkedIn</a>
+      </div>
+      <ul class="resume-contact" aria-label="Contact links">
+        <li><a href="mailto:{{ resume.email }}">{{ resume.email }}</a></li>
+        <li><a href="{{ resume.github }}">GitHub</a></li>
+        <li><a href="{{ resume.website }}">harsim.ca</a></li>
+      </ul>
+    </div>
+  </section>
 
-Security Operations and Threat Intelligence Analyst specializing in incident response, endpoint security, WAF investigations and detection engineering. I turn real-world investigations into practical playbooks for security analysts.
+  <div class="resume-layout">
+    <main class="resume-main">
+      <section class="resume-section" aria-labelledby="experience-title">
+        <p class="resume-section-number">01</p>
+        <h2 id="experience-title">Experience</h2>
+        {% for job in resume.experience %}
+          <article class="resume-role">
+            <div class="resume-role-heading">
+              <div>
+                <h3>{{ job.role }}</h3>
+                <p>{{ job.company }} · {{ job.location }}</p>
+              </div>
+              <time>{{ job.dates }}</time>
+            </div>
+            <ul>{% for bullet in job.bullets %}<li>{{ bullet }}</li>{% endfor %}</ul>
+          </article>
+        {% endfor %}
+      </section>
 
-[Download resume (PDF)](/assets/files/Harsimran-Sidhu-Resume.pdf){: .button .resume-download download="Harsimran-Sidhu-Resume.pdf"}
+      <section class="resume-section" aria-labelledby="work-title">
+        <p class="resume-section-number">02</p>
+        <h2 id="work-title">Selected security work</h2>
+        <div class="resume-work-grid">
+          {% for work in resume.selected_work %}
+            <article class="resume-work-card">
+              <h3><a href="{{ work.url | relative_url }}">{{ work.title }}</a></h3>
+              <p>{{ work.description }}</p>
+              <a class="resume-work-link" href="{{ work.url | relative_url }}">Read the case file →</a>
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+    </main>
 
-## Experience
+    <aside class="resume-sidebar" aria-label="Capabilities and education">
+      <section class="resume-section" aria-labelledby="capabilities-title">
+        <p class="resume-section-number">03</p>
+        <h2 id="capabilities-title">Core capabilities</h2>
+        {% for skill in resume.skills %}
+          <div class="resume-skill-group">
+            <h3>{{ skill.group }}</h3>
+            <p>{{ skill.items }}</p>
+          </div>
+        {% endfor %}
+      </section>
 
-### Security Operations Center Analyst
-**Columba System Inc, Remote**  
-_Nov 2022 - Present_
-
-- Monitoring endpoint activities with Cortex XDR to identify potential threats.
-- Implementing Splunk rules and alerts for advanced threat detection.
-- Managing and resolving tickets with Jira for efficient issue tracking.
-- Escalating critical issues to the IT team for rapid response.
-- Automating compliance checks and URL verifications with custom scripts.
-- Analyzing email headers and login patterns to prevent attacks.
-
-### Cyber Security Analyst
-**SecureOps, Remote**  
-_Oct 2021 – Nov 2022_
-
-- Investigating alerts from Microsoft 365 Defender and managing incident escalation.
-- Maintaining clear communication with team members using Microsoft Teams.
-- Daily use of Splunk, Azure Sentinel, and AWS Sandbox within service agreements.
-- Employing Kusto Query Language (KQL) for data filtering during investigations.
-- Packet analysis with Wireshark and familiarity with cybersecurity frameworks.
-
-### Information Technology Specialist
-**Telecom Metrics Inc, Kingston, Ontario**  
-_Jan 2021 – Aug 2021_
-
-- Leading IT security projects for infrastructure development and server maintenance.
-- Providing top-tier customer support and remote troubleshooting.
-- Implementing high availability solutions and automating tasks with Python.
-
-## Skills
-
-- **Problem Solving**: Exceptional at diagnosing and resolving complex issues.
-- **Teamwork**: Collaborative mindset with a history of positive team interactions.
-- **Time Management**: Efficiently prioritizes tasks to meet and exceed deadlines.
-- **Curiosity**: Avid learner, constantly acquiring new technical skills.
-
-**Technical Skills**:
-- Programming: C++, Python
-- Scripting: Shell, Bash
-- Version Control: Proficient with GitHub
-
-## Education
-
-**Cyber Security**
-*University of Toronto CE, Toronto, ON*  
-_Jan 2020 – Aug 2020_  
-Studies focused on cybersecurity strategies and digital information protection.
-
-**Bachelor of Engineering in Technology**
-*Cape Breton University, Sydney, NS*  
-_Sept 2017 – Apr 2019_  
-Emphasis on engineering principles and technological system management.
-
-**Electromechanical Engineering – Advanced Diploma**
-*Humber College, Toronto, ON*  
-_Sept 2013 – Apr 2016_  
-Combination of practical technical skills and electromechanical theory.
+      <section class="resume-section" aria-labelledby="education-title">
+        <p class="resume-section-number">04</p>
+        <h2 id="education-title">Education</h2>
+        {% for item in resume.education %}
+          <article class="resume-education">
+            <h3>{{ item.credential }}</h3>
+            <p>{{ item.school }}</p>
+            <p>{{ item.location }} · {{ item.dates }}</p>
+          </article>
+        {% endfor %}
+      </section>
+    </aside>
+  </div>
+</div>
