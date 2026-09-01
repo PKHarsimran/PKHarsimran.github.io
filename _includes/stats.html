@@ -35,16 +35,6 @@
       if (scriptsLoaded || !isProduction) return;
       scriptsLoaded = true;
 
-      window.plausible = window.plausible || function () {
-        (window.plausible.q = window.plausible.q || []).push(arguments);
-      };
-
-      var plausibleScript = document.createElement("script");
-      plausibleScript.defer = true;
-      plausibleScript.dataset.domain = "harsim.ca";
-      plausibleScript.src = "https://plausible.io/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js";
-      document.head.appendChild(plausibleScript);
-
       window.gtag("js", new Date());
       window.gtag("config", measurementId, {
         allow_ad_personalization_signals: false,
@@ -86,8 +76,15 @@
         ad_personalization: "denied"
       });
 
-      if (granted) loadMeasurementScripts();
-      else clearMeasurementCookies();
+      if (granted) {
+        loadMeasurementScripts();
+        return;
+      }
+
+      clearMeasurementCookies();
+
+      /* Remove an already-loaded measurement runtime after consent is withdrawn. */
+      if (scriptsLoaded) window.location.reload();
     }
 
     window.sitePrivacy = {
