@@ -686,13 +686,17 @@
 
     .image {
       display: none;
-      flex: 0 0 rem(110px);
+      flex: 0 0 rem(140px);
       height: rem(72px);
       overflow: hidden;
       border-radius: rem(4px);
 
-      @include media(">=sm") {
+      @media (min-width: 48rem) {
         display: block;
+        height: rem(88px);
+      }
+
+      @media (min-width: 64rem) {
         flex-basis: rem(180px);
         height: rem(110px);
       }
@@ -717,9 +721,15 @@
       transition: color 0.3s;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 3;
-      @include media(">=sm") {
+
+      @media (min-width: 48rem) {
+        font-size: rem(18px);
+        margin-left: rem(16px);
+      }
+
+      @media (min-width: 64rem) {
         font-size: rem(19px);
-        margin: 0 0 0 rem(20px);
+        margin-left: rem(20px);
         -webkit-line-clamp: 2;
       }
     }
