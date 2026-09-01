@@ -21,7 +21,6 @@ The Site uses Google services. Please read [how Google uses information from sit
 - I do not ask visitors to create an account.
 - The Site uses analytics to understand visits and improve its content.
 - If you arrive through a Google ad, campaign and conversion information may be used to measure the ad's performance.
-- Comments are provided by Disqus and load only when you choose to load or use them.
 - Optional measurement is off until you choose to allow it, and you can change that choice through **Cookie settings** in the Site footer.
 
 ## Information collected
@@ -29,8 +28,6 @@ The Site uses Google services. Please read [how Google uses information from sit
 ### Information you provide
 
 The Site does not operate an on-site contact form or user account system. If you contact me by email, LinkedIn, GitHub, or another external service, I may receive the information you choose to provide, such as your name, email address, profile information, message, and any attachments. Those services handle information under their own privacy policies.
-
-If you load or post a comment, Disqus may collect your account details, comment content, IP address, device information, and other information described in the [Disqus Privacy Policy](https://disqus.com/privacy-policy/).
 
 ### Information collected automatically
 
@@ -52,7 +49,6 @@ Information may be used to:
 - understand which articles and resources are useful;
 - measure downloads, outbound links, and other Site interactions;
 - respond when you contact me;
-- moderate or display comments;
 - measure the effectiveness of Google Ads or other promotional campaigns;
 - prevent abuse, fraud, and security incidents; and
 - comply with legal obligations and enforce applicable terms.
@@ -69,19 +65,15 @@ If you visit after interacting with a Google ad, Google and the Site may process
 
 You can prevent Google Analytics JavaScript from sharing visit activity with Google Analytics by using the [Google Analytics Opt-out Browser Add-on](https://tools.google.com/dlpage/gaoptout).
 
-### Plausible Analytics
-
-The Site also uses Plausible Analytics for aggregate page-view, outbound-link, and file-download measurement. Plausible is configured as a privacy-focused analytics service and does not use cookies for its standard analytics measurement. See [Plausible's Data Policy](https://plausible.io/data-policy) for details.
-
 ## Cookies and similar technologies
 
-Cookies are small files stored by your browser. The Site or its providers may use them for analytics, security, comments, and advertising measurement. Disqus may set additional cookies or identifiers if you choose to load the comments feature.
+Cookies are small files stored by your browser. The Site or its providers may use them for analytics, security, preferences, and advertising measurement.
 
-You can block or delete cookies in your browser settings. Blocking cookies may affect comments, analytics, or other features. Browser privacy modes do not necessarily prevent providers from receiving technical information such as an IP address and page URL.
+You can block or delete cookies in your browser settings. Blocking cookies may affect analytics or other features. Browser privacy modes do not necessarily prevent providers from receiving technical information such as an IP address and page URL.
 
-Optional Google Analytics, Google Ads measurement storage, and Plausible measurement are disabled until you select **Allow measurement** in the Site's privacy-choice panel. Selecting **Reject optional** keeps those measurement scripts disabled. Advertising personalization remains disabled in either case.
+Optional Google Analytics and Google Ads measurement storage are disabled until you select **Allow measurement** in the Site's privacy-choice panel. Selecting **Reject optional** keeps those measurement scripts disabled. Advertising personalization remains disabled in either case.
 
-You can revisit your choice at any time by selecting **Cookie settings** in the Site footer. Rejecting optional measurement updates the consent signal, removes accessible Google measurement cookies from the Site, and prevents new measurement events from being sent by the Site. A page refresh may be required to fully stop a provider script that was already loaded during the current visit.
+You can revisit your choice at any time by selecting **Cookie settings** in the Site footer. Rejecting optional measurement updates the consent signal, removes accessible Google measurement cookies from the Site, prevents new measurement events from being sent by the Site, and reloads the page when necessary to remove an already-loaded measurement script.
 
 ## Service providers and disclosures
 
@@ -89,8 +81,6 @@ Information may be processed by providers that help operate the Site, including:
 
 - **GitHub Pages**, for website hosting and infrastructure;
 - **Google**, for Google Analytics, Google Ads measurement, and Google Fonts;
-- **Plausible Analytics**, for aggregate website measurement;
-- **Disqus**, when you choose to load or use comments; and
 - **LinkedIn, GitHub, email providers, TryHackMe, and other external sites**, when you follow a link, load externally hosted content, or contact me through those services.
 
 I may also disclose information when reasonably necessary to comply with law, protect rights or safety, investigate abuse, or support a business transfer. I do not sell personal information. I do not currently use personal information collected by the Site for cross-context behavioural advertising.
