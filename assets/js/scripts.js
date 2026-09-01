@@ -13,6 +13,7 @@
   var searchClose = searchWrapper && searchWrapper.querySelector(".search-close");
   var searchResults = searchWrapper && searchWrapper.querySelector(".search-results");
   var searchStatus = searchWrapper && searchWrapper.querySelector(".search-status");
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var searchIndex;
   var previousFocus;
 
@@ -146,6 +147,7 @@
     button.addEventListener("click", function () {
       var filter = button.dataset.filter;
       var count = 0;
+      var visibleIndex = 0;
       filterButtons.forEach(function (item) {
         var active = item === button;
         item.classList.toggle("active", active);
@@ -154,12 +156,52 @@
       caseFiles.forEach(function (item) {
         var visible = filter === "all" || item.dataset.category === filter;
         item.hidden = !visible;
-        if (visible) count += 1;
+        item.classList.remove("filter-enter");
+        if (visible) {
+          count += 1;
+          if (!reduceMotion) {
+            item.style.setProperty("--filter-delay", (Math.min(visibleIndex, 5) * 45) + "ms");
+            window.requestAnimationFrame(function () { item.classList.add("filter-enter"); });
+          }
+          visibleIndex += 1;
+        }
       });
       if (visibleCount) visibleCount.textContent = count.toString();
       if (noResults) noResults.hidden = count !== 0;
     });
   });
+
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    document.documentElement.classList.add("motion-ready");
+    var revealTargets = document.querySelectorAll([
+      ".case-files-heading",
+      ".case-filters",
+      "[data-case-file]",
+      ".resume-hero",
+      ".resume-role",
+      ".resume-work-card",
+      ".resume-skill-group",
+      ".resume-education",
+      ".post-content > h2",
+      ".post-content > h3",
+      ".post-content > figure",
+      ".post-content > blockquote",
+      ".post-content > pre",
+      ".investigation-path"
+    ].join(","));
+    var revealObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: "0px 0px -7% 0px", threshold: 0.08 });
+    revealTargets.forEach(function (target, index) {
+      target.classList.add("reveal-on-scroll");
+      target.style.setProperty("--reveal-delay", ((index % 3) * 70) + "ms");
+      revealObserver.observe(target);
+    });
+  }
 
   function copyText(text, button, successLabel) {
     if (!navigator.clipboard) return;
