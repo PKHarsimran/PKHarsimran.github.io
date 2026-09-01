@@ -97,19 +97,6 @@ Example:
 formspree_form_id: your_formspree_form_id
 ```
 
-#### `disqus_username`
-
-Type: *string*
-
-Set your [Disqus](https://disqus.com) username to add comments to your posts. Leave it blank if you don't want enable comments.
-
-Example:
-
-```yaml
-# site.yml
-disqus_username: disqus_username
-```
-
 #### `show_hero`
 
 Type: *boolean*
