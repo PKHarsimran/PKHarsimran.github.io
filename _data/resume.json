@@ -1,0 +1,63 @@
+{
+  "name": "Harsimran Sidhu",
+  "headline": "Security Operations | Incident Response | Threat Intelligence",
+  "email": "harsimransidhu770@gmail.com",
+  "website": "https://harsim.ca",
+  "linkedin": "https://www.linkedin.com/in/harsimransidhu",
+  "github": "https://github.com/PKHarsimran",
+  "summary": "Security operations analyst with 4+ years of experience across SOC and IT infrastructure. Investigates endpoint, identity, web, email, and network threats; builds detection logic and automation; and turns technical evidence into clear response decisions. Publishes practical SOC playbooks and threat research grounded in real investigation workflows.",
+  "experience": [
+    {
+      "role": "Security Operations Center Analyst",
+      "company": "Columba System Inc",
+      "location": "Remote",
+      "dates": "Nov 2022 - Present",
+      "bullets": [
+        "Investigate endpoint, web, identity, and email-security alerts to validate threats, scope impact, and determine the appropriate response.",
+        "Build and tune Splunk rules and alerts that support threat detection, triage, and repeatable investigation workflows.",
+        "Correlate Cortex XDR, WAF, authentication, URL, and email-header evidence to separate malicious activity from false positives.",
+        "Manage Jira cases from initial triage through documentation and escalation, preserving clear evidence and decision context for IT teams.",
+        "Automate compliance checks and URL-verification tasks with custom scripts to reduce repetitive analyst work."
+      ]
+    },
+    {
+      "role": "Cyber Security Analyst",
+      "company": "SecureOps",
+      "location": "Remote",
+      "dates": "Oct 2021 - Nov 2022",
+      "bullets": [
+        "Investigated and escalated incidents across Microsoft 365 Defender, Splunk, and Microsoft Sentinel within defined service agreements.",
+        "Wrote Kusto Query Language queries to filter security telemetry, validate alert context, and support incident scoping.",
+        "Analyzed network traffic with Wireshark and used an AWS sandbox to examine suspicious activity safely.",
+        "Produced clear investigation updates and coordinated response decisions with distributed technical teams."
+      ]
+    },
+    {
+      "role": "Information Technology Specialist",
+      "company": "Telecom Metrics Inc",
+      "location": "Kingston, Ontario",
+      "dates": "Jan 2021 - Aug 2021",
+      "bullets": [
+        "Led security and infrastructure projects supporting server maintenance, reliability, and operational continuity.",
+        "Implemented high-availability solutions and Python automation for recurring operational tasks.",
+        "Delivered remote troubleshooting and technical support across infrastructure and end-user systems."
+      ]
+    }
+  ],
+  "skills": [
+    {"group": "Security Operations", "items": "Alert triage, incident response, threat hunting, endpoint security, WAF analysis, email security, IOC enrichment, log correlation"},
+    {"group": "Detection and Analysis", "items": "Detection engineering, Splunk rules, KQL, packet analysis, MITRE ATT&CK mapping, technical documentation"},
+    {"group": "Platforms", "items": "Cortex XDR, Splunk, Microsoft 365 Defender, Microsoft Sentinel, AWS Sandbox, Jira, Wireshark"},
+    {"group": "Automation and Engineering", "items": "Python, Bash/Shell, Git, GitHub, Docker, Azure, CI/CD"}
+  ],
+  "selected_work": [
+    {"title": "Web and Identity Incident Response", "description": "Published hands-on playbooks for WordPress compromise and WAF login attacks, covering triage, evidence preservation, log analysis, scoping, containment, and hardening.", "url": "/wordpress-defacement-investigation/"},
+    {"title": "Threat Research", "description": "Analyzed Qilin ransomware, the XZ supply-chain backdoor, and Cortex XDR abuse patterns with attack timelines and defensive recommendations.", "url": "/qilin-ransomware/"},
+    {"title": "Security Engineering and Automation", "description": "Built Python website monitoring, Docker-based network protection, and GitHub/Azure CI/CD projects documented for other practitioners.", "url": "/UniversalWebTracker/"}
+  ],
+  "education": [
+    {"credential": "Cyber Security", "school": "University of Toronto Continuing Education", "location": "Toronto, ON", "dates": "Jan 2020 - Aug 2020"},
+    {"credential": "Bachelor of Engineering in Technology", "school": "Cape Breton University", "location": "Sydney, NS", "dates": "Sept 2017 - Apr 2019"},
+    {"credential": "Electromechanical Engineering - Advanced Diploma", "school": "Humber College", "location": "Toronto, ON", "dates": "Sept 2013 - Apr 2016"}
+  ]
+}
