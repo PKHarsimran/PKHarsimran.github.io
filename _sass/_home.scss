@@ -46,7 +46,7 @@
 }
 
 .case-filter {
-  min-height: rem(44px);
+  min-height: rem(46px);
   flex: 0 0 auto;
   border: 1px solid rgba(255, 255, 255, 0.19);
   border-radius: rem(22px);
@@ -155,18 +155,18 @@
 
   .category {
     display: block;
-    height: rem(36px);
-    line-height: rem(36px);
+    height: rem(46px);
+    line-height: rem(46px);
     text-transform: uppercase;
     font-weight: bold;
     font-size: rem(18px);
     padding: 0 rem(15px);
 
-    a { color: rgba(255, 255, 255, 0.68); }
+    a { min-height: rem(46px); color: rgba(255, 255, 255, 0.68); }
   }
 
   .box-body {
-    height: calc(100% - #{rem(36px)});
+    height: calc(100% - #{rem(46px)});
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: rem(6px);
@@ -221,13 +221,13 @@
     }
 
     .tags a {
-      height: rem(30px);
-      line-height: rem(26px);
+      min-height: rem(46px);
       color: $accentDark;
       padding: 0 rem(10px);
       border: 1px solid $accentDark;
-      border-radius: 15px;
-      display: inline-block;
+      border-radius: rem(22px);
+      display: inline-flex;
+      align-items: center;
       margin: 0 rem(10px) rem(10px) 0;
       z-index: 50;
 

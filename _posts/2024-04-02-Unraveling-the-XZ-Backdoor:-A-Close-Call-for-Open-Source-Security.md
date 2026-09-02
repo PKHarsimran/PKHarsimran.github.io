@@ -6,6 +6,7 @@ subtitle: "Insight into the Foiled XZ Utils Supply Chain Attack"
 description: "An in-depth analysis of the recent XZ Backdoor incident, highlighting the resilience of the open source community in the face of a sophisticated supply chain attack. This post unpacks the details of the CVE-2024-3094 event, where a well-executed backdoor nearly compromised major Linux distributions, and the collaborative effort that led to its discovery and mitigation."
 image: /assets/img/xz-backdoor-alert.webp
 optimized_image: /assets/img/xz-backdoor-alert.webp
+thumbnail_image: /assets/img/thumbs/xz-backdoor-alert.webp
 image_width: 1280
 image_height: 731
 category: cybersecurity
@@ -32,7 +33,7 @@ The nefarious code wasn't just a blip; it was a well-engineered multi-stage load
 As the news broke, the open source community mobilized. With a spirit of collaboration, they worked tirelessly through clues and codes, a weekend-long digital defense that highlighted the collective resolve of cybersecurity guardians.
 
 ## 🖼️ The Blueprint Revealed: Visualizing the Backdoor
-![xz-backdoor-graphic-thomas-roccia-scaled](https://github.com/PKHarsimran/PKHarsimran.github.io/assets/22066581/87d296d5-c376-4156-ab7e-66c62d57babe)
+![XZ backdoor overview](/assets/img/uploads/xz-backdoor-overview.jpg)
 Thomas Roccia, a cybersecurity artist at Microsoft, crafted a visual infographic detailing the complex web spun by the attackers. His work brought clarity to the chaos, mapping out the threat's architecture.
 
 ## 👤 The Shadowy Figure: JiaT75
@@ -42,7 +43,7 @@ Central to this digital drama was JiaT75, also known as Jia Tan—a contributor 
 Post-incident, the open-source world remains on guard. CVE-2024-3094 stands as a stark reminder that in our interconnected digital reality, the line between security and vulnerability is often a community's watchful gaze.
 
 ## 🚨 Understanding the Severity: CVE-2024-3094
-![image](https://github.com/PKHarsimran/PKHarsimran.github.io/assets/22066581/b3a58713-e474-4fee-8216-11537dbd2f57)
+![Terminal output related to the XZ backdoor](/assets/img/uploads/xz-backdoor-terminal.png)
 
 
 The National Institute of Standards and Technology (NIST) has officially recognized the gravity of this event with a designation: CVE-2024-3094. The details are as chilling as the score is critical.

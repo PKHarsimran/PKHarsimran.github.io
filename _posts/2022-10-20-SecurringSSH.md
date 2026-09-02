@@ -7,6 +7,7 @@ subtitle: "A Step-by-Step Guide to Enhancing Your SSH Security"
 description: "Explore essential steps to harden your SSH port and prevent unauthorized access in this concise guide. Learn key security measures to protect your systems effectively."
 image: /assets/img/ssh.webp
 optimized_image: /assets/img/ssh.webp
+thumbnail_image: /assets/img/thumbs/ssh.webp
 image_width: 1024
 image_height: 1024
 category: blog

@@ -8,6 +8,7 @@ category: cybersecurity
 tags: [WordPress Security, Web Defacement, Incident Response, DFIR, SOC Analyst, Webshell, Threat Hunting, Cybersecurity]
 image: /assets/img/wordpress-defacement-investigation.webp
 optimized_image: /assets/img/wordpress-defacement-investigation.webp
+thumbnail_image: /assets/img/thumbs/wordpress-defacement-investigation.webp
 image_width: 1200
 image_height: 630
 description: "A hands-on guide for SOC analysts on how to investigate a hacked or defaced WordPress site. Learn how to scope the compromise, contain without destroying evidence, read Apache and PHP logs, tell a dropped webshell apart from live AJAX abuse, and harden the site so it doesn't happen again."

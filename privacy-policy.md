@@ -80,7 +80,7 @@ You can revisit your choice at any time by selecting **Cookie settings** in the 
 Information may be processed by providers that help operate the Site, including:
 
 - **GitHub Pages**, for website hosting and infrastructure;
-- **Google**, for Google Analytics, Google Ads measurement, and Google Fonts;
+- **Google**, for Google Analytics and Google Ads measurement;
 - **LinkedIn, GitHub, email providers, TryHackMe, and other external sites**, when you follow a link, load externally hosted content, or contact me through those services.
 
 I may also disclose information when reasonably necessary to comply with law, protect rights or safety, investigate abuse, or support a business transfer. I do not sell personal information. I do not currently use personal information collected by the Site for cross-context behavioural advertising.

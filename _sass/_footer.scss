@@ -43,10 +43,10 @@ footer {
 
   a {
     display: inline-block;
-    fill: #808080;
+    fill: #666;
     transition: all 0.3s ease;
     text-decoration: none;
-    color: #808080;
+    color: #666;
     
     &:hover {
       fill: $themeColor;
@@ -89,7 +89,7 @@ footer {
       appearance: none;
       border: 0;
       background: transparent;
-      color: #808080;
+      color: #666;
       cursor: pointer;
       font: inherit;
       margin-left: rem(18px);
@@ -152,7 +152,7 @@ footer {
     gap: rem(10px);
 
     button {
-      min-height: rem(42px);
+      min-height: rem(46px);
       padding: rem(9px) rem(14px);
       border: 1px solid rgba(255, 255, 255, 0.38);
       border-radius: rem(5px);
@@ -200,6 +200,15 @@ footer {
     
     p {
       color: $accentDark;
+    }
+
+    a {
+      color: #aaa;
+      fill: #aaa;
+    }
+
+    .footer-legal button {
+      color: #aaa;
     }
   }
 }

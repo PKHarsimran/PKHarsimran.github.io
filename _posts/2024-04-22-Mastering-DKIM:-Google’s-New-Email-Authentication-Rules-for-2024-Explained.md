@@ -7,6 +7,7 @@ subtitle: "Enhancing Email Security with DKIM, SPF, and DMARC"
 description: "A comprehensive guide to understanding Google's new email sender requirements for 2024, with a focus on implementing DKIM to enhance email security and reduce spam."
 image: /assets/img/dkim-google-2024.webp
 optimized_image: /assets/img/dkim-google-2024.webp
+thumbnail_image: /assets/img/thumbs/dkim-google-2024.webp
 image_width: 1024
 image_height: 1024
 category: email-security
@@ -58,7 +59,7 @@ When an email is sent, the receiving email server performs these checks:
 ### Diagram Explanation
 
 Here's a diagram to illustrate how DKIM, along with SPF and DMARC, works to authenticate an email:
-![image](https://github.com/PKHarsimran/PKHarsimran.github.io/assets/22066581/b9acfad6-5fa7-456a-8225-1dfb8f9b8579)
+![DKIM email authentication flow](/assets/img/uploads/dkim-authentication-flow.png)
 
 1. **Sender**: Sends an email.
 2. **Sending Email Server**: Processes the email.
@@ -84,7 +85,7 @@ In the original message view, you will see details about SPF, DKIM, and DMARC au
 
 Here’s an example screenshot to illustrate:
 
-![image](https://github.com/PKHarsimran/PKHarsimran.github.io/assets/22066581/034a4379-44c5-41f1-a21c-e93ab20b9a23)
+![DKIM reporting options](/assets/img/uploads/dkim-reporting-options.png)
 
 This shows the authentication results for SPF, DKIM, and DMARC, helping you confirm that the email is genuine and hasn’t been tampered with.
 

@@ -1,6 +1,7 @@
 # Site Settings
 name: Harsimran Sidhu
 title: Cybersecurity Field Notes
+tagline: Harsimran Sidhu
 description: Practical SOC playbooks, threat investigations, security engineering guides, and lessons from Harsimran Sidhu.
 tags:
   - blog

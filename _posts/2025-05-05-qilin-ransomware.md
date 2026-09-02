@@ -7,6 +7,7 @@ subtitle: "Stop Double‑Extortion Attacks Before They Start"
 description: "Walk through a realistic Qilin ransomware breach mapped to MITRE ATT&CK, review campaign indicators collected for this article, and apply a seven-step hardening checklist."
 image: /assets/img/qilinPoster.webp        
 optimized_image: /assets/img/qilinPoster.webp
+thumbnail_image: /assets/img/thumbs/qilinPoster.webp
 image_width: 1024
 image_height: 1536
 category: ransomware
