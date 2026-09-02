@@ -6,6 +6,7 @@ subtitle: "CPTSD, lupus, and how being the odd kid with a computer became a care
 description: "I used to think healing led me into cybersecurity. It was the other way around. A story about Complex PTSD, a lupus diagnosis I ignored, a failed exam, and the ransomware incident where the thing I learned as a lonely kid finally became useful."
 image: /assets/img/cptsd-career-change.webp
 optimized_image: /assets/img/cptsd-career-change.webp
+thumbnail_image: /assets/img/thumbs/cptsd-career-change.webp
 image_width: 1024
 image_height: 1024
 category: personal-growth

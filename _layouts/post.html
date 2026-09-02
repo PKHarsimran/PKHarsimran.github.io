@@ -6,8 +6,8 @@
         {% include svg-icons.html %}
         {% include header.html %}
 
-        <section class="post {% if site.two_columns_layout %}two-columns{% else %}one-column{% endif %}">
-            <article role="article" class="post-content">
+        <main class="post {% if site.two_columns_layout %}two-columns{% else %}one-column{% endif %}" id="main-content">
+            <article class="post-content">
                 <p class="post-info">
                     {% if page.date %}
                         <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
@@ -45,7 +45,9 @@
                         {% for post in shuffled_array limit:3 %}
                             <li>
                                 <a href="{{ post.url | prepend: site.baseurl }}">
-                                    {% if post.optimized_image %}
+                                    {% if post.thumbnail_image %}
+                                        <img src="{{ post.thumbnail_image | relative_url }}" alt="{{ post.title | escape }}" width="640" height="360" loading="lazy" decoding="async">
+                                    {% elsif post.optimized_image %}
                                         <img src="{{ post.optimized_image | relative_url }}" alt="{{ post.title | escape }}" width="{{ post.image_width }}" height="{{ post.image_height }}" loading="lazy" decoding="async">
                                     {% elsif post.image %}
                                         <img src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}" width="{{ post.image_width }}" height="{{ post.image_height }}" loading="lazy" decoding="async">
@@ -60,7 +62,7 @@
                 </aside>
             {% endif %}
 
-        </section>
+        </main>
 
         <!-- Add time bar only for pages without pagination -->
         {% if paginator.activated == nil and site.show_time_bar == true %}
@@ -84,13 +86,7 @@
         {% include footer.html %}
 
         {% if page.math %}
-        <script>
-            MathJax = {
-                tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']]
-                }
-            };
-        </script>
+        <script src="{{ '/assets/js/mathjax-config.js' | relative_url }}"></script>
         <script type="text/javascript" id="MathJax-script" async
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
         </script>

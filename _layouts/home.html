@@ -9,7 +9,7 @@ layout: main
 {% endif %}
 {% assign featured = posts.first %}
 
-<main class="home no-padding" role="main">
+<main class="home no-padding" id="main-content">
     {% if site.show_hero and paginator == nil or paginator.page == 1 %}
         <section class="hero" aria-labelledby="hero-title">
             <img class="hero-art" src="{{ '/assets/img/soc-case-files-hero.webp' | relative_url }}" alt="Abstract incident telemetry converging on a protected core" width="1672" height="941" decoding="async" fetchpriority="high">
@@ -56,7 +56,9 @@ layout: main
                     <span class="category"><a href="{{ site.baseurl }}/{{ site.categories_folder | default: 'category' }}/{{ post.category | slugify }}/"><span>{{ post.category }}</span></a></span>
                     <div class="box-body">
                         <a class="cover" href="{{ post.url | relative_url }}">
-                            {% if post.optimized_image %}
+                            {% if post.thumbnail_image %}
+                                <img src="{{ post.thumbnail_image | relative_url }}" alt="" width="640" height="360" loading="lazy" decoding="async">
+                            {% elsif post.optimized_image %}
                                 <img src="{{ post.optimized_image | relative_url }}" alt="" width="{{ post.image_width }}" height="{{ post.image_height }}" loading="lazy" decoding="async">
                             {% elsif post.image %}
                                 <img src="{{ post.image | relative_url }}" alt="" width="{{ post.image_width }}" height="{{ post.image_height }}" loading="lazy" decoding="async">

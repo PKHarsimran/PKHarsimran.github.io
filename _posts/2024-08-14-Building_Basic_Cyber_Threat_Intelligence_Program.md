@@ -8,6 +8,7 @@ keywords: "cyber threat intelligence, CTI program, cybersecurity for small busin
 canonical_url: "https://harsim.ca/Building_Basic_Cyber_Threat_Intelligence_Program/"
 image: /assets/img/cyber-threat-intelligence.webp
 optimized_image: /assets/img/cyber-threat-intelligence.webp
+thumbnail_image: /assets/img/thumbs/cyber-threat-intelligence.webp
 image_width: 1280
 image_height: 731
 category: cybersecurity

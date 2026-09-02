@@ -5,7 +5,7 @@
         {% include svg-icons.html %}
         {% include header.html %}
         <section class="content">
-            <main class="home" id="post" role="main">
+            <main class="home" id="main-content">
                 <h1 class="title-category">/{{page.title}}</h1>
                 <div id="grid" class="row flex-grid">
                     {% assign posts = site.posts | where_exp:"post","post.is_generated != true" %}
@@ -16,7 +16,9 @@
                                 <div class="box-body">
                                     {% if post.image %}
                                         <a class="cover" href="{{ post.url | prepend: site.baseurl }}">
-                                            {% if post.optimized_image %}
+                                            {% if post.thumbnail_image %}
+                                                <img src="{{ post.thumbnail_image | relative_url }}" alt="{{ post.title | escape }}" width="640" height="360" loading="lazy" decoding="async">
+                                            {% elsif post.optimized_image %}
                                                 <img src="{{ post.optimized_image | relative_url }}" alt="{{ post.title | escape }}" width="{{ post.image_width }}" height="{{ post.image_height }}" loading="lazy" decoding="async">
                                             {% elsif post.image %}
                                                 <img src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}" width="{{ post.image_width }}" height="{{ post.image_height }}" loading="lazy" decoding="async">
@@ -57,4 +59,3 @@
         {% include footer.html %}
     </body>
 </html>
-

@@ -7,6 +7,7 @@ subtitle: "Enhancing Email Security with DKIM, SPF, and DMARC"
 description: "A comprehensive guide to understanding Google's new email sender requirements for 2024, with a focus on implementing DKIM to enhance email security and reduce spam."
 image: /assets/img/dkim-google-2024.webp
 optimized_image: /assets/img/dkim-google-2024.webp
+thumbnail_image: /assets/img/thumbs/dkim-google-2024.webp
 image_width: 1024
 image_height: 1024
 category: email-security

@@ -384,11 +384,11 @@ url: ""
 
 Type: *string*
 
-Set your Google Analytics [tracking ID](https://www.youtube.com/watch?v=Mtzl4tkVdbI).
+Set your Google Analytics 4 measurement ID.
 
 ```yaml
 # advanced.yml
-google_analytics: "UA-XXXXXXXX-X"
+google_analytics: "G-XXXXXXXXXX"
 ```
 
 #### `language`

@@ -6,6 +6,7 @@ subtitle: "Insight into the Foiled XZ Utils Supply Chain Attack"
 description: "An in-depth analysis of the recent XZ Backdoor incident, highlighting the resilience of the open source community in the face of a sophisticated supply chain attack. This post unpacks the details of the CVE-2024-3094 event, where a well-executed backdoor nearly compromised major Linux distributions, and the collaborative effort that led to its discovery and mitigation."
 image: /assets/img/xz-backdoor-alert.webp
 optimized_image: /assets/img/xz-backdoor-alert.webp
+thumbnail_image: /assets/img/thumbs/xz-backdoor-alert.webp
 image_width: 1280
 image_height: 731
 category: cybersecurity

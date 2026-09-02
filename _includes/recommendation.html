@@ -17,7 +17,9 @@
     {% endif %}
     <a href="{{ recommendation.url | prepend: site.baseurl }}" class="post-preview">
         <div class="image">
-            {% if recommendation.optimized_image %}
+            {% if recommendation.thumbnail_image %}
+                <img src="{{ recommendation.thumbnail_image | relative_url }}" alt="{{ recommendation.title | escape }}" width="640" height="360" loading="lazy" decoding="async">
+            {% elsif recommendation.optimized_image %}
                 <img src="{{ recommendation.optimized_image | relative_url }}" alt="{{ recommendation.title | escape }}" width="{{ recommendation.image_width }}" height="{{ recommendation.image_height }}" loading="lazy" decoding="async">
             {% elsif recommendation.image %}
                 <img src="{{ recommendation.image | relative_url }}" alt="{{ recommendation.title | escape }}" width="{{ recommendation.image_width }}" height="{{ recommendation.image_height }}" loading="lazy" decoding="async">

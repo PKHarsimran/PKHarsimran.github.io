@@ -1,6 +1,8 @@
 (function () {
   "use strict";
 
+  document.documentElement.classList.remove("no-js");
+
   var body = document.body;
   var menuButton = document.getElementById("menu");
   var sidebar = document.getElementById("sidebar");

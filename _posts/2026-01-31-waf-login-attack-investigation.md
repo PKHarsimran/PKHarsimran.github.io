@@ -6,6 +6,7 @@ subtitle: "A practical, real-world guide to triaging, detecting, and responding 
 description: "A hands-on guide for SOC analysts on how to investigate WAF login attacks in real-world environments. Learn how to triage alerts, identify attack patterns, reduce false positives, and make confident response decisions."
 image: /assets/img/waf-login-attacks.webp
 optimized_image: /assets/img/waf-login-attacks.webp
+thumbnail_image: /assets/img/thumbs/waf-login-attacks.webp
 image_width: 1280
 image_height: 731
 category: cybersecurity
