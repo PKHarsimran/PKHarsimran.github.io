@@ -36,6 +36,97 @@
   }
 }
 
+.home-tool-callout {
+  @include center(rem(1134px));
+  position: relative;
+  display: grid;
+  grid-template-columns: rem(54px) minmax(0, 1fr) auto;
+  gap: rem(20px);
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: rem(58px);
+  padding: rem(22px) rem(25px);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: rem(10px);
+  background: linear-gradient(110deg, #1d2024, #17181b);
+  color: #fff;
+  text-decoration: none;
+  transition: border-color 180ms ease, box-shadow 220ms ease, transform 220ms ease;
+
+  &::after {
+    position: absolute;
+    top: -80%;
+    right: 5%;
+    width: rem(180px);
+    height: rem(180px);
+    border-radius: 50%;
+    background: rgba(208, 0, 18, 0.15);
+    filter: blur(rem(34px));
+    content: "";
+    pointer-events: none;
+  }
+
+  &:hover,
+  &:focus-visible {
+    border-color: rgba(239, 89, 107, 0.65);
+    box-shadow: 0 rem(20px) rem(45px) rgba(0, 0, 0, 0.3);
+    color: #fff;
+    transform: translateY(rem(-4px));
+  }
+
+  &:focus-visible { outline: rem(3px) solid rgba(239, 89, 107, 0.38); outline-offset: rem(3px); }
+}
+
+.home-tool-mark {
+  display: grid;
+  width: rem(54px);
+  height: rem(54px);
+  place-items: center;
+  border: 1px solid rgba(239, 89, 107, 0.35);
+  border-radius: rem(8px);
+  background: rgba(208, 0, 18, 0.14);
+  color: #ff6b7c;
+  font-size: rem(28px);
+}
+
+.home-tool-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+
+  strong { font-size: rem(23px); line-height: 1.15; }
+  > span:last-child { margin-top: rem(4px); color: rgba(255, 255, 255, 0.62); font-size: rem(14px); line-height: 1.4; }
+}
+
+.home-tool-label {
+  margin-bottom: rem(5px);
+  color: #ef596b;
+  font-size: rem(11px);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.home-tool-action {
+  z-index: 1;
+  color: #fff;
+  font-size: rem(14px);
+  font-weight: 700;
+  white-space: nowrap;
+
+  span { margin-left: rem(5px); color: #ef596b; font-size: rem(20px); }
+}
+
+@include media("<sm") {
+  .home-tool-callout {
+    grid-template-columns: rem(46px) minmax(0, 1fr);
+    margin: 0 rem(14px) rem(48px);
+    padding: rem(19px);
+  }
+
+  .home-tool-mark { width: rem(46px); height: rem(46px); }
+  .home-tool-action { grid-column: 2; }
+}
+
 .case-filters {
   @include center(rem(1180px));
   display: flex;
