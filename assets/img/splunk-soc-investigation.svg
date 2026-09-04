@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Splunk SOC investigation workflow</title>
+  <desc id="desc">A dark security operations search interface connecting an alert to a timeline and evidence.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.55" stop-color="#0c2030"/>
+      <stop offset="1" stop-color="#07151b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#66f2b5"/>
+      <stop offset="1" stop-color="#34b6ff"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <circle cx="1080" cy="78" r="250" fill="#0e5670" opacity=".16"/>
+  <circle cx="84" cy="590" r="230" fill="#1a6b51" opacity=".14"/>
+  <g opacity=".12" stroke="#7fe8cf">
+    <path d="M0 105H1200M0 210H1200M0 315H1200M0 420H1200M0 525H1200"/>
+    <path d="M150 0V630M300 0V630M450 0V630M600 0V630M750 0V630M900 0V630M1050 0V630"/>
+  </g>
+
+  <text x="76" y="92" fill="#6ff2b7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" letter-spacing="3">SOC FIELD GUIDE</text>
+  <text x="76" y="166" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="700">Investigate with Splunk</text>
+  <text x="76" y="211" fill="#b5c9d5" font-family="Inter, Arial, sans-serif" font-size="25">Start broad. Pivot with evidence. Build the timeline.</text>
+
+  <rect x="76" y="262" width="1048" height="112" rx="16" fill="#071019" stroke="#2b5364" stroke-width="2"/>
+  <circle cx="106" cy="292" r="6" fill="#ff6b6b"/>
+  <circle cx="128" cy="292" r="6" fill="#ffd166"/>
+  <circle cx="150" cy="292" r="6" fill="#66f2b5"/>
+  <text x="101" y="340" fill="#71f0bb" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="21">index=windows host="FIN-WS-07" earliest=-30m</text>
+  <text x="732" y="340" fill="#6ecfff" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="21">| sort 0 _time</text>
+
+  <path d="M146 465H1055" stroke="#2b5364" stroke-width="4" stroke-linecap="round"/>
+  <path d="M146 465H898" stroke="url(#accent)" stroke-width="4" stroke-linecap="round" filter="url(#glow)"/>
+  <g font-family="Inter, Arial, sans-serif" text-anchor="middle">
+    <g transform="translate(166 465)">
+      <circle r="22" fill="#0a1b23" stroke="#66f2b5" stroke-width="4"/>
+      <text y="64" fill="#d8e6ec" font-size="18">Question</text>
+    </g>
+    <g transform="translate(388 465)">
+      <circle r="22" fill="#0a1b23" stroke="#66f2b5" stroke-width="4"/>
+      <text y="64" fill="#d8e6ec" font-size="18">Search</text>
+    </g>
+    <g transform="translate(610 465)">
+      <circle r="22" fill="#0a1b23" stroke="#66f2b5" stroke-width="4"/>
+      <text y="64" fill="#d8e6ec" font-size="18">Pivot</text>
+    </g>
+    <g transform="translate(832 465)">
+      <circle r="22" fill="#0a1b23" stroke="#66f2b5" stroke-width="4"/>
+      <text y="64" fill="#d8e6ec" font-size="18">Timeline</text>
+    </g>
+    <g transform="translate(1054 465)">
+      <circle r="22" fill="#0a1b23" stroke="#34b6ff" stroke-width="4"/>
+      <text y="64" fill="#ffffff" font-size="18" font-weight="700">Decision</text>
+    </g>
+  </g>
+  <text x="76" y="594" fill="#829ba9" font-family="Inter, Arial, sans-serif" font-size="18">A BEGINNER-FRIENDLY PLAYBOOK FOR DEFENSIBLE SECURITY INVESTIGATIONS</text>
+</svg>
