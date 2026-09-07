@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">After the alert: did the attacker actually get in?</title>
+<desc id="desc">A fictional SOC case connects failed logins, a successful session, discovery commands, and an evidence-backed handoff.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset="1" stop-color="#102e36"/></linearGradient></defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<g stroke="#355361" opacity=".22"><path d="M0 105H1200M0 210H1200M0 315H1200M0 420H1200M0 525H1200M200 0V630M400 0V630M600 0V630M800 0V630M1000 0V630"/></g>
+<g font-family="Arial, sans-serif">
+<text x="70" y="79" fill="#73edbd" font-size="19" letter-spacing="3">HARSIMRAN SIDHU / SOC FIELD NOTES</text>
+<text x="70" y="161" fill="#fff" font-size="57" font-weight="700">After the alert.</text>
+<text x="70" y="226" fill="#fff" font-size="45" font-weight="700">Did the attacker actually get in?</text>
+<text x="70" y="273" fill="#b5cbd4" font-size="24">One case. Simple Splunk searches. A defensible decision.</text>
+<path d="M190 388H1010" stroke="#64dab5" stroke-width="3"/>
+<g fill="#0b1a27" stroke="#436371" stroke-width="2">
+<rect x="70" y="333" width="240" height="143" rx="14"/>
+<rect x="343" y="333" width="240" height="143" rx="14"/>
+<rect x="616" y="333" width="240" height="143" rx="14"/>
+<rect x="889" y="333" width="240" height="143" rx="14"/>
+</g>
+<g font-size="17" fill="#9bb4c0">
+<text x="92" y="367">01 / AUTHENTICATION</text><text x="365" y="367">02 / SESSION</text>
+<text x="638" y="367">03 / ACTIVITY</text><text x="911" y="367">04 / HANDOFF</text></g>
+<g font-size="28" font-weight="700">
+<text x="92" y="412" fill="#ffcb83">24 failures</text><text x="365" y="412" fill="#76e5c2">1 success</text>
+<text x="638" y="412" fill="#78caff">3 commands</text><text x="911" y="412" fill="#fff">Evidence first</text></g>
+<g font-size="18" fill="#bfd1da">
+<text x="92" y="447">14:01–14:09 UTC</text><text x="365" y="447">Follow 0x91ab</text>
+<text x="638" y="447">Check the context</text><text x="911" y="447">State the unknowns</text></g>
+<text x="70" y="555" fill="#73edbd" font-size="21">INCLUDES PRACTICE LOGS + SEARCHES + CASE NOTES</text>
+<text x="70" y="593" fill="#93aab7" font-size="17">FICTIONAL TRAINING CASE • NOT A CUSTOMER INCIDENT</text>
+</g></svg>
