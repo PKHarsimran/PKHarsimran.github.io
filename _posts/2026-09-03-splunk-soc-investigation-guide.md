@@ -6,7 +6,7 @@ date: 2026-09-03 10:00:00 +0530
 last_modified_at: 2026-09-04
 category: cybersecurity
 tags: [Splunk, SPL, SOC Analyst, Security Operations, Incident Response, SIEM, Cybersecurity]
-image: /assets/img/splunk-soc-investigation.svg
+image: /assets/img/splunk-soc-investigation.png
 optimized_image: /assets/img/splunk-soc-investigation.svg
 thumbnail_image: /assets/img/splunk-soc-investigation.svg
 image_width: 1200
