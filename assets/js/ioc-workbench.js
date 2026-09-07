@@ -96,7 +96,10 @@
     var match;
     regex.lastIndex = 0;
     while ((match = regex.exec(text)) !== null) {
-      var raw = match[0];
+      // The email pattern consumes its boundary instead of using lookbehind.
+      // Only capture group 1 is the indicator; exclude the prefix from offsets.
+      var raw = type === "email" ? match[1] : match[0];
+      var start = match.index + match[0].length - raw.length;
       if (type === "url") {
         // Remove unmatched prose wrappers, but preserve balanced URL parentheses
         // and meaningful query/path punctuation.
@@ -107,7 +110,6 @@
           raw = raw.slice(0, -1);
         }
       }
-      var start = match.index;
       var end = start + raw.length;
       if (type !== "url" && (/[a-z0-9_@.%-]/i.test(text.charAt(start - 1)) ||
           /[a-z0-9_@%-]/i.test(text.charAt(end)))) continue;
@@ -127,7 +129,7 @@
 
     addMatches(text, /\bhttps?:\/\/[^\s<>"'\x60]+/gi, "url", ranges, found, null, normalizeUrl);
     addMatches(text, /\b(?:[a-f0-9]{64}|[a-f0-9]{40}|[a-f0-9]{32})\b/gi, hashType, ranges, found, null, function (value) { return value.toLowerCase(); });
-    addMatches(text, /(?<![a-z0-9._%+\-])[a-z0-9._%+\-]+@[a-z0-9.-]+\.[a-z]{2,63}\b/gi, "email", ranges, found, function (value) {
+    addMatches(text, /(?:^|[^a-z0-9._%+\-])([a-z0-9._%+\-]+@[a-z0-9.-]+\.[a-z]{2,63}\b)/gi, "email", ranges, found, function (value) {
       var parts = value.split("@");
       return !/^\.|\.$|\.\./.test(parts[0]) && validDomain(parts[1]);
     }, function (value) {

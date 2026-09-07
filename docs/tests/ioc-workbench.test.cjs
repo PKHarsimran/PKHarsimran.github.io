@@ -30,7 +30,9 @@ class TestURL extends URL {}
 TestURL.createObjectURL = blob => { exported = blob; return 'blob:test'; };
 TestURL.revokeObjectURL = () => {};
 const context = { document: { querySelector: () => root, createElement: () => new Element(), body: new Element(), execCommand: () => false }, window: { setTimeout() {} }, navigator: { clipboard: { writeText: text => { copied = text; return Promise.resolve(); } } }, URL: TestURL, Blob };
-vm.runInNewContext(fs.readFileSync(path.join(__dirname, '../../assets/js/ioc-workbench.js'), 'utf8'), context);
+const workbenchSource = fs.readFileSync(path.join(__dirname, '../../assets/js/ioc-workbench.js'), 'utf8');
+assert.ok(!workbenchSource.includes('(?<!') && !workbenchSource.includes('(?<='), 'Workbench must avoid regex lookbehind for older Safari');
+vm.runInNewContext(workbenchSource, context);
 function analyze(text) { el.input.value = text; el.analyze.click(); }
 function values() { return el.list.children.map(row => row.children[1].textContent); }
 async function run() {
@@ -53,6 +55,12 @@ async function run() {
   assert.deepEqual(values(), ['hxxps[:]//example[.]test/wiki/Foo_(bar)', 'hxxps[:]//example[.]test/?']);
   analyze('Admin[@]EXAMPLE[.]test admin@example.test 203[.]0[.]113[.]24');
   assert.equal(values().length, 3, 'Preserve email local-part case');
+  analyze('+tag@example.test,second@example.test\n(user+tag@example.test)');
+  assert.deepEqual(values(), ['+tag@example[.]test', 'second@example[.]test', 'user+tag@example[.]test'], 'Email boundary prefixes are excluded from values');
+  analyze('.bad@example.test bad..name@example.test bad@example..test @nested@example.test');
+  assert.deepEqual(values(), [], 'Do not recover email fragments from malformed tokens');
+  analyze('https://example.test/user@example.test person@example.test');
+  assert.deepEqual(values(), ['hxxps[:]//example[.]test/user@example[.]test', 'person@example[.]test'], 'Email offsets still respect URL overlap');
   analyze('999.2.3.4 1.2.3.4.5 1234.2.3.4 bad..example.test -bad.test 203.0.113.1');
   assert.deepEqual(values(), ['203[.]0[.]113[.]1'], 'Do not extract valid fragments from malformed indicators');
   analyze('example.test EXAMPLE.TEST 203.0.113.1');
