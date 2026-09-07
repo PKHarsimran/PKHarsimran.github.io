@@ -1,0 +1,39 @@
+CASE NOTE — remove prompts and insert verified evidence
+Ticket:
+Analyst / handoff owner:
+Last updated (UTC):
+Status / priority under your team's rubric:
+
+QUESTION
+What are we trying to establish?
+
+DATA COVERAGE
+Sources / indexes:
+Search window and timezone:
+Known collection gaps:
+
+OBSERVED EVIDENCE
+UTC time | host | identity | session | event reference | observation
+
+CONTEXT (record separately from telemetry)
+Who provided it? How was identity verified? When? Evidence reference?
+
+ASSESSMENT
+What is established?
+What is suspected, and why?
+What alternative explanation was considered?
+What is still unknown?
+
+SCOPE
+Known affected assets / identities:
+What has not yet been checked?
+
+NEXT ACTIONS
+Action | assigned owner | approval needed | due / next update
+
+ACTIONS ACTUALLY COMPLETED
+Action | time | owner | verification / evidence
+
+EVIDENCE LOCATION
+Raw records, saved searches, time range, relevant ticket references:
+Follow organizational evidence-handling and retention requirements.

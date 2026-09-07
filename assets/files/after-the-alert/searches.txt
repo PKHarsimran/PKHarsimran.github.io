@@ -1,0 +1,39 @@
+SYNTHETIC TRAINING CASE — run each search separately in classic SPL.
+Upload soc-login-case.csv as a lookup in your current app first.
+These searches target a fixed 30-record fixture, not live indexes.
+
+SEARCH 1
+| inputlookup soc-login-case.csv
+| head 5
+
+SEARCH 2
+| inputlookup soc-login-case.csv
+| eval _time=strptime(timestamp,"%Y-%m-%dT%H:%M:%S%z")
+| where _time>=strptime("2026-09-03T14:00:00+0000","%Y-%m-%dT%H:%M:%S%z")
+    AND _time<strptime("2026-09-03T14:20:00+0000","%Y-%m-%dT%H:%M:%S%z")
+| search source_type=windows_security host="FIN-WS-07" user="alex.morgan"
+| stats count AS events earliest(timestamp) AS first_utc latest(timestamp) AS last_utc
+    BY src_ip event_code logon_type
+| sort 0 src_ip event_code
+
+SEARCH 3
+| inputlookup soc-login-case.csv
+| search source_type=windows_security host="FIN-WS-07"
+    user="alex.morgan" event_code=4624
+| sort 0 timestamp
+| table event_id timestamp src_ip logon_type logon_id
+
+SEARCH 4
+| inputlookup soc-login-case.csv
+| search source_type=windows_process host="FIN-WS-07"
+    user="alex.morgan" logon_id="0x91ab"
+| sort 0 timestamp
+| table event_id timestamp host logon_id command
+
+SEARCH 5
+| inputlookup soc-login-case.csv
+| search host="FIN-WS-07" user="alex.morgan"
+| where (source_type="windows_security" AND src_ip="198.51.100.44")
+    OR (source_type="windows_process" AND logon_id="0x91ab")
+| sort 0 timestamp
+| table event_id timestamp source_type event_code src_ip logon_id command
