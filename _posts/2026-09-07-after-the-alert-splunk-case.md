@@ -34,6 +34,8 @@ This post follows that gap. We will use a small Splunk investigation to move fro
 
 If you are still finding your way around Splunk, start with [Your First SOC Investigation in Splunk]({{ '/splunk-soc-investigation-guide/' | relative_url }}). That guide covers indexes, sourcetypes, and reading your first event. Here, we continue its fictional ticket and add follow-on evidence.
 
+**Choose your path:** read straight through for the investigation, or [download the searches]({{ '/assets/files/after-the-alert/searches.txt' | relative_url }}) and follow along in your own lab. You only need basic search access and permission to upload a lookup—not a live attack or a production endpoint.
+
 ## 1. Read the ticket before writing a search
 
 At **14:11 UTC on September 3, 2026**, ticket **SOC-2026-0903-017** arrives:
@@ -90,6 +92,18 @@ You should see columns such as `timestamp`, `host`, `event_code`, and `logon_id`
 
 The lab uses `alex.morgan` without a domain because it contains only one identity domain. In production, preserve the domain or SID to avoid merging different accounts.
 
+### If your results do not match
+
+| Symptom | Check this first |
+|---|---|
+| Lookup file not found | Confirm the exact filename, current app, and lookup permissions. |
+| Everything appears in one column | Upload the original CSV, not a spreadsheet-exported or reformatted copy. |
+| The first search works but the time-filtered search is empty | Check that `timestamp` still includes its `+0000` offset and matches the format passed to `strptime`. |
+| Changing the time picker has no effect | This is a lookup exercise. Its rows need an explicit time filter. |
+| No process records in a real investigation | Check collection coverage and field mapping before concluding that nothing ran. |
+
+Work backward one filter at a time. Keep the original search saved so you can explain what you changed.
+
 ## 3. Verify the failures and the success
 
 Start with the account and destination, **without filtering to the suspicious IP**. That leaves room to notice other sessions.
@@ -116,6 +130,8 @@ Expected groups:
 The output also shows the full date and offset. `earliest` and `latest` select the timestamp values using the parsed `_time`. Later searches sort the fixture's identically formatted UTC strings; do not use string ordering for mixed timestamp formats.
 
 The alert's counts check out. But there is also a second successful session.
+
+One missing detail matters: **why did the attempts fail?** On real 4625 events, inspect `Status`, `SubStatus`, and the failure reason. A locked account and an incorrect password are not the same explanation. This fixture omits those fields, so we cannot call all 24 failures bad-password attempts. [Microsoft event 4625 reference](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4625).
 
 Microsoft documents **4624** as a successful logon session on the destination computer. Type **10** is remote interactive, associated with Remote Desktop/Terminal Services; type **3** is a network logon. They are not interchangeable. [Microsoft event 4624 reference](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4624).
 
@@ -173,6 +189,8 @@ Expected results:
 | P03 | 14:11:42 | `net group "Domain Admins" /domain` |
 
 These commands inspect identity, the host name, and domain-group membership. They are useful to an intruder—and also to administrators.
+
+More precisely, these records show the commands **were launched with those arguments**. They do not contain command output or exit status. We cannot tell whether the domain-group query succeeded or returned useful information.
 
 **The commands alone are not a malware verdict.** Their value here is that they belong to the session we are investigating, immediately after the suspicious login.
 
@@ -274,7 +292,27 @@ Try answering these in a clean search tab:
 3. What gets incorrectly included if you filter processes only by username and host?
 4. What remains unknown even after you have the correct timeline?
 
-**Check yourself:** 26 authentication records; session `0x91ab`; B02 from `0x77cd`; the actor, credential-acquisition method, full scope, and any data access or loss are still unresolved.
+<details>
+<summary>Check your answers</summary>
+<ol>
+<li>26 authentication records: 24 failures and two successes.</li>
+<li>Session <code>0x91ab</code> on <code>FIN-WS-07</code>.</li>
+<li>B02, the process from the separate session <code>0x77cd</code>.</li>
+<li>The actor, credential-acquisition method, full scope, and any data access or loss are still unresolved.</li>
+</ol>
+</details>
+
+### Take the method back to your own logs
+
+Do not just replace `inputlookup` with `index=windows` and expect the lab fields to exist. Before adapting a search:
+
+1. **Find one real event.** Use the index and sourcetype your team actually collects, within an explicit incident time window.
+2. **Map the fields.** Confirm the destination computer, account/domain or SID, source address, event code, and subject/target session fields in the original record. Splunk's `host` metadata may identify a collector rather than the affected endpoint.
+3. **Check the time.** Verify event timestamps and the search timezone against the alert. Check for delayed collection or clock differences before joining a timeline.
+4. **Validate one match manually.** Open the successful login and a candidate process record side by side before summarizing hundreds of events.
+5. **Expand deliberately.** Search other destinations for the identity and source, then inspect process ancestry and available network/file evidence. Record which sources and periods you actually checked.
+
+If a key field is missing, write down the gap and request the relevant telemetry. A blank result is a reason to check coverage—not evidence that the host is clean.
 
 Download the [searches]({{ '/assets/files/after-the-alert/searches.txt' | relative_url }}), [lab notes]({{ '/assets/files/after-the-alert/README.txt' | relative_url }}), and [blank case-note template]({{ '/assets/files/after-the-alert/case-note-template.txt' | relative_url }}) to work through it yourself.
 
