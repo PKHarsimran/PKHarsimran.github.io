@@ -33,7 +33,7 @@
   });
 
   function loadMeasurementScripts() {
-    if (scriptsLoaded || !isProduction) return;
+    if (scriptsLoaded || !isProduction || bootstrapScript.dataset.measurementDisabled === "true") return;
     scriptsLoaded = true;
 
     window.gtag("js", new Date());
