@@ -24,10 +24,39 @@
 
   button,
   textarea,
-  input {
+  input,
+  select {
     font: inherit;
   }
+
+  [hidden] { display: none !important; }
+  button:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
 }
+
+.ioc-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(16px);
+  margin-bottom: rem(20px);
+
+  label { flex: 1 1 rem(180px); min-width: 0; font-weight: 700; }
+  input, select {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: rem(8px);
+    min-height: rem(46px);
+    padding: rem(10px);
+    border: 1px solid #bac4cb;
+    border-radius: rem(7px);
+    background: #fff;
+    color: #111820;
+  }
+  :focus-visible { outline: 3px solid #a6000e; outline-offset: 2px; }
+}
+
+[data-ioc-feedback] { line-height: 1.5; }
+[data-ioc-more] { margin-top: rem(18px); }
 
 .ioc-hero {
   position: relative;
@@ -367,13 +396,12 @@
   animation-delay: calc(var(--ioc-index) * 35ms);
 
   code {
-    overflow: hidden;
+    overflow-wrap: anywhere;
     padding: 0;
     background: transparent;
     color: #26343e;
     font-size: rem(14px);
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: normal;
   }
 }
 

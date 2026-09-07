@@ -16,6 +16,11 @@
   var modeFieldset = root.querySelector("[data-ioc-mode]");
   var copyButton = root.querySelector("[data-ioc-copy]");
   var exportButton = root.querySelector("[data-ioc-export]");
+  var feedback = root.querySelector("[data-ioc-feedback]");
+  var typeFilter = root.querySelector("[data-ioc-filter]");
+  var searchInput = root.querySelector("[data-ioc-search]");
+  var moreButton = root.querySelector("[data-ioc-more]");
+  var visibleLimit = 100;
   var indicators = [];
   var displayMode = "defanged";
 
@@ -41,6 +46,7 @@
       .replace(/\[(?:\.|dot)\]|\((?:\.|dot)\)|\{(?:\.|dot)\}/gi, ".")
       .replace(/\[:\]/g, ":")
       .replace(/\[\/\]/g, "/")
+      .replace(/\[@\]|\(at\)/gi, "@")
       .replace(/\s+dot\s+/gi, ".");
   }
 
@@ -90,9 +96,22 @@
     var match;
     regex.lastIndex = 0;
     while ((match = regex.exec(text)) !== null) {
-      var raw = match[0].replace(/[),.;!?]+$/, "");
+      var raw = match[0];
+      if (type === "url") {
+        // Remove unmatched prose wrappers, but preserve balanced URL parentheses
+        // and meaningful query/path punctuation.
+        while (/[)\]}]$/.test(raw)) {
+          var close = raw.slice(-1);
+          var open = { ")": "(", "]": "[", "}": "{" }[close];
+          if (raw.split(close).length <= raw.split(open).length) break;
+          raw = raw.slice(0, -1);
+        }
+      }
       var start = match.index;
       var end = start + raw.length;
+      if (type !== "url" && (/[a-z0-9_@.%-]/i.test(text.charAt(start - 1)) ||
+          /[a-z0-9_@%-]/i.test(text.charAt(end)))) continue;
+      if (type !== "url" && text.charAt(end) === "." && /[a-z0-9.]/i.test(text.charAt(end + 1))) continue;
       if (!raw || overlaps(start, end, ranges) || (validator && !validator(raw))) continue;
       var value = normalizer ? normalizer(raw) : raw;
       if (!value) continue;
@@ -108,16 +127,40 @@
 
     addMatches(text, /\bhttps?:\/\/[^\s<>"'\x60]+/gi, "url", ranges, found, null, normalizeUrl);
     addMatches(text, /\b(?:[a-f0-9]{64}|[a-f0-9]{40}|[a-f0-9]{32})\b/gi, hashType, ranges, found, null, function (value) { return value.toLowerCase(); });
-    addMatches(text, /\b[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}\b/gi, "email", ranges, found, null, function (value) { return value.toLowerCase(); });
+    addMatches(text, /(?<![a-z0-9._%+\-])[a-z0-9._%+\-]+@[a-z0-9.-]+\.[a-z]{2,63}\b/gi, "email", ranges, found, function (value) {
+      var parts = value.split("@");
+      return !/^\.|\.$|\.\./.test(parts[0]) && validDomain(parts[1]);
+    }, function (value) {
+      var parts = value.split("@");
+      return parts[0] + "@" + parts[1].toLowerCase();
+    });
     addMatches(text, /\b(?:\d{1,3}\.){3}\d{1,3}\b/g, "ipv4", ranges, found, validIpv4);
-    addMatches(text, /\b(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+(?:[a-z]{2,63}|xn--[a-z0-9-]{2,59})\b/gi, "domain", ranges, found, null, function (value) { return value.toLowerCase(); });
+    addMatches(text, /\b(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+(?:xn--[a-z0-9-]{2,59}|[a-z]{2,63})\b/gi, "domain", ranges, found, validDomain, function (value) { return value.toLowerCase(); });
 
-    var seen = new Set();
+    var seen = new Map();
     return found.filter(function (indicator) {
-      var key = indicator.type + ":" + indicator.value.toLowerCase();
-      if (seen.has(key)) return false;
-      seen.add(key);
+      var key = indicator.type + ":" + indicator.value;
+      if (seen.has(key)) {
+        seen.get(key).occurrences += 1;
+        return false;
+      }
+      indicator.occurrences = 1;
+      seen.set(key, indicator);
       return true;
+    });
+  }
+
+  function validDomain(value) {
+    return value.length <= 253 && value.split(".").every(function (label) {
+      return /^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/i.test(label);
+    });
+  }
+
+  function matchingIndicators() {
+    var query = refang(searchInput.value.trim()).toLowerCase();
+    return indicators.filter(function (indicator) {
+      return (typeFilter.value === "all" || indicator.type === typeFilter.value) &&
+        indicator.value.toLowerCase().includes(query);
     });
   }
 
@@ -160,7 +203,8 @@
 
   function renderList() {
     list.replaceChildren();
-    indicators.forEach(function (indicator, index) {
+    var matching = matchingIndicators();
+    matching.slice(0, visibleLimit).forEach(function (indicator, index) {
       var item = document.createElement("li");
       var heading = document.createElement("div");
       var type = document.createElement("span");
@@ -170,11 +214,11 @@
       var copy = document.createElement("button");
 
       item.className = "ioc-item";
-      item.style.setProperty("--ioc-index", index);
+      item.style.setProperty("--ioc-index", Math.min(index, 8));
       heading.className = "ioc-item-heading";
       type.className = "ioc-type ioc-type-" + indicator.type;
       type.textContent = typeMeta[indicator.type].label;
-      group.textContent = typeMeta[indicator.type].group;
+      group.textContent = typeMeta[indicator.type].group + " · " + indicator.occurrences + (indicator.occurrences === 1 ? " occurrence" : " occurrences");
       value.textContent = shownValue(indicator);
       value.title = shownValue(indicator);
       actions.className = "ioc-item-actions";
@@ -203,6 +247,10 @@
       item.append(heading, value, actions);
       list.appendChild(item);
     });
+    moreButton.hidden = matching.length <= visibleLimit;
+    copyButton.disabled = exportButton.disabled = matching.length === 0;
+    setStatus(matching.length + " of " + indicators.length + " unique indicators match. " +
+      (matching.length > visibleLimit ? "Showing " + visibleLimit + "; copy and export include all matches." : ""));
   }
 
   function setStatus(message) {
@@ -214,10 +262,13 @@
     emptyState.hidden = hasResults;
     output.hidden = !hasResults;
     modeFieldset.disabled = !hasResults;
-    if (!hasResults) return;
+    if (!hasResults) {
+      list.replaceChildren();
+      summary.replaceChildren();
+      return;
+    }
     renderSummary();
     renderList();
-    setStatus(indicators.length + (indicators.length === 1 ? " unique indicator" : " unique indicators") + " found.");
   }
 
   function copyText(text, button, successLabel) {
@@ -229,14 +280,20 @@
 
     function fallbackCopy() {
       var helper = document.createElement("textarea");
+      var previousFocus = document.activeElement;
       helper.value = text;
       helper.setAttribute("readonly", "");
       helper.style.position = "fixed";
       helper.style.opacity = "0";
       document.body.appendChild(helper);
       helper.select();
-      var copied = document.execCommand("copy");
-      helper.remove();
+      var copied = false;
+      try { copied = document.execCommand("copy"); }
+      catch (error) { copied = false; }
+      finally {
+        helper.remove();
+        if (previousFocus) previousFocus.focus();
+      }
       if (copied) showSuccess();
       else setStatus("Copy was blocked by the browser. Select the text and copy it manually.");
     }
@@ -259,9 +316,11 @@
   }
 
   function exportCsv() {
-    var rows = [["type", "indicator", "defanged"]];
-    indicators.forEach(function (indicator) {
-      rows.push([typeMeta[indicator.type].label, indicator.value, defang(indicator.value, indicator.type)]);
+    var matching = matchingIndicators();
+    if (!matching.length) return;
+    var rows = [["type", "indicator", "defanged", "occurrences"]];
+    matching.forEach(function (indicator) {
+      rows.push([typeMeta[indicator.type].label, indicator.value, defang(indicator.value, indicator.type), String(indicator.occurrences)]);
     });
     var csv = rows.map(function (row) { return row.map(csvCell).join(","); }).join("\r\n");
     var blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
@@ -272,14 +331,24 @@
     document.body.appendChild(link);
     link.click();
     link.remove();
-    URL.revokeObjectURL(url);
-    setStatus("CSV export created for " + indicators.length + " indicators.");
-    track("ioc_export", { indicator_count: indicators.length });
+    window.setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+    setStatus("CSV export created for " + matching.length + " indicators.");
+    track("ioc_export", { indicator_count: matching.length });
   }
 
   analyzeButton.addEventListener("click", function () {
+    if (input.value.length > 100000) {
+      invalidateResults();
+      feedback.textContent = "This batch is too large. Split it into batches of 100,000 characters or fewer.";
+      return;
+    }
+    typeFilter.value = "all";
+    searchInput.value = "";
+    visibleLimit = 100;
     indicators = extract(input.value);
     render();
+    var total = indicators.reduce(function (sum, indicator) { return sum + indicator.occurrences; }, 0);
+    feedback.textContent = indicators.length + " unique indicators found; " + (total - indicators.length) + " duplicate occurrences combined.";
     if (!indicators.length) {
       emptyState.querySelector("h3").textContent = input.value.trim() ? "No supported indicators found" : "Add indicators to begin";
       emptyState.querySelector("p").textContent = input.value.trim() ? "Check the formatting or try the safe sample." : "Paste alert text or load the safe sample above.";
@@ -290,6 +359,7 @@
   clearButton.addEventListener("click", function () {
     input.value = "";
     indicators = [];
+    feedback.textContent = "Input and results cleared.";
     render();
     emptyState.querySelector("h3").textContent = "Ready for signal";
     emptyState.querySelector("p").textContent = "Your classified indicators will appear here.";
@@ -305,6 +375,7 @@
       "44d88612fea8a8f36de82e1278abb02f",
       "44d88612fea8a8f36de82e1278abb02f"
     ].join("\n");
+    invalidateResults();
     input.focus();
   });
 
@@ -316,11 +387,33 @@
   });
 
   copyButton.addEventListener("click", function () {
-    copyText(indicators.map(shownValue).join("\n"), copyButton, "Copied all");
-    track("ioc_copy_all", { indicator_count: indicators.length });
+    var matching = matchingIndicators();
+    if (!matching.length) return;
+    copyText(matching.map(shownValue).join("\n"), copyButton, "Copied");
+    track("ioc_copy_all", { indicator_count: matching.length });
   });
 
   exportButton.addEventListener("click", exportCsv);
+
+  function invalidateResults() {
+    indicators = [];
+    render();
+    feedback.textContent = "Input changed. Analyze again to refresh results.";
+    emptyState.querySelector("h3").textContent = "Ready to analyze";
+    emptyState.querySelector("p").textContent = "Analyze the current input to see matching indicators.";
+  }
+
+  Object.keys(typeMeta).forEach(function (type) {
+    var option = document.createElement("option");
+    option.value = type;
+    option.textContent = typeMeta[type].label;
+    typeFilter.appendChild(option);
+  });
+  input.addEventListener("input", invalidateResults);
+  [typeFilter, searchInput].forEach(function (control) {
+    control.addEventListener("input", function () { visibleLimit = 100; renderList(); });
+  });
+  moreButton.addEventListener("click", function () { visibleLimit += 100; renderList(); });
 
   input.addEventListener("keydown", function (event) {
     if ((event.metaKey || event.ctrlKey) && event.key === "Enter") analyzeButton.click();

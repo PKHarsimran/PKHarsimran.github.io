@@ -3,6 +3,7 @@ layout: default
 title: IOC Workbench
 description: A fast, privacy-first browser tool for extracting, classifying, deduplicating, defanging, and exporting cybersecurity indicators of compromise.
 permalink: /ioc-workbench/
+measurement_disabled: true
 ---
 
 <article class="ioc-workbench" data-ioc-workbench>
@@ -33,7 +34,8 @@ permalink: /ioc-workbench/
 
     <label class="ioc-label" for="ioc-input">Raw IOC text</label>
     <textarea id="ioc-input" data-ioc-input rows="9" spellcheck="false" autocomplete="off" placeholder="Paste an incident note, alert, or list of indicators…"></textarea>
-    <p class="ioc-input-hint">Supports plain and defanged indicators such as <code>hxxps://example[.]com/path</code>. Press <kbd>Ctrl</kbd>/<kbd>⌘</kbd> + <kbd>Enter</kbd> to analyze. Nothing is uploaded.</p>
+    <p class="ioc-input-hint">Supports IPv4, domains, HTTP(S) URLs, email addresses, and MD5/SHA-1/SHA-256 hashes, including <code>hxxps://example[.]com/path</code>. Up to 100,000 characters per batch. Press <kbd>Ctrl</kbd>/<kbd>⌘</kbd> + <kbd>Enter</kbd> to analyze. Nothing is uploaded.</p>
+    <p data-ioc-feedback role="status" aria-live="polite"></p>
 
     <div class="ioc-actions">
       <button class="ioc-primary-button" type="button" data-ioc-analyze>
@@ -64,14 +66,20 @@ permalink: /ioc-workbench/
 
     <div data-ioc-output hidden>
       <div class="ioc-summary" data-ioc-summary aria-label="Indicator summary"></div>
+      <div class="ioc-filters">
+        <label>Indicator type <select data-ioc-filter><option value="all">All types</option></select></label>
+        <label>Find an indicator <input data-ioc-search type="search" placeholder="Search values…" autocomplete="off" spellcheck="false"></label>
+      </div>
       <div class="ioc-result-toolbar">
         <p data-ioc-status role="status" aria-live="polite"></p>
         <div>
-          <button class="ioc-secondary-button" type="button" data-ioc-copy>Copy all</button>
-          <button class="ioc-secondary-button" type="button" data-ioc-export>Export CSV</button>
+          <button class="ioc-secondary-button" type="button" data-ioc-copy>Copy matching</button>
+          <button class="ioc-secondary-button" type="button" data-ioc-export>Export matching CSV</button>
         </div>
       </div>
       <ol class="ioc-list" data-ioc-list></ol>
+      <button class="ioc-secondary-button" type="button" data-ioc-more hidden>Show more</button>
+      <p class="ioc-input-hint">Copy uses the selected display format. CSV includes normalized and defanged values plus occurrence counts. URL paths and email local-part capitalization are preserved. Review extracted candidates before using them; a URL or email is kept whole, without also listing its embedded domain. Trailing URL punctuation can be part of the address, so check values pasted from prose.</p>
       <p class="ioc-lookup-note"><strong>Investigation links are optional.</strong> Opening one shares that single indicator with the named external provider.</p>
     </div>
   </section>
