@@ -9,7 +9,7 @@ permalink: /privacy-policy/
 # Privacy Policy
 
 **Effective date:** September 1, 2026  
-**Last updated:** September 1, 2026
+**Last updated:** October 18, 2026
 
 This Privacy Policy explains how Harsimran Sidhu ("I," "me," or "my") handles information when you visit **harsim.ca** and its pages, articles, feeds, and related features (the "Site"). It is intended to give visitors a clear, globally applicable explanation of the Site's privacy practices.
 
@@ -22,6 +22,14 @@ The Site uses Google services. Please read [how Google uses information from sit
 - The Site uses analytics to understand visits and improve its content.
 - If you arrive through a Google ad, campaign and conversion information may be used to measure the ad's performance.
 - Optional measurement is off until you choose to allow it, and you can change that choice through **Cookie settings** in the Site footer.
+
+## Live Lab visitor passes and optional IP lookup
+
+The [Live Lab](/lab/) creates a random visitor callsign and saves the pass, puzzle progress, tour progress, and motion preference in your browser's local storage. The lab does not upload your pass or puzzle answers. Use **Start a fresh visit** to replace the pass and clear its progress, or clear this site's browser storage to remove the saved information.
+
+Selecting **Reveal my public IP** makes a direct request from your browser to [ipify](https://www.ipify.org/). That service necessarily receives the requesting internet-facing IP address. The lookup is optional and does not run on page load. The lab displays the returned address temporarily, does not put it in local storage or a downloaded badge, and provides a button to hide it again. It is not a device scan or a way to establish a visitor's identity. A VPN or proxy can affect the address shown.
+
+The standalone Live Lab page does not load the site's optional Google measurement scripts. GitHub Pages and network providers may still process ordinary hosting and security information as described in this policy.
 
 ## Information collected
 

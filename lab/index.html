@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Enter Harsimran's live lab. Meet Pixel, follow a packet, solve three tiny security cases, and take home your own creature badge.">
+  <meta name="theme-color" content="#0B101B">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; connect-src 'self' https://api64.ipify.org; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <title>The Live Lab · Harsimran Sidhu</title>
+  <link rel="canonical" href="https://harsim.ca/lab/">
+  <link rel="icon" href="/Favicon.ico">
+  <link rel="stylesheet" href="./lab.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#check-in">Skip to visitor check-in</a>
+  <header class="site-nav wrap">
+    <a class="brand" href="/" aria-label="Harsimran Sidhu home"><span class="brand-mark" aria-hidden="true">h<span>_</span></span><span>Harsimran Sidhu<small>FIELD NOTES / AFTER HOURS</small></span></a>
+    <nav aria-label="Lab navigation"><a href="#journey">The route</a><a href="#cases">The clues</a><a href="#vault">The vault</a><button id="motion-toggle" class="quiet" type="button" aria-pressed="false">Pause motion</button></nav>
+  </header>
+  <main>
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> HARSIM'S LIVE LAB / CHANNEL OPEN</p>
+        <h1 id="hero-title">You brought<br>the <span>signal.</span></h1>
+        <p class="hero-deck">Let’s turn it into a little adventure.</p>
+        <p class="intro">A curious corner of my cybersecurity projects and Zima homelab. Check in, follow a packet, and crack a tiny vault. Pixel’s been expecting you.</p>
+        <div class="hero-actions"><a class="button primary" href="#check-in">Get my visitor pass <span aria-hidden="true">↗</span></a><a class="text-link" href="#cases">I’m here for the puzzle <span aria-hidden="true">→</span></a></div>
+        <p class="micro">No account. Just a little curiosity.</p>
+      </div>
+      <div class="companion-station">
+        <div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div>
+        <span class="orbit-label label-one" aria-hidden="true">LISTENING FOR GOOD IDEAS</span><span class="orbit-label label-two" aria-hidden="true">CURIOSITY / NOMINAL</span>
+        <p class="speech" id="mascot-speech" aria-live="polite">Oh, a visitor. I saved you a side quest.</p>
+        <button id="mascot" class="mascot" type="button" aria-label="Say hello to Pixel, your lab companion">
+          <svg viewBox="0 0 180 190" role="img" aria-label="Pixel, a violet robot with mint eyes">
+            <ellipse class="bot-shadow" cx="90" cy="177" rx="49" ry="7" fill="#B7A1FF" opacity=".12"/>
+            <g class="bot-body" shape-rendering="crispEdges">
+              <path fill="#B7A1FF" d="M83 14H97V42H130V56H144V70H158V126H144V140H130V168H105V140H75V168H50V140H36V126H22V70H36V56H50V42H83Z"/>
+              <path fill="#D2C4FF" d="M50 42H83V28H97V42H130V56H50Z"/><path fill="#8E74D2" d="M22 98H36V126H50V140H75V153H50V140H36V126H22ZM105 140H130V168H105Z"/>
+              <path fill="#111C2A" d="M48 70H132V112H48Z"/>
+              <g class="bot-eyes"><path fill="#63E6C4" d="M61 80H78V99H61ZM102 80H119V99H102Z"/></g>
+              <path class="bot-mouth" fill="#63E6C4" d="M76 120H104V126H76Z"/>
+              <path class="bot-sleep" fill="#63E6C4" d="M61 89H78V94H61ZM102 89H119V94H102Z"/>
+              <path fill="#F685BF" d="M84 11H96V24H84Z"/>
+            </g>
+          </svg>
+          <span class="bot-tap">tap to say hi</span>
+        </button>
+        <div class="companion-caption"><span class="status-dot" aria-hidden="true"></span><strong>PIXEL</strong><span id="mascot-state">Curious & awake</span></div>
+      </div>
+    </section>
+
+    <section class="check-in wrap panel" id="check-in" aria-labelledby="check-in-title">
+      <div class="panel-top"><h2 id="check-in-title"><span aria-hidden="true">↳</span> Visitor check-in</h2><span class="mono">YOUR PASS / <span id="pass-serial">…</span></span></div>
+      <div class="check-in-grid">
+        <div><span class="field-label">CALLSIGN ASSIGNED</span><strong class="callsign" id="callsign">Issuing your pass…</strong><span class="muted small" id="visit-greeting">A little curiosity looks good on you.</span></div>
+        <div class="network-cell"><span class="field-label">YOUR PUBLIC IP</span><strong id="public-ip">Hidden until you ask</strong><button id="ip-reveal" class="inline-action" type="button">Reveal my public IP ↗</button><span class="small muted">Optional lookup via <a href="https://www.ipify.org/" target="_blank" rel="noopener noreferrer">ipify</a>. Excluded from your pass.</span><span class="small" id="ip-status" role="status"></span></div>
+        <div><span class="field-label">YOUR CORNER OF THE CLOCK</span><strong id="local-time">—:—</strong><span class="small muted" id="local-zone">Local browser time</span></div>
+      </div>
+      <div class="check-in-bottom"><p class="small muted">Your callsign and puzzle progress stay in this browser. Make yourself at home.</p><button class="button primary" id="start-visit" type="button">Check in & send my packet <span aria-hidden="true">→</span></button></div>
+    </section>
+
+    <section class="journey wrap section-space" id="journey" aria-labelledby="journey-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / FOLLOW YOUR PACKET</p><h2 id="journey-title">Every good visit<br>starts with a connection.</h2></div><p>A guided hop through my corner of the internet.<br><span class="small muted">Illustrated tour · not a network trace</span></p></div>
+      <div class="route-map panel" id="route-map">
+        <div class="route-wire" aria-hidden="true"><span class="packet-dot" id="packet-dot"></span></div>
+        <ol class="route-stops">
+          <li><span class="stop-icon" aria-hidden="true">▣</span><span class="mono">00 / DEPARTURE</span><strong>Your browser</strong></li>
+          <li><span class="stop-icon" aria-hidden="true">⌁</span><span class="mono">01 / THE EDGE</span><strong>A public doorway</strong></li>
+          <li><span class="stop-icon" aria-hidden="true">▤</span><span class="mono">02 / THE HOMELAB</span><strong>Zima, connected</strong></li>
+          <li><span class="stop-icon" aria-hidden="true">◇</span><span class="mono">03 / SIDE QUESTS</span><strong>The evidence bay</strong></li>
+        </ol>
+        <div class="route-story"><div><span class="field-label" id="route-stage">READY AT THE DEPARTURE GATE</span><h3 id="route-title">One packet. A few interesting stops.</h3><p id="route-description">Your visitor pass is ready. Send a packet to begin the tour, or head straight to the clues below.</p><a id="route-link" href="#cases">Skip to the case files →</a></div><button id="route-next" class="button secondary" type="button">Send the packet →</button></div>
+      </div>
+      <details class="service-drawer"><summary>The service crew behind the illustration <span aria-hidden="true">↗</span></summary><p><strong>Media:</strong> Jellyfin, Jellyseerr, Radarr, Sonarr, Prowlarr, Bazarr. <strong>Downloads:</strong> Transmission + Gluetun. <strong>Libraries:</strong> PhotoPrism, Shelfmark, Audiobookshelf. <strong>Operations:</strong> Homepage, Portainer, custom dashboards. <strong>Monitoring:</strong> Uptime Kuma, Glances, Dozzle, ntfy.</p><p class="small muted">A curated public inventory of the lab, with illustrated handoffs.</p></details>
+    </section>
+
+    <section class="cases wrap section-space" id="cases" aria-labelledby="cases-title">
+      <div class="section-heading"><div><p class="eyebrow">02 / THE THREE LOOSE ENDS</p><h2 id="cases-title">Good tools.<br>Tiny mysteries.</h2></div><p>Solve one question at each station.<br>Keep the three code fragments for the vault.</p></div>
+      <p class="training-note"><span aria-hidden="true">✦</span> These are harmless training cases. The projects behind them are real.</p>
+      <div class="case-grid" id="case-grid"></div>
+      <noscript><p class="panel">The tour, puzzle, mascot, and badge maker need JavaScript. You can still explore <a href="https://github.com/PKHarsimran">the public projects on GitHub</a>.</p></noscript>
+    </section>
+
+    <section class="vault wrap section-space" id="vault" aria-labelledby="vault-title">
+      <div class="vault-panel panel">
+        <div class="vault-copy"><p class="eyebrow">03 / A SMALL VAULT, A STRANGE REWARD</p><h2 id="vault-title">Something tiny<br>is waiting inside.</h2><p>Three fragments. One specific order.<br>Follow the route to build your code.</p><ol class="code-route" id="code-route" aria-label="Vault route: Inspect, Capture, Trace"></ol><p class="small muted" id="fragment-progress">0 of 3 fragments collected</p></div>
+        <form id="vault-form" class="vault-lock"><span class="lock-mark" id="lock-mark" aria-hidden="true">◇</span><label for="vault-code">Three-digit vault code</label><input id="vault-code" name="code" type="text" inputmode="numeric" pattern="[0-9]{3}" minlength="3" maxlength="3" autocomplete="off" placeholder="· · ·" required aria-describedby="vault-feedback"><button id="unlock-vault" class="button primary" type="submit" disabled>Collect the three fragments first</button><p id="vault-feedback" role="status">The code route is INSPECT → CAPTURE → TRACE.</p></form>
+      </div>
+    </section>
+
+    <section class="souvenir wrap section-space" id="souvenir" aria-labelledby="souvenir-title">
+      <div class="souvenir-copy"><p class="eyebrow">04 / KEEP A LITTLE PIECE OF THE LAB</p><h2 id="souvenir-title">Your visit.<br>Your weird little souvenir.</h2><p id="badge-description">Your visitor pass is ready to keep. Open the vault to meet your own pixel creature and upgrade it to an explorer badge.</p><button class="button secondary" id="download-badge" type="button">Download visitor badge <span aria-hidden="true">↓</span></button><p class="small muted">A PNG, made right here. Your IP is never part of it.</p><p id="badge-status" role="status" class="small"></p></div>
+      <div class="badge-preview"><img id="badge-preview" alt="Your personalized lab visitor badge" width="900" height="520"><span class="badge-caption mono" id="badge-caption">VISITOR EDITION / CURIOSITY CLEARED</span></div>
+    </section>
+
+    <section class="wrap faq section-space" aria-labelledby="field-notes-title"><p class="eyebrow" id="field-notes-title">A COUPLE OF FIELD NOTES</p><details><summary>Does this scan my device?</summary><p>No. Pixel reacts to the page, and the route is an illustration. The cases use training data. The optional IP button asks ipify for your internet-facing address; it is not a device scan or a way to identify you.</p></details><details><summary>What gets saved?</summary><p>Your random visitor pass, solved cases, tour progress, and motion preference stay in this browser. The lab does not send your answers to a server. The IP lookup only runs when you ask, is not saved by the lab, and is never added to the badge. <a href="/privacy-policy/">Read the site privacy policy.</a></p></details></section>
+  </main>
+  <footer class="site-footer wrap"><a class="brand" href="/">Harsimran Sidhu <span>↗</span></a><p>Build with curiosity. Leave something useful behind.</p><div><a href="https://github.com/PKHarsimran">GitHub</a><a href="/">Field notes</a><button id="reset-visit" class="inline-action" type="button">Start a fresh visit</button></div></footer>
+  <div class="celebration" id="celebration" aria-hidden="true"></div>
+</body>
+</html>

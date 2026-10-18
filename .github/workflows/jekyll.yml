@@ -4,6 +4,15 @@ on:
   pull_request:
     branches: ["master"]
   workflow_dispatch:
+  push:
+    branches: ["master"]
+    paths:
+      - "lab/**"
+      - "docs/tests/live-lab.test.mjs"
+      - "_config.yml"
+      - "_layouts/home.html"
+      - "privacy-policy.md"
+      - ".github/workflows/jekyll.yml"
 
 permissions:
   contents: read
@@ -19,6 +28,8 @@ jobs:
         with:
           ruby-version: '3.4'
           bundler-cache: true
+      - name: Check live lab game and optional IP lookup
+        run: node --test docs/tests/live-lab.test.mjs
       - name: Build with Jekyll
         run: bundle exec jekyll build --strict_front_matter
         env:
