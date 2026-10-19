@@ -1,4 +1,4 @@
-import { validIP } from './core.mjs';
+import { validIP } from './core.mjs?v=20261019-1';
 
 // Importing this module makes no requests. The UI calls it only after the reveal button is pressed.
 export async function lookupPublicIP({ fetcher = globalThis.fetch, timeout = 6000 } = {}) {

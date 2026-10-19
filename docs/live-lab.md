@@ -21,6 +21,8 @@ node docs/tests/ioc-workbench.test.cjs
 
 Open `http://127.0.0.1:8866/lab/`. The rest of the Jekyll site still needs its normal Jekyll build. The GitHub workflow checks the lab's rules and optional lookup before the strict-front-matter Jekyll build.
 
+The page's CSS, entry module, and module imports share an asset revision query. Bump it together when shipping changes so an older cached module cannot be mixed with a new interface.
+
 ## Data boundaries
 
 The app stores only a seed, derived callsign, creation time, completed room IDs, route progress, vault status, and motion preference. The callsign is random, not derived from an IP or device information. A visitor must click the reveal button before a direct request to `api64.ipify.org` runs. It omits credentials and referrer information, and the address is not saved, included in a badge, or used to seed the creature. The standalone page loads no analytics script.

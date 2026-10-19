@@ -1,5 +1,5 @@
-import { STORAGE_KEY, ROOMS, VAULT_ROUTE, PATCHES, createVisit, restoreVisit, answerRoom, openVault, creatureFor, renderBadgeSVG, badgeFilename, missionPatches, recordHello, pixelCommand } from './core.mjs';
-import { lookupPublicIP } from './network.mjs';
+import { STORAGE_KEY, ROOMS, VAULT_ROUTE, PATCHES, createVisit, restoreVisit, answerRoom, openVault, creatureFor, renderBadgeSVG, badgeFilename, missionPatches, recordHello, pixelCommand } from './core.mjs?v=20261019-1';
+import { lookupPublicIP } from './network.mjs?v=20261019-1';
 
 const $ = id => document.getElementById(id);
 const motionMedia = matchMedia('(prefers-reduced-motion: reduce)');
