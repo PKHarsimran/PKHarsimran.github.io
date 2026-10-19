@@ -19,3 +19,73 @@ body[data-motion='off'] *,body[data-motion='off'] *::before,body[data-motion='of
 @media(max-width:760px){.wrap{width:calc(100% - 40px)}.site-nav{min-height:88px;gap:18px}.brand{font-size:14px}.brand small{font-size:7px;letter-spacing:1px}.brand-mark{width:33px;height:36px;font-size:20px}.site-nav nav>a{display:none}.quiet{font-size:11px;padding:8px}.hero{grid-template-columns:1fr;padding-top:44px;padding-bottom:35px;gap:10px}.hero h1{font-size:clamp(59px,11vw,80px)}.hero .eyebrow{font-size:9px;letter-spacing:1px}.hero-deck{font-size:22px}.intro{font-size:17px;max-width:510px}.hero-actions{margin-top:23px;gap:20px}.hero-actions .button{font-size:13px}.hero-actions .text-link{font-size:13px}.companion-station{min-height:320px;margin-top:10px}.mascot{width:170px}.orbit,.orbit-two{width:250px;height:250px}.speech{top:0;right:8%;font-size:14px;max-width:245px}.companion-caption{bottom:20px;font-size:9px}.label-two{font-size:7px;bottom:0;right:3%}.check-in{padding:22px}.panel-top{align-items:flex-start}.panel-top h2{font-size:17px}.panel-top .mono{font-size:8px;max-width:100px;text-align:right}.check-in-grid{grid-template-columns:1fr;gap:22px;padding:22px 0}.check-in-grid>div+div{border-left:0;border-top:1px solid var(--line);padding:20px 0 0}.check-in-grid .field-label{font-size:9px}.check-in-grid strong{font-size:22px}.check-in-grid .network-cell strong{font-size:18px}.check-in-bottom{flex-direction:column;align-items:stretch;gap:18px}.section-space{margin-top:72px}.section-heading{flex-direction:column;align-items:flex-start;gap:22px;margin-bottom:24px}.section-heading h2{font-size:36px}.section-heading>p{font-size:16px}.eyebrow{font-size:9px;letter-spacing:1px}.route-map{padding:22px}.route-stops{grid-template-columns:1fr;gap:22px}.route-stops li{display:grid;grid-template-columns:52px 1fr;grid-template-rows:20px 24px;column-gap:17px;row-gap:2px;text-align:left;align-items:center}.stop-icon{width:48px;height:48px;border-radius:12px;grid-row:1/3;font-size:25px}.route-stops li .mono{font-size:8px}.route-stops li strong{font-size:16px}.route-wire{left:46px;right:auto;top:47px;width:1px;height:210px}.packet-dot{top:var(--packet-position,0%);left:-5px;transition:top 1.2s cubic-bezier(.65,0,.35,1)}.route-story{flex-direction:column;align-items:stretch;gap:20px}.route-story h3{font-size:22px}.route-story p{font-size:16px}.service-drawer{padding:14px 16px;font-size:14px}.case-grid{grid-template-columns:1fr;gap:20px}.case-card{padding:25px}.case-card pre{font-size:12px;min-height:0}.case-question{min-height:0;font-size:18px}.answer-options button{font-size:15px;padding:12px}.case-feedback{min-height:40px}.case-card details{font-size:14px}.case-card>a{font-size:15px}.vault-panel{grid-template-columns:1fr;padding:26px;gap:30px}.vault-copy h2{font-size:34px}.vault-copy p{font-size:16px}.vault-lock{border-left:0;border-top:1px solid var(--line);padding:24px 0 0}.lock-mark{font-size:40px}.souvenir{grid-template-columns:1fr;gap:30px}.souvenir h2{font-size:34px}.souvenir-copy>p{font-size:16px}.badge-preview{margin:0 4px}.badge-caption{font-size:8px;letter-spacing:1px}.faq details{font-size:16px}.site-footer{margin-top:65px;gap:23px}.site-footer>div{gap:22px;flex-wrap:wrap}.site-footer p{font-size:12px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.badge-preview{transform:none}.bot-eyes{transform:none}.celebration{display:none}}
 .brand-mark{display:inline-flex;align-items:center;justify-content:center}
+
+/* Pixel's field kit and the visit's real milestones. */
+#vault-title{white-space:pre-line}
+.terminal-launcher{display:grid;grid-template-columns:auto auto auto;align-items:center;justify-content:center;column-gap:11px;row-gap:5px;min-height:49px;margin:0 auto;padding:9px 17px;border:1px solid #4b4165;border-radius:12px;background:#181c2d;color:#e8dfff;font:700 14px var(--display)}
+.terminal-launcher>span{color:var(--mint);font:500 14px var(--mono)}
+kbd{border:1px solid #4b526b;border-bottom-width:2px;border-radius:4px;padding:1px 6px;color:var(--muted);font:500 10px var(--mono)}
+.terminal-launcher small{grid-column:1/-1;color:var(--muted);font:400 12px var(--body)}
+.terminal-launcher:hover{border-color:var(--violet);background:#211f36}
+.mission-strip{display:flex;gap:20px;align-items:center;flex-wrap:wrap;padding-top:18px;margin-top:18px;border-top:1px solid var(--line)}
+.mission-strip>a{font:500 10px var(--mono);color:var(--violet);letter-spacing:.7px}
+.mission-strip progress{appearance:none;width:130px;height:5px;border:0;border-radius:8px;background:#29374e;color:var(--mint)}
+.mission-strip progress::-webkit-progress-bar{background:#29374e;border-radius:8px}
+.mission-strip progress::-webkit-progress-value{background:var(--mint);border-radius:8px}
+.mission-strip progress::-moz-progress-bar{background:var(--mint);border-radius:8px}
+.mission-strip button{margin-left:auto;font-size:13px}
+.patch-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-bottom:20px}
+.patch-card{display:flex;flex-direction:column;align-items:flex-start;padding:22px 17px;border:1px solid var(--line);border-radius:15px;background:#111a28}
+.patch-emblem{display:grid;place-content:center;width:62px;height:65px;margin-bottom:17px;font:500 28px var(--mono);background:#222a3b;color:#94a3bb;clip-path:polygon(50% 0,95% 23%,95% 77%,50% 100%,5% 77%,5% 23%)}
+.patch-status{font:500 8px var(--mono);letter-spacing:1px;color:var(--muted);margin-bottom:9px}
+.patch-card h3{font-size:18px;letter-spacing:-.5px;margin-bottom:10px}
+.patch-card p{font-size:14px;line-height:1.4;color:var(--muted);margin-bottom:15px;min-height:40px}
+.patch-card button{font-size:12px;margin-top:auto}
+.patch-card.earned{border-color:#42796f;background:linear-gradient(145deg,#16282b,#111a28 80%)}
+.patch-card.earned .patch-emblem{background:#1d594e;color:#92ffe0}
+.patch-card.earned .patch-status{color:var(--mint)}
+.patch-card:nth-child(2n).earned{border-color:#665787;background:linear-gradient(145deg,#27213a,#111a28 80%)}
+.patch-card:nth-child(2n).earned .patch-emblem{background:#493a69;color:#dacbff}
+.patch-card:nth-child(2n).earned .patch-status{color:var(--violet)}
+.patch-toast{position:fixed;right:24px;bottom:24px;z-index:40;max-width:calc(100% - 40px);padding:17px 22px;background:#16352f;border:1px solid #63b9a1;border-radius:12px;box-shadow:0 10px 40px #0005;color:#c1ffe9;font:500 12px/1.6 var(--mono);animation:patch-arrive .25s ease-out}
+.terminal-open{overflow:hidden}
+.pixel-terminal{width:min(740px,calc(100% - 36px));max-height:90dvh;padding:28px;border:1px solid #786299;border-radius:20px;background:linear-gradient(145deg,#1b1e32,#0c1422 60%);color:var(--text);box-shadow:0 35px 110px #0009}
+.pixel-terminal::backdrop{background:#050b16bd;backdrop-filter:blur(7px)}
+.terminal-top{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+.terminal-top .eyebrow{font-size:9px;margin-bottom:12px;color:var(--violet)}
+.terminal-top h2{font-size:29px;letter-spacing:-1px;margin-bottom:14px}
+.terminal-top .quiet{white-space:nowrap;min-height:44px;min-width:56px}
+.terminal-top kbd{margin-left:7px}
+.terminal-log{background:#09111c;border:1px solid #2b3951;border-radius:12px;padding:20px;height:240px;overflow:auto;overscroll-behavior:contain;margin:20px 0}
+.terminal-log p{font:500 12px/1.85 var(--mono);white-space:pre-wrap;overflow-wrap:anywhere;color:#becde1;margin:0 0 7px}
+.terminal-log .terminal-input{color:var(--mint);margin-top:15px}
+.terminal-log .terminal-reward{color:var(--pink);border-top:1px solid #3b2c45;margin-top:14px;padding-top:12px}
+#terminal-form{display:flex;align-items:center;gap:12px;border:1px solid #3c526c;background:#101b2b;padding:8px 8px 8px 15px;border-radius:10px}
+#terminal-form>span{font:500 10px var(--mono);color:var(--mint);white-space:nowrap}
+#terminal-command{min-width:0;width:100%;background:transparent;color:var(--text);border:0;font:500 13px var(--mono);padding:10px 2px}
+#terminal-command::placeholder{color:#8d9ab2}
+#terminal-form .button{min-height:39px;padding:9px 15px;gap:10px;font-size:12px}
+.command-chips{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:14px}
+.command-chips button{padding:7px 11px;border:1px solid #35415b;border-radius:7px;color:var(--violet);background:#141d2e;font:500 11px var(--mono);min-height:34px}
+.command-chips button:hover{border-color:var(--violet)}
+.command-chips>span{margin-left:auto;font-size:11px;color:var(--muted)}
+@keyframes patch-arrive{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media(max-width:1000px){.patch-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.patch-card p{min-height:22px}.patch-card{padding:20px}.command-chips>span{width:100%;margin-top:5px}}
+@media(max-width:760px){
+  .hero h1{font-size:clamp(47px,12.6vw,64px)}
+  .companion-station{min-height:280px}
+  .terminal-launcher{margin-top:4px;font-size:13px;min-height:47px}
+  .hero{padding-bottom:35px}
+  .mission-strip{gap:12px}.mission-strip>a{font-size:9px}.mission-strip progress{margin-left:auto;width:75px}.mission-strip button{margin-left:0;width:100%;min-height:36px}
+  .patch-grid{grid-template-columns:1fr;gap:12px}
+  .patch-card{display:grid;grid-template-columns:58px 1fr;column-gap:18px;row-gap:4px;padding:18px}
+  .patch-emblem{grid-row:1/5;width:56px;height:60px;margin:0;align-self:center;font-size:25px}
+  .patch-status,.patch-card h3,.patch-card p,.patch-card button{grid-column:2;margin:0}
+  .patch-card h3{font-size:19px}.patch-card p{font-size:13px;min-height:0}.patch-card button{font-size:13px;min-height:34px}
+  .patch-toast{bottom:16px;right:16px;max-width:calc(100% - 32px);font-size:10px;padding:14px 17px}
+  .pixel-terminal{padding:19px;width:calc(100% - 24px);max-height:94dvh;border-radius:15px}
+  .terminal-top{gap:12px}.terminal-top .eyebrow{font-size:7px;letter-spacing:.8px}.terminal-top h2{font-size:23px;max-width:205px}.terminal-top .quiet{font-size:11px;padding:8px}.terminal-top kbd{display:none}
+  .terminal-log{height:210px;padding:14px;margin:15px 0}.terminal-log p{font-size:11px}
+  #terminal-form{gap:8px;padding-left:10px}#terminal-form>span{display:none}#terminal-command{font-size:12px;padding:10px 0}#terminal-form .button{padding-inline:11px}
+  .command-chips{gap:7px}.command-chips button{min-height:44px}.command-chips>span{font-size:10px}
+}

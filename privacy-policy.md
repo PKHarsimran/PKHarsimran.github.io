@@ -9,7 +9,7 @@ permalink: /privacy-policy/
 # Privacy Policy
 
 **Effective date:** September 1, 2026  
-**Last updated:** October 18, 2026
+**Last updated:** October 19, 2026
 
 This Privacy Policy explains how Harsimran Sidhu ("I," "me," or "my") handles information when you visit **harsim.ca** and its pages, articles, feeds, and related features (the "Site"). It is intended to give visitors a clear, globally applicable explanation of the Site's privacy practices.
 
@@ -25,7 +25,7 @@ The Site uses Google services. Please read [how Google uses information from sit
 
 ## Live Lab visitor passes and optional IP lookup
 
-The [Live Lab](/lab/) creates a random visitor callsign and saves the pass, puzzle progress, tour progress, and motion preference in your browser's local storage. The lab does not upload your pass or puzzle answers. Use **Start a fresh visit** to replace the pass and clear its progress, or clear this site's browser storage to remove the saved information.
+The [Live Lab](/lab/) creates a random visitor callsign and saves the pass, puzzle progress, tour progress, mission milestones, and motion preference in your browser's local storage. Mission milestones include whether you greeted Pixel and tried its toy terminal. The lab does not upload your pass, puzzle answers, or terminal commands. The terminal's recent command history is kept only in the open page's memory, not in local storage. Use **Start a fresh visit** to replace the pass and clear its progress, or clear this site's browser storage to remove the saved information.
 
 Selecting **Reveal my public IP** makes a direct request from your browser to [ipify](https://www.ipify.org/). That service necessarily receives the requesting internet-facing IP address. The lookup is optional and does not run on page load. The lab displays the returned address temporarily, does not put it in local storage or a downloaded badge, and provides a button to hide it again. It is not a device scan or a way to establish a visitor's identity. A VPN or proxy can affect the address shown.
 

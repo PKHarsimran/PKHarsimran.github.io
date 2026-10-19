@@ -5,6 +5,8 @@ The standalone `/lab/` page is copied unchanged by Jekyll and deployed on the ex
 - `lab/core.mjs`: random visitor passes, validated progress, training cases, vault rules, deterministic creature art, and SVG badge source.
 - `lab/network.mjs`: optional public-IP lookup through ipify, with a timeout and response validation. Importing it makes no request.
 - `lab/app.mjs`: accessible DOM controls, local progress, packet tour, mascot reactions, animation preferences, and PNG export.
+- Pixel's terminal: press `/` outside an input or choose **Ask Pixel**. `help` lists its fixed commands; `hint` follows puzzle progress. The native dialog closes with **Close** or Escape, and keeps commands only in the current page's memory. No command is executed or forwarded to a server.
+- Mission patches: five milestones derived from the visitor's saved progress. Earlier passes migrate without losing their callsign or solved cases. Greeting Pixel or using its terminal records a bounded counter/boolean; no device data is used.
 - `lab/lab.css`: desktop/mobile layouts and reduced-motion behavior. Fonts are local and their licenses are in `lab/fonts/`.
 
 ## Run and check

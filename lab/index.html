@@ -28,6 +28,7 @@
         <div class="hero-actions"><a class="button primary" href="#check-in">Get my visitor pass <span aria-hidden="true">↗</span></a><a class="text-link" href="#cases">I’m here for the puzzle <span aria-hidden="true">→</span></a></div>
         <p class="micro">No account. Just a little curiosity.</p>
       </div>
+      <div class="companion-shell">
       <div class="companion-station">
         <div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div>
         <span class="orbit-label label-one" aria-hidden="true">LISTENING FOR GOOD IDEAS</span><span class="orbit-label label-two" aria-hidden="true">CURIOSITY / NOMINAL</span>
@@ -49,6 +50,8 @@
         </button>
         <div class="companion-caption"><span class="status-dot" aria-hidden="true"></span><strong>PIXEL</strong><span id="mascot-state">Curious & awake</span></div>
       </div>
+      <button id="open-terminal" class="terminal-launcher" type="button" aria-haspopup="dialog" aria-controls="pixel-terminal"><span aria-hidden="true">&gt;_</span> Ask Pixel <kbd>/</kbd><small>Hints, shortcuts & a few secrets</small></button>
+      </div>
     </section>
 
     <section class="check-in wrap panel" id="check-in" aria-labelledby="check-in-title">
@@ -59,6 +62,7 @@
         <div><span class="field-label">YOUR CORNER OF THE CLOCK</span><strong id="local-time">—:—</strong><span class="small muted" id="local-zone">Local browser time</span></div>
       </div>
       <div class="check-in-bottom"><p class="small muted">Your callsign and puzzle progress stay in this browser. Make yourself at home.</p><button class="button primary" id="start-visit" type="button">Check in & send my packet <span aria-hidden="true">→</span></button></div>
+      <div class="mission-strip"><a href="#patches" id="mission-summary">MISSION PATCHES / 0 OF 5</a><progress id="mission-progress" max="5" value="0" aria-label="Mission patches earned">0 of 5</progress><button id="next-mission" class="inline-action" type="button">Next: meet Pixel ↗</button></div>
     </section>
 
     <section class="journey wrap section-space" id="journey" aria-labelledby="journey-title">
@@ -95,9 +99,19 @@
       <div class="badge-preview"><img id="badge-preview" alt="Your personalized lab visitor badge" width="900" height="520"><span class="badge-caption mono" id="badge-caption">VISITOR EDITION / CURIOSITY CLEARED</span></div>
     </section>
 
-    <section class="wrap faq section-space" aria-labelledby="field-notes-title"><p class="eyebrow" id="field-notes-title">A COUPLE OF FIELD NOTES</p><details><summary>Does this scan my device?</summary><p>No. Pixel reacts to the page, and the route is an illustration. The cases use training data. The optional IP button asks ipify for your internet-facing address; it is not a device scan or a way to identify you.</p></details><details><summary>What gets saved?</summary><p>Your random visitor pass, solved cases, tour progress, and motion preference stay in this browser. The lab does not send your answers to a server. The IP lookup only runs when you ask, is not saved by the lab, and is never added to the badge. <a href="/privacy-policy/">Read the site privacy policy.</a></p></details></section>
+    <section class="wrap patches section-space" id="patches" aria-labelledby="patches-title"><div class="section-heading"><div><p class="eyebrow">05 / CURIOSITY LEAVES A MARK</p><h2 id="patches-title">A patch for<br>every little detour.</h2></div><p id="patches-description">Five small missions. A collection that stays with your visitor pass.</p></div><div class="patch-grid" id="patch-grid"></div><p class="small muted">Your collection stays in this browser. Starting a fresh visit starts a fresh collection.</p></section>
+
+    <section class="wrap faq section-space" aria-labelledby="field-notes-title"><p class="eyebrow" id="field-notes-title">A COUPLE OF FIELD NOTES</p><details><summary>Does this scan my device?</summary><p>No. Pixel reacts to the page, and the route is an illustration. The cases use training data. The optional IP button asks ipify for your internet-facing address; it is not a device scan or a way to identify you.</p></details><details><summary>What gets saved?</summary><p>Your random visitor pass, solved cases, tour progress, mission patches, and motion preference stay in this browser. Pixel’s terminal is a local toy: commands are not sent to a server or run on your device. The IP lookup only runs when you ask, is not saved by the lab, and is never added to the badge. <a href="/privacy-policy/">Read the site privacy policy.</a></p></details></section>
   </main>
   <footer class="site-footer wrap"><a class="brand" href="/">Harsimran Sidhu <span>↗</span></a><p>Build with curiosity. Leave something useful behind.</p><div><a href="https://github.com/PKHarsimran">GitHub</a><a href="/">Field notes</a><button id="reset-visit" class="inline-action" type="button">Start a fresh visit</button></div></footer>
   <div class="celebration" id="celebration" aria-hidden="true"></div>
+  <div class="patch-toast" id="patch-toast" role="status" hidden></div>
+  <dialog id="pixel-terminal" class="pixel-terminal" aria-labelledby="terminal-title" aria-describedby="terminal-description">
+    <div class="terminal-top"><div><p class="eyebrow">AFTER HOURS / PIXEL'S FIELD KIT</p><h2 id="terminal-title">A little command magic.</h2></div><button id="close-terminal" class="quiet" type="button" aria-label="Close Pixel's terminal">Close <kbd>Esc</kbd></button></div>
+    <p id="terminal-description" class="small muted">Pixel’s pretend terminal. Try a command, find a shortcut, or ask for a clue.</p>
+    <div id="terminal-log" class="terminal-log" role="log" aria-live="polite" aria-relevant="additions text"></div>
+    <form id="terminal-form"><label for="terminal-command" class="sr-only">Pixel command</label><span aria-hidden="true">visitor@lab &gt;</span><input id="terminal-command" name="command" type="text" maxlength="80" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="type help, hint, or joke" autofocus><button class="button primary" type="submit">Run <span aria-hidden="true">↵</span></button></form>
+    <div class="command-chips" aria-label="Suggested commands"><button type="button" data-command="help">help</button><button type="button" data-command="hint">hint</button><button type="button" data-command="status">status</button><button type="button" data-command="joke">joke</button><span>↑ previous command · / open · Esc close</span></div>
+  </dialog>
 </body>
 </html>

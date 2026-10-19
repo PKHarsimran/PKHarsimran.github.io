@@ -45,7 +45,7 @@ export function createVisit(seed, now = new Date()) {
   const n = hashText(seed);
   return { version: 1, seed,
     callsign: `${ADJECTIVES[n % 8]}-${CALLSIGNS[(n >>> 4) % 8]}-${seed.slice(-3).toUpperCase()}`,
-    createdAt: now.toISOString(), completed: [], routeStep: 0, vaultUnlocked: false };
+    createdAt: now.toISOString(), completed: [], routeStep: 0, vaultUnlocked: false, hellos: 0, terminalUsed: false };
 }
 
 export function restoreVisit(raw) {
@@ -57,6 +57,8 @@ export function restoreVisit(raw) {
     visit.completed = ROOMS.map(r => r.id).filter(id => Array.isArray(data.completed) && data.completed.includes(id));
     visit.routeStep = Number.isInteger(data.routeStep) ? Math.max(0, Math.min(4, data.routeStep)) : 0;
     visit.vaultUnlocked = data.vaultUnlocked === true && visit.completed.length === ROOMS.length;
+    visit.hellos = Number.isInteger(data.hellos) ? Math.max(0, Math.min(99, data.hellos)) : 0;
+    visit.terminalUsed = data.terminalUsed === true;
     return visit;
   } catch { return null; }
 }
@@ -77,6 +79,52 @@ export function openVault(visit, code) {
 
 export function creatureFor(visit) {
   return CREATURES[hashText(visit.seed + ':creature') % CREATURES.length];
+}
+
+export const PATCHES = [
+  { id: 'contact', name: 'First Contact', icon: '✦', hint: 'Say hello to Pixel.', action: 'hello', button: 'Meet Pixel' },
+  { id: 'packet', name: 'Packet Pilot', icon: '⌁', hint: 'Reach the last stop on the tour.', action: 'route', button: 'Follow the packet' },
+  { id: 'evidence', name: 'Evidence Eyes', icon: '⌕', hint: 'Find all three case fragments.', action: 'cases', button: 'Explore the cases' },
+  { id: 'vault', name: 'Vault Keeper', icon: '◇', hint: 'Open the little vault.', action: 'vault', button: 'Visit the vault' },
+  { id: 'console', name: 'Console Cadet', icon: '>_', hint: 'Try a command in Pixel’s terminal.', action: 'terminal', button: 'Ask Pixel' },
+];
+
+export function missionPatches(visit) {
+  const earned = { contact: visit.hellos > 0, packet: visit.routeStep === 4,
+    evidence: ROOMS.every(r => visit.completed.includes(r.id)), vault: visit.vaultUnlocked === true,
+    console: visit.terminalUsed === true };
+  return PATCHES.map(p => ({ ...p, earned: Boolean(earned[p.id]) }));
+}
+
+export function recordHello(visit) {
+  return { ...visit, hellos: Math.min(99, (visit.hellos || 0) + 1) };
+}
+
+// Fixed, local replies only. Nothing entered here is executed or sent to a server.
+export function pixelCommand(input, visit) {
+  const command = String(input).trim().toLowerCase().replace(/\s+/g, ' ');
+  const reply = (lines, action = null) => ({ recognized: true, lines, action });
+  switch (command) {
+    case 'help': return reply(['FIELD KIT / help · whoami · status · hint', 'SHORTCUTS / route · cases · vault · badge · patches', 'AFTER HOURS / pet · joke · party · clear', 'A few less sensible commands might work, too.']);
+    case 'whoami': return reply([`${visit.callsign} / ${visit.vaultUnlocked ? 'VAULT EXPLORER' : 'LAB VISITOR'}`, 'Random callsign. Real curiosity. No identity scan.']);
+    case 'status': return reply([`${missionPatches(visit).filter(p => p.earned).length}/5 mission patches · ${visit.completed.length}/3 fragments`, `Packet tour: ${visit.routeStep}/4 stops · vault: ${visit.vaultUnlocked ? 'open' : 'waiting'}`, visit.vaultUnlocked ? `Companion recovered: ${creatureFor(visit)}.` : 'A tiny creature is still waiting for you.']);
+    case 'hint': {
+      const next = ROOMS.find(r => !visit.completed.includes(r.id));
+      return reply([next ? `${next.project}: ${next.hint}` : visit.vaultUnlocked ? 'Try the other stations for the rest of your mission patches.' : 'Read your fragments in INSPECT → CAPTURE → TRACE order.']);
+    }
+    case 'route': return reply(['Packet departure gate, coming right up.'], 'journey');
+    case 'cases': return reply(['Three tools. Three loose ends. You have this.'], 'cases');
+    case 'vault': return reply(['Mind the door. Something tiny lives behind it.'], 'vault');
+    case 'badge': return reply(['Your souvenir desk is this way.'], 'souvenir');
+    case 'patches': return reply(['Opening your mission patch collection.'], 'patches');
+    case 'pet': return reply(['Antenna patted. Morale: unreasonably high.'], 'pet');
+    case 'party': return reply(['Deploying entirely unnecessary celebration packets.'], 'party');
+    case 'joke': return reply([['My favourite protocol? A proper hello.', 'I tried to cache a nap. It expired.', 'There are no bugs here. Just undocumented side quests.'][hashText(visit.seed + visit.hellos) % 3]]);
+    case 'clear': return reply([], 'clear');
+    case 'sudo make me a sandwich': return reply(['Sudo privileges: none. Snack enthusiasm: unlimited.', 'Best I can offer is a byte.']);
+    case 'hello': case 'hi': return reply(['Hello, fellow tinkerer. I saved you a side quest.'], 'pet');
+    default: return { recognized: false, lines: [command.length > 80 ? 'That is a very long spell. Try help.' : 'That one is outside my field kit. Try help, hint, or joke.'], action: null };
+  }
 }
 
 export function creaturePixels(seed) {

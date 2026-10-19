@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { ROOMS, VAULT_ROUTE, createVisit, restoreVisit, answerRoom, openVault, creatureFor, creaturePixels, renderBadgeSVG, badgeFilename, validIP } from '../../lab/core.mjs';
+import { ROOMS, VAULT_ROUTE, createVisit, restoreVisit, answerRoom, openVault, creatureFor, creaturePixels, renderBadgeSVG, badgeFilename, validIP, missionPatches, recordHello, pixelCommand } from '../../lab/core.mjs';
 import { lookupPublicIP } from '../../lab/network.mjs';
 
 const fresh = () => createVisit('0123456789abcdef01234567', new Date('2026-10-18T12:00:00Z'));
@@ -92,4 +92,61 @@ test('IP lookup has only an explicit reveal trigger; main page has no tracking s
   assert.ok(!/googletagmanager|google-analytics|gtag\(/i.test(html));
   assert.match(html, /Hidden until you ask/);
   assert.match(html, /prefers-reduced-motion|motion-toggle/);
+});
+
+test('earlier passes keep their progress and gain empty mission fields', () => {
+  const old = openVault(solved(), '274').visit;
+  delete old.hellos; delete old.terminalUsed;
+  const restored = restoreVisit(JSON.stringify(old));
+  assert.equal(restored.callsign, old.callsign);
+  assert.equal(restored.vaultUnlocked, true);
+  assert.deepEqual(restored.completed, old.completed);
+  assert.equal(restored.hellos, 0); assert.equal(restored.terminalUsed, false);
+  assert.deepEqual(missionPatches(restored).filter(p => p.earned).map(p => p.id), ['evidence', 'vault']);
+});
+test('mission patches reflect completed interactions, not page views', () => {
+  assert.equal(missionPatches(fresh()).filter(p => p.earned).length, 0);
+  let v = recordHello(fresh());
+  assert.deepEqual(missionPatches(v).filter(p => p.earned).map(p => p.id), ['contact']);
+  assert.equal(missionPatches({ ...v, routeStep: 3 }).find(p => p.id === 'packet').earned, false);
+  v = { ...openVault(solved(), '274').visit, hellos: 1, routeStep: 4, terminalUsed: true };
+  assert.equal(missionPatches(v).filter(p => p.earned).length, 5);
+  assert.deepEqual(missionPatches(v), missionPatches(restoreVisit(JSON.stringify(v))));
+});
+test('Pixel interactions are bounded and do not change completed game state', () => {
+  const v = fresh(), next = recordHello(v);
+  assert.equal(v.hellos, 0); assert.equal(next.hellos, 1);
+  assert.deepEqual(next.completed, []);
+  assert.equal(recordHello({ ...v, hellos: 99 }).hellos, 99);
+  const restored = restoreVisit(JSON.stringify({ ...v, hellos: 999999, terminalUsed: 'yes', terminalHistory: ['private command'] }));
+  assert.equal(restored.hellos, 99); assert.equal(restored.terminalUsed, false);
+  assert.equal('terminalHistory' in restored, false);
+});
+test('Pixel hints follow current progress and never spill the vault answer', () => {
+  assert.match(pixelCommand('hint', fresh()).lines.join(' '), /SwiftIOC/);
+  const one = answerRoom(fresh(), 'trace', 1).visit;
+  assert.match(pixelCommand('hint', one).lines.join(' '), /IOC Inspector/);
+  const ready = pixelCommand('hint', solved()).lines.join(' ');
+  assert.match(ready, /INSPECT → CAPTURE → TRACE/);
+  assert.ok(!ready.includes('274'));
+  const recovered = openVault(solved(), '274').visit;
+  assert.match(pixelCommand('hint', recovered).lines.join(' '), /mission patches/);
+});
+test('terminal commands are a small local allowlist, not a shell or network client', () => {
+  for (const command of ['curl https://example.com', 'rm -rf /', '<img src=x onerror=alert(1)>', 'fetch', 'reveal my ip']) {
+    const result = pixelCommand(command, fresh());
+    assert.equal(result.recognized, false); assert.equal(result.action, null);
+    assert.ok(!result.lines.join(' ').includes(command));
+  }
+  for (const command of ['help', 'whoami', 'status', 'hint', 'route', 'cases', 'vault', 'badge', 'patches', 'pet', 'party', 'joke', 'clear']) {
+    assert.equal(pixelCommand(command, fresh()).recognized, true, command);
+  }
+  assert.equal(pixelCommand(' ROUTE ', fresh()).action, 'journey');
+  assert.equal(pixelCommand('sudo  make me a sandwich', fresh()).recognized, true);
+});
+test('terminal status uses the random callsign and public game progress only', () => {
+  const v = { ...fresh(), ip: '192.0.2.42', terminalHistory: ['do not echo this'] };
+  assert.ok(pixelCommand('whoami', v).lines[0].includes(v.callsign));
+  assert.ok(!pixelCommand('status', v).lines.join(' ').includes(v.ip));
+  assert.match(pixelCommand('status', openVault(solved(), '274').visit).lines.join(' '), /vault: open/);
 });

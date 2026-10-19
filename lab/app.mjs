@@ -1,4 +1,4 @@
-import { STORAGE_KEY, ROOMS, VAULT_ROUTE, createVisit, restoreVisit, answerRoom, openVault, creatureFor, renderBadgeSVG, badgeFilename } from './core.mjs';
+import { STORAGE_KEY, ROOMS, VAULT_ROUTE, PATCHES, createVisit, restoreVisit, answerRoom, openVault, creatureFor, renderBadgeSVG, badgeFilename, missionPatches, recordHello, pixelCommand } from './core.mjs';
 import { lookupPublicIP } from './network.mjs';
 
 const $ = id => document.getElementById(id);
@@ -17,6 +17,9 @@ let badgeSignature = '';
 let storageAvailable = true;
 let napTimer, celebrationTimer, pointerFrame;
 let lastWake = 0;
+let knownPatches = null, patchToastTimer;
+const commandHistory = [];
+let historyCursor = 0;
 const STATES = [
   { title: 'Hello from your browser.', text: 'Your callsign was made here. It is a random pass, not a fingerprint of your device. Next stop: a public doorway into the projects.', link: 'Meet the public projects ↗', url: 'https://github.com/PKHarsimran' },
   { title: 'Public-facing. Curiosity-friendly.', text: 'This site is a doorway to field notes, open-source tools, and a few experiments. The route is an illustration; no tracing or scanning is taking place.', link: 'Explore the field notes ↗', url: '/' },
@@ -122,6 +125,8 @@ function renderState() {
   document.body.dataset.vault = visit.vaultUnlocked ? 'open' : 'closed';
   $('lock-mark').textContent = visit.vaultUnlocked ? '✦' : '◇';
   $('vault-code').disabled = visit.vaultUnlocked;
+  if (visit.vaultUnlocked) $('vault-code').value = VAULT_ROUTE.map(id => ROOMS.find(r => r.id === id).digit).join('');
+  $('vault-title').textContent = visit.vaultUnlocked ? 'A tiny mystery.\nA well-earned souvenir.' : 'Something tiny\nis waiting inside.';
   if (visit.vaultUnlocked) $('vault-feedback').textContent = `${creatureFor(visit)} is waiting on your explorer badge below.`;
   $('badge-description').textContent = visit.vaultUnlocked ? `Meet ${creatureFor(visit)}, your tiny souvenir from the signal. Your explorer badge is ready to keep.` : 'Your visitor pass is ready to keep. Open the vault to meet your own pixel creature and upgrade it to an explorer badge.';
   $('download-badge').textContent = visit.vaultUnlocked ? 'Download explorer badge ↓' : 'Download visitor badge ↓';
@@ -133,9 +138,114 @@ function renderState() {
     badgeSignature = signature;
   }
   renderRoute();
+  renderMissions();
 }
 
-function goTo(id) { $(id).scrollIntoView({ behavior: document.body.dataset.motion === 'off' ? 'instant' : 'smooth', block: 'start' }); }
+function goTo(id) {
+  const target = $(id);
+  target.setAttribute('tabindex', '-1');
+  target.scrollIntoView({ behavior: document.body.dataset.motion === 'off' ? 'instant' : 'smooth', block: 'start' });
+  target.focus({ preventScroll: true });
+}
+function mountMissions() {
+  for (const patch of PATCHES) {
+    const card = document.createElement('article'); card.className = 'patch-card'; card.id = `patch-${patch.id}`;
+    const emblem = document.createElement('span'); emblem.className = 'patch-emblem'; emblem.textContent = patch.icon; emblem.setAttribute('aria-hidden', 'true');
+    const status = document.createElement('span'); status.className = 'patch-status'; status.textContent = 'TO DISCOVER';
+    const title = document.createElement('h3'); title.textContent = patch.name;
+    const hint = document.createElement('p'); hint.textContent = patch.hint;
+    const action = document.createElement('button'); action.className = 'inline-action'; action.type = 'button'; action.textContent = patch.button + ' ↗';
+    action.addEventListener('click', () => followMission(patch.action));
+    card.append(emblem, status, title, hint, action); $('patch-grid').append(card);
+  }
+}
+function followMission(action) {
+  if (action === 'terminal') { openTerminal(); return; }
+  if (action === 'hello') { goTo('hero-title'); $('mascot').focus({ preventScroll: true }); return; }
+  goTo(action === 'route' ? 'journey' : action);
+}
+function renderMissions() {
+  const patches = missionPatches(visit), earned = patches.filter(p => p.earned), next = patches.find(p => !p.earned);
+  $('mission-summary').textContent = `MISSION PATCHES / ${earned.length} OF 5`;
+  $('mission-progress').value = earned.length;
+  $('mission-progress').textContent = `${earned.length} of 5`;
+  $('next-mission').textContent = next ? `Next: ${next.button.toLowerCase()} ↗` : 'Collection complete · take a look ↗';
+  $('next-mission').onclick = () => next ? followMission(next.action) : goTo('patches');
+  $('patches-description').textContent = earned.length === 5 ? 'Full collection. Five small missions, one very curious visitor.' : `${earned.length} of 5 patches earned. There is still a little more to discover.`;
+  for (const patch of patches) {
+    const card = $(`patch-${patch.id}`); card.classList.toggle('earned', patch.earned);
+    card.querySelector('.patch-status').textContent = patch.earned ? 'EARNED ✓' : 'TO DISCOVER';
+  }
+  if (knownPatches !== null) {
+    const found = earned.filter(p => !knownPatches.has(p.id));
+    if (found.length) {
+      const message = `PATCH FOUND / ${found.map(p => p.name).join(' + ')}`;
+      clearTimeout(patchToastTimer);
+      if ($('pixel-terminal').open) { $('patch-toast').hidden = true; terminalLine(message, 'reward'); }
+      else { $('patch-toast').textContent = message; $('patch-toast').hidden = false; patchToastTimer = setTimeout(() => { $('patch-toast').hidden = true; }, 4500); }
+    }
+  }
+  knownPatches = new Set(earned.map(p => p.id));
+}
+function terminalLine(text, kind = 'reply') {
+  const line = document.createElement('p'); line.className = `terminal-${kind}`; line.textContent = text;
+  $('terminal-log').append(line);
+  while ($('terminal-log').children.length > 36) $('terminal-log').firstElementChild.remove();
+  $('terminal-log').scrollTop = $('terminal-log').scrollHeight;
+}
+function openTerminal() {
+  if ($('pixel-terminal').open) return;
+  if (!$('terminal-log').children.length) {
+    terminalLine(`PIXEL / ${visit.callsign}, welcome to the field kit.`);
+    terminalLine('Try help for commands, hint for a clue, or joke for questionable humour.');
+  }
+  $('pixel-terminal').showModal(); document.body.classList.add('terminal-open');
+  $('terminal-command').focus(); wake();
+}
+function closeTerminal() { $('pixel-terminal').close(); }
+function runPixelCommand(raw) {
+  const text = String(raw).trim().slice(0, 80);
+  if (!text) { $('terminal-command').focus(); return; }
+  const result = pixelCommand(text, visit);
+  if (result.recognized && text.toLowerCase() === 'status') result.lines = pixelCommand('status', { ...visit, terminalUsed: true }).lines;
+  commandHistory.push(text); if (commandHistory.length > 20) commandHistory.shift(); historyCursor = commandHistory.length;
+  $('terminal-command').value = '';
+  if (result.action === 'clear') $('terminal-log').replaceChildren();
+  else { terminalLine(`visitor@lab > ${text}`, 'input'); result.lines.forEach(line => terminalLine(line)); }
+  if (result.recognized) {
+    visit = { ...visit, terminalUsed: true };
+    if (result.action === 'pet') { visit = recordHello(visit); celebrate('Antenna patted. Morale restored.'); }
+    renderMissions(); persist();
+    if (['journey', 'cases', 'vault', 'souvenir', 'patches'].includes(result.action)) { closeTerminal(); goTo(result.action); }
+    if (result.action === 'party') { closeTerminal(); throwConfetti(); celebrate('A celebration packet, just for you.'); }
+  }
+  if ($('pixel-terminal').open) $('terminal-command').focus();
+}
+$('open-terminal').addEventListener('click', openTerminal);
+$('close-terminal').addEventListener('click', closeTerminal);
+$('pixel-terminal').addEventListener('close', () => document.body.classList.remove('terminal-open'));
+$('terminal-form').addEventListener('submit', event => { event.preventDefault(); runPixelCommand($('terminal-command').value); });
+document.querySelectorAll('[data-command]').forEach(button => button.addEventListener('click', () => runPixelCommand(button.dataset.command)));
+$('terminal-command').addEventListener('keydown', event => {
+  if (!commandHistory.length || !['ArrowUp', 'ArrowDown'].includes(event.key)) return;
+  event.preventDefault(); historyCursor = Math.max(0, Math.min(commandHistory.length, historyCursor + (event.key === 'ArrowUp' ? -1 : 1)));
+  $('terminal-command').value = commandHistory[historyCursor] || '';
+});
+document.addEventListener('keydown', event => {
+  if (event.key === '/' && !event.ctrlKey && !event.metaKey && !event.altKey && !event.defaultPrevented && !event.target.closest('input, textarea, select, [contenteditable]')) {
+    event.preventDefault(); openTerminal();
+  }
+});
+function throwConfetti() {
+  if (document.body.dataset.motion === 'off') return;
+  $('celebration').replaceChildren();
+  for (let i = 0; i < 22; i++) {
+    const piece = document.createElement('i'); piece.className = 'confetti';
+    piece.style.setProperty('--x', `${(i * 47) % 100}%`); piece.style.setProperty('--delay', `${i % 5 * .07}s`);
+    piece.style.setProperty('--color', ['#63e6c4', '#b7a1ff', '#f685bf'][i % 3]); $('celebration').append(piece);
+  }
+  setTimeout(() => $('celebration').replaceChildren(), 2400);
+}
 function advanceRoute() {
   if (visit.routeStep === 4) { goTo('cases'); return; }
   visit = { ...visit, routeStep: visit.routeStep + 1 }; renderState(); persist();
@@ -150,15 +260,7 @@ $('vault-form').addEventListener('submit', event => {
   if (result.status === 'open') {
     visit = result.visit; renderState(); persist(); celebrate('You opened it! That creature is yours to keep.');
     $('badge-status').textContent = 'Explorer badge unlocked. Your creature is ready.';
-    if (document.body.dataset.motion !== 'off') {
-      $('celebration').replaceChildren();
-      for (let i = 0; i < 22; i++) {
-        const piece = document.createElement('i'); piece.className = 'confetti';
-        piece.style.setProperty('--x', `${(i * 47) % 100}%`); piece.style.setProperty('--delay', `${i % 5 * .07}s`);
-        piece.style.setProperty('--color', ['#63e6c4', '#b7a1ff', '#f685bf'][i % 3]); $('celebration').append(piece);
-      }
-      setTimeout(() => $('celebration').replaceChildren(), 2400);
-    }
+    throwConfetti();
   } else {
     $('vault-feedback').textContent = result.status === 'missing' ? 'The three case files each hold a fragment. Collect them first.' : 'A decoy code. Read the fragments in INSPECT → CAPTURE → TRACE order.';
     say('Check the route. Order makes all the difference.');
@@ -214,6 +316,7 @@ function applyMotion() {
 $('motion-toggle').addEventListener('click', () => { manualPause = !manualPause; safeWrite(STORAGE_KEY + '-motion', manualPause ? 'paused' : 'playing'); applyMotion(); });
 motionMedia.addEventListener('change', applyMotion);
 function wake() {
+  if ($('mascot').classList.contains('sleeping')) say('Oh, you’re back. Where were we?');
   $('mascot').classList.remove('sleeping');
   if (!$('mascot').classList.contains('celebrate')) $('mascot-state').textContent = 'Curious & awake';
   if (Date.now() - lastWake < 1000) return;
@@ -231,12 +334,13 @@ document.addEventListener('pointermove', event => {
 }, { passive: true });
 document.addEventListener('keydown', wake);
 document.addEventListener('pointerdown', wake, { passive: true });
-$('mascot').addEventListener('click', () => { wake(); celebrate(visit.vaultUnlocked ? 'That creature badge looks good on you.' : visit.completed.length ? 'You’ve got a good eye. Keep following the clues.' : 'Hi! I’m Pixel. I handle morale and occasional naps.'); });
+$('mascot').addEventListener('click', () => { wake(); visit = recordHello(visit); renderMissions(); persist(); celebrate(visit.vaultUnlocked ? 'That creature badge looks good on you.' : visit.completed.length ? 'You’ve got a good eye. Keep following the clues.' : 'Hi! I’m Pixel. I handle morale and occasional naps.'); });
 $('reset-visit').addEventListener('click', () => {
   visit = freshVisit(); networkIP = null; ++ipRequest; $('ip-reveal').disabled = false; $('ip-reveal').textContent = 'Reveal my public IP ↗';
   $('public-ip').textContent = 'Hidden until you ask'; $('ip-status').textContent = ''; $('vault-code').value = '';
   $('vault-feedback').textContent = 'The code route is INSPECT → CAPTURE → TRACE.'; $('badge-status').textContent = '';
+  knownPatches = null; commandHistory.length = 0; historyCursor = 0; $('terminal-log').replaceChildren(); $('terminal-command').value = ''; $('patch-toast').hidden = true;
   for (const room of ROOMS) $(`feedback-${room.id}`).textContent = 'Solve the case to collect its fragment.';
   renderState(); persist(); say('Fresh pass. Fresh possibilities. Welcome back.'); goTo('check-in');
 });
-mountCases(); updateClock(); applyMotion(); renderState(); persist(); wake(); setInterval(updateClock, 30000);
+mountCases(); mountMissions(); updateClock(); applyMotion(); renderState(); persist(); wake(); setInterval(updateClock, 30000);
